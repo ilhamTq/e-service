@@ -2,11 +2,7 @@
 import { saveUser, updateUser } from '@/app/(main)/pegawai/_action';
 import IconArrowBackward from '@/components/icon/icon-arrow-backward';
 import IconSave from '@/components/icon/icon-save';
-import bank from '@/lib/bank';
-import level from '@/lib/level';
-import pendidikan from '@/lib/pendidikan';
 import { UserEditSchema, UserSchema } from '@/src/schema/users';
-import Jabatan_Type from '@/src/types/jabatan';
 import { zodResolver } from '@hookform/resolvers/zod';
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -23,9 +19,8 @@ type Inputs = z.infer<typeof UserSchema>;
 
 const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
     const router = useRouter();
-    const [detail, setDetail] = useState({ user_nama: '', user_alamat: '', user_nohp: '' });
+    const [detail, setDetail] = useState({ user_nama: '', user_alamat: '', user_hp: '' });
     const [loading, setLoading] = useState<string>();
-    const [jabatan, setJabatan] = useState<Jabatan_Type[]>();
     const {
         register,
         handleSubmit,
@@ -48,12 +43,6 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
         setImage(URL.createObjectURL(value));
     };
 
-    const getJabatan = async () => {
-        const res = await fetch('/api/jabatan');
-        const result = await res.json();
-        setJabatan(result.data);
-    };
-
     const showAlert = async (jenis: SweetAlertIcon = 'success', pesan = 'Data berhasil disimpan') => {
         const toast = Swal.mixin({
             toast: true,
@@ -68,20 +57,20 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
         });
     };
 
-    useEffect(() => {
-        getJabatan();
-        if (data) {
-            setDetail(data);
-            reset(data);
-            if (data.bank.length === 1) {
-                setValue('bank', data.bank[0].bank_name);
-                setValue('nama_rekening', data.bank[0].bank_account);
-                setValue('nomor_rekening', data.bank[0].bank_number);
-            }
-            // setValue('user_id', data.user_id);
-            // console.log(data);
-        }
-    }, []);
+    // useEffect(() => {
+    //     getJabatan();
+    //     if (data) {
+    //         setDetail(data);
+    //         reset(data);
+    //         if (data.bank.length === 1) {
+    //             setValue('bank', data.bank[0].bank_name);
+    //             setValue('nama_rekening', data.bank[0].bank_account);
+    //             setValue('nomor_rekening', data.bank[0].bank_number);
+    //         }
+    //         // setValue('user_id', data.user_id);
+    //         // console.log(data);
+    //     }
+    // }, []);
 
     const processForm: SubmitHandler<Inputs> = async (dt) => {
         setLoading('loading');
@@ -123,7 +112,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                         <div className="mt-6 space-y-1 text-gray-500 dark:text-gray-400">
                             <div>{detail.user_nama}</div>
                             <div>{detail.user_alamat}</div>
-                            <div>{detail.user_nohp}</div>
+                            <div>{detail.user_hp}</div>
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 lg:max-w-fit">
@@ -132,27 +121,6 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                                 NIP
                             </label>
                             <input type="text" {...register('user_nip')} className="form-input w-2/3 lg:w-[250px]" placeholder="8801..." />
-                        </div>
-                        <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_nik })}>
-                            <label htmlFor="invoiceLabel" className="mb-0 flex-1 ltr:mr-2 rtl:ml-2">
-                                NIK
-                            </label>
-                            <input id="invoiceLabel" type="text" {...register('user_nik')} className="form-input w-2/3 lg:w-[250px]" placeholder="Enter NIK" />
-                        </div>
-                        <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_jabatan })}>
-                            <label htmlFor="startDate" className="mb-0 flex-1 ltr:mr-2 rtl:ml-2">
-                                Jabatan
-                            </label>
-                            {jabatan && (
-                                <select {...register('user_jabatan')} className="form-select w-2/3 lg:w-[250px]">
-                                    <option value="">Pilih Jabatan</option>
-                                    {jabatan?.map((i) => (
-                                        <option key={i.jabatan_id} value={i.jabatan_id}>
-                                            {i.jabatan_nama}
-                                        </option>
-                                    ))}
-                                </select>
-                            )}
                         </div>
                     </div>
                 </div>
@@ -198,35 +166,20 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                                     }}
                                 />
                             </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_nohp })}>
+                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_hp })}>
                                 <label htmlFor="reciever-number" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
                                     No HP
                                 </label>
                                 <input
-                                    value={detail.user_nohp}
+                                    value={detail.user_hp}
                                     type="text"
                                     className="form-input flex-1"
                                     placeholder="Enter Phone number"
                                     onChange={(e) => {
-                                        setValue('user_nohp', e.target.value);
-                                        setDetail({ ...detail, user_nohp: e.target.value });
+                                        setValue('user_hp', e.target.value);
+                                        setDetail({ ...detail, user_hp: e.target.value });
                                     }}
                                 />
-                            </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_ttd, hidden: mode === 'profile' })}>
-                                <label htmlFor="reciever-number" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Akses Tanda Tangan
-                                </label>
-                                <label className="flex cursor-pointer items-center">
-                                    <input type="checkbox" className="form-checkbox" {...register('user_ttd')} />
-                                    <span className=" text-white-dark">Ya</span>
-                                </label>
-                            </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_pangkat })}>
-                                <label htmlFor="reciever-number" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Pangkat
-                                </label>
-                                <input type="text" {...register('user_pangkat')} className="form-input flex-1" placeholder="Enter Pangkat" />
                             </div>
                             <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_image })}>
                                 <label htmlFor="ctnFile" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
@@ -241,68 +194,6 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                                         setValue('user_image', e.target.files);
                                     }}
                                 />
-                            </div>
-                        </div>
-                        <div className="w-full lg:w-1/2">
-                            <div className="text-lg">&nbsp;</div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_pendidikan_akhir })}>
-                                <label htmlFor="pendidikan" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Pendidikan Terakhir
-                                </label>
-                                <select id="pendidikan" {...register('user_pendidikan_akhir')} className="form-select flex-1">
-                                    {pendidikan.map((e) => (
-                                        <option value={e.id} key={e.id}>
-                                            {e.value}
-                                        </option>
-                                    ))}
-                                </select>
-                            </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_tmp_lahir })}>
-                                <label htmlFor="bank-name" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Tempat Lahir
-                                </label>
-                                <input id="bank-name" type="text" {...register('user_tmp_lahir')} className="form-input flex-1" placeholder="Kota Tempat Lahir" />
-                            </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_tgl_lahir })}>
-                                <label htmlFor="swift-code" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Tanggal Lahir
-                                </label>
-                                <Flatpickr
-                                    value={data?.user_tgl_lahir}
-                                    options={{ dateFormat: 'Y-m-d', position: 'auto left' }}
-                                    className="form-input flex-1"
-                                    onChange={(date) => {
-                                        setValue('user_tgl_lahir', date[0]);
-                                    }}
-                                />
-                            </div>
-                            <div className="mt-4 flex items-center">
-                                <label htmlFor="swift-code" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Jenis Kelamin
-                                </label>
-                                <label className="flex cursor-pointer items-center">
-                                    <input type="radio" className="form-radio" {...register('user_jk')} value="L" />
-                                    <span className={clsx({ 'text-danger': errors.user_jk })}>Laki-laki</span>
-                                </label>
-                                <label className="ml-3 flex cursor-pointer items-center">
-                                    <input type="radio" className="form-radio" {...register('user_jk')} value="P" />
-                                    <span className={clsx({ 'text-danger': errors.user_jk })}>Perempuan</span>
-                                </label>
-                            </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_jumlah_anak })}>
-                                <label htmlFor="iban-code" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Jumlah Anak
-                                </label>
-                                <input id="iban-code" type="text" {...register('user_jumlah_anak')} className="form-input flex-1" placeholder="Enter Jumlah Anak" />
-                            </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_external })}>
-                                <label htmlFor="reciever-number" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Pegawai External
-                                </label>
-                                <label className="flex cursor-pointer items-center">
-                                    <input type="checkbox" className="form-checkbox" {...register('user_external')} />
-                                    <span className=" text-white-dark">Ya</span>
-                                </label>
                             </div>
                         </div>
                     </div>
@@ -323,7 +214,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                                 </label>
                                 <input id="password" type="password" {...register('user_pass')} className="form-input flex-1" placeholder="Enter Password" />
                             </div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_active })}>
+                            {/* <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_active })}>
                                 <label htmlFor="reciever-number" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
                                     Aktif
                                 </label>
@@ -331,10 +222,10 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                                     <input type="checkbox" className="form-checkbox" {...register('user_active')} />
                                     <span className=" text-white-dark">Ya</span>
                                 </label>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="w-full lg:w-1/2">
-                            <div className="text-lg">&nbsp;</div>
+                            {/* <div className="text-lg">&nbsp;</div>
                             <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_level, hidden: mode === 'profile' })}>
                                 <label htmlFor="level" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
                                     Level
@@ -348,7 +239,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                                             </option>
                                         ))}
                                 </select>
-                            </div>
+                            </div> */}
                             <div className={clsx('mt-4 flex items-center', { 'has-error': errors.confirm_password })}>
                                 <label htmlFor="confirm_password" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
                                     Confirm Password
@@ -361,7 +252,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
             </div>
 
             <div className="mt-6 w-full xl:mt-0 xl:w-96">
-                <div className="panel mb-5">
+                {/* <div className="panel mb-5">
                     <div className={clsx('mt-4', { 'has-error': errors.bank })}>
                         <label htmlFor="currency">Data Rekening</label>
                         <select {...register('bank')} className="form-select">
@@ -380,7 +271,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                         <label htmlFor="payment-method">Nomor Rekening</label>
                         <input type="text" {...register('nomor_rekening')} className="form-input" placeholder="620..." />
                     </div>
-                </div>
+                </div> */}
                 <div className="panel">
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-1">
                         <button type="submit" className="btn btn-success w-full gap-2" disabled={typeof loading === 'string'}>

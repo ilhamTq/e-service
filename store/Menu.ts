@@ -30,7 +30,7 @@ const menu = [
   {
     title: "Pegawai",
     icon: IconUsers,
-    href: "#",
+    href: "/pegawai",
     // level: [1, 2, 3, 4],
   },
   // {
