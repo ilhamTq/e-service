@@ -17,12 +17,18 @@ const menu = [
     icon: IconMenuDashboard,
     href: "/dashboard",
   },
-  // {
-  //     title: 'Laporan',
-  //     icon: IconNotes,
-  //     href: '/laporan',
-  //     // level: [1, 2, 3, 4],
-  // },
+  {
+    title: "SKTM",
+    icon: IconNotes,
+    href: "/sktm",
+    // level: [1, 2, 3, 4],
+  },
+  {
+    title: "Surat Pengantar Nikah",
+    icon: IconNotes,
+    href: "/pengantar_nikah",
+    // level: [1, 2, 3, 4],
+  },
   {
     title: "Data Master",
     // level: [1, 2, 3, 4],
@@ -33,12 +39,12 @@ const menu = [
     href: "/pegawai",
     // level: [1, 2, 3, 4],
   },
-  // {
-  //     title: 'Jabatan',
-  //     icon: IconMenuChat,
-  //     href: '/jabatan',
-  //     // level: [1, 2, 3, 4],
-  // },
+  {
+    title: "Jabatan",
+    icon: IconMenuChat,
+    href: "/jabatan",
+    // level: [1, 2, 3, 4],
+  },
   // {
   //     title: 'Tunjangan',
   //     icon: IconMenuMailbox,

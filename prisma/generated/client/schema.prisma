@@ -22,11 +22,40 @@ model users {
   user_hp        String
   user_image     String?
   user_alamat    String
+  user_jabatan   Int?
   user_name      String
   user_pass      String
+  user_level     Int?
   user_lastip    String?
   user_lastlogin String?
   user_created   DateTime  @default(now())
   user_updated   DateTime  @updatedAt
   user_deleted   DateTime?
+  jabatan        jabatan?  @relation(fields: [user_jabatan], references: [jabatan_id])
+  sktm           sktm[]
+}
+
+model jabatan {
+  jabatan_id      Int       @id @default(autoincrement())
+  jabatan_nama    String
+  jabatan_created DateTime  @default(now())
+  jabatan_updated DateTime  @updatedAt
+  jabatan_deleted DateTime?
+  users           users[]
+}
+
+model sktm {
+  sktm_id             Int      @id @default(autoincrement())
+  sktm_user_nama      Int
+  sktm_tgl_lahir      DateTime @db.Date
+  sktm_tempat_lahir   String
+  sktm_alamat         String
+  sktm_nama_ortu      String
+  sktm_tgl_lahir_ortu DateTime @db.Date
+  sktm_pekerjaan_ortu String
+  sktm_nik_ortu       String
+  sktm_alamat_ortu    String
+  sktm_kepentingan    String
+  sktm_ttd            Int?
+  ttd_sktm            users?   @relation(fields: [sktm_ttd], references: [user_id])
 }

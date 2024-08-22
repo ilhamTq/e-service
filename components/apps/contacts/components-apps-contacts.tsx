@@ -47,7 +47,9 @@ const ComponentsAppsContacts = ({ pegawai }: { pegawai: any }) => {
       showCancelButton: true,
       confirmButtonText: "Delete",
       padding: "2em",
-      customClass: "sweet-alerts",
+      customClass: {
+        popup: 'sweer-alerts',
+      },
     }).then(async (result) => {
       if (result.value) {
         const res = await deleteUser(user.user_id);

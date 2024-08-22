@@ -18,6 +18,16 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  * 
  */
 export type users = $Result.DefaultSelection<Prisma.$usersPayload>
+/**
+ * Model jabatan
+ * 
+ */
+export type jabatan = $Result.DefaultSelection<Prisma.$jabatanPayload>
+/**
+ * Model sktm
+ * 
+ */
+export type sktm = $Result.DefaultSelection<Prisma.$sktmPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -150,6 +160,26 @@ export class PrismaClient<
     * ```
     */
   get users(): Prisma.usersDelegate<ExtArgs>;
+
+  /**
+   * `prisma.jabatan`: Exposes CRUD operations for the **jabatan** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Jabatans
+    * const jabatans = await prisma.jabatan.findMany()
+    * ```
+    */
+  get jabatan(): Prisma.jabatanDelegate<ExtArgs>;
+
+  /**
+   * `prisma.sktm`: Exposes CRUD operations for the **sktm** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Sktms
+    * const sktms = await prisma.sktm.findMany()
+    * ```
+    */
+  get sktm(): Prisma.sktmDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -627,7 +657,9 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    users: 'users'
+    users: 'users',
+    jabatan: 'jabatan',
+    sktm: 'sktm'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -643,7 +675,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "users"
+      modelProps: "users" | "jabatan" | "sktm"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -710,6 +742,138 @@ export namespace Prisma {
           count: {
             args: Prisma.usersCountArgs<ExtArgs>
             result: $Utils.Optional<UsersCountAggregateOutputType> | number
+          }
+        }
+      }
+      jabatan: {
+        payload: Prisma.$jabatanPayload<ExtArgs>
+        fields: Prisma.jabatanFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.jabatanFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.jabatanFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload>
+          }
+          findFirst: {
+            args: Prisma.jabatanFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.jabatanFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload>
+          }
+          findMany: {
+            args: Prisma.jabatanFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload>[]
+          }
+          create: {
+            args: Prisma.jabatanCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload>
+          }
+          createMany: {
+            args: Prisma.jabatanCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.jabatanDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload>
+          }
+          update: {
+            args: Prisma.jabatanUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload>
+          }
+          deleteMany: {
+            args: Prisma.jabatanDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.jabatanUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.jabatanUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$jabatanPayload>
+          }
+          aggregate: {
+            args: Prisma.JabatanAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateJabatan>
+          }
+          groupBy: {
+            args: Prisma.jabatanGroupByArgs<ExtArgs>
+            result: $Utils.Optional<JabatanGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.jabatanCountArgs<ExtArgs>
+            result: $Utils.Optional<JabatanCountAggregateOutputType> | number
+          }
+        }
+      }
+      sktm: {
+        payload: Prisma.$sktmPayload<ExtArgs>
+        fields: Prisma.sktmFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.sktmFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.sktmFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload>
+          }
+          findFirst: {
+            args: Prisma.sktmFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.sktmFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload>
+          }
+          findMany: {
+            args: Prisma.sktmFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload>[]
+          }
+          create: {
+            args: Prisma.sktmCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload>
+          }
+          createMany: {
+            args: Prisma.sktmCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.sktmDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload>
+          }
+          update: {
+            args: Prisma.sktmUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload>
+          }
+          deleteMany: {
+            args: Prisma.sktmDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.sktmUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.sktmUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$sktmPayload>
+          }
+          aggregate: {
+            args: Prisma.SktmAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSktm>
+          }
+          groupBy: {
+            args: Prisma.sktmGroupByArgs<ExtArgs>
+            result: $Utils.Optional<SktmGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.sktmCountArgs<ExtArgs>
+            result: $Utils.Optional<SktmCountAggregateOutputType> | number
           }
         }
       }
@@ -869,6 +1033,67 @@ export namespace Prisma {
    */
 
 
+  /**
+   * Count Type UsersCountOutputType
+   */
+
+  export type UsersCountOutputType = {
+    sktm: number
+  }
+
+  export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    sktm?: boolean | UsersCountOutputTypeCountSktmArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the UsersCountOutputType
+     */
+    select?: UsersCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountSktmArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: sktmWhereInput
+  }
+
+
+  /**
+   * Count Type JabatanCountOutputType
+   */
+
+  export type JabatanCountOutputType = {
+    users: number
+  }
+
+  export type JabatanCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    users?: boolean | JabatanCountOutputTypeCountUsersArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * JabatanCountOutputType without action
+   */
+  export type JabatanCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the JabatanCountOutputType
+     */
+    select?: JabatanCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * JabatanCountOutputType without action
+   */
+  export type JabatanCountOutputTypeCountUsersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: usersWhereInput
+  }
+
 
   /**
    * Models
@@ -888,10 +1113,14 @@ export namespace Prisma {
 
   export type UsersAvgAggregateOutputType = {
     user_id: number | null
+    user_jabatan: number | null
+    user_level: number | null
   }
 
   export type UsersSumAggregateOutputType = {
     user_id: number | null
+    user_jabatan: number | null
+    user_level: number | null
   }
 
   export type UsersMinAggregateOutputType = {
@@ -902,8 +1131,10 @@ export namespace Prisma {
     user_hp: string | null
     user_image: string | null
     user_alamat: string | null
+    user_jabatan: number | null
     user_name: string | null
     user_pass: string | null
+    user_level: number | null
     user_lastip: string | null
     user_lastlogin: string | null
     user_created: Date | null
@@ -919,8 +1150,10 @@ export namespace Prisma {
     user_hp: string | null
     user_image: string | null
     user_alamat: string | null
+    user_jabatan: number | null
     user_name: string | null
     user_pass: string | null
+    user_level: number | null
     user_lastip: string | null
     user_lastlogin: string | null
     user_created: Date | null
@@ -936,8 +1169,10 @@ export namespace Prisma {
     user_hp: number
     user_image: number
     user_alamat: number
+    user_jabatan: number
     user_name: number
     user_pass: number
+    user_level: number
     user_lastip: number
     user_lastlogin: number
     user_created: number
@@ -949,10 +1184,14 @@ export namespace Prisma {
 
   export type UsersAvgAggregateInputType = {
     user_id?: true
+    user_jabatan?: true
+    user_level?: true
   }
 
   export type UsersSumAggregateInputType = {
     user_id?: true
+    user_jabatan?: true
+    user_level?: true
   }
 
   export type UsersMinAggregateInputType = {
@@ -963,8 +1202,10 @@ export namespace Prisma {
     user_hp?: true
     user_image?: true
     user_alamat?: true
+    user_jabatan?: true
     user_name?: true
     user_pass?: true
+    user_level?: true
     user_lastip?: true
     user_lastlogin?: true
     user_created?: true
@@ -980,8 +1221,10 @@ export namespace Prisma {
     user_hp?: true
     user_image?: true
     user_alamat?: true
+    user_jabatan?: true
     user_name?: true
     user_pass?: true
+    user_level?: true
     user_lastip?: true
     user_lastlogin?: true
     user_created?: true
@@ -997,8 +1240,10 @@ export namespace Prisma {
     user_hp?: true
     user_image?: true
     user_alamat?: true
+    user_jabatan?: true
     user_name?: true
     user_pass?: true
+    user_level?: true
     user_lastip?: true
     user_lastlogin?: true
     user_created?: true
@@ -1101,8 +1346,10 @@ export namespace Prisma {
     user_hp: string
     user_image: string | null
     user_alamat: string
+    user_jabatan: number | null
     user_name: string
     user_pass: string
+    user_level: number | null
     user_lastip: string | null
     user_lastlogin: string | null
     user_created: Date
@@ -1137,13 +1384,18 @@ export namespace Prisma {
     user_hp?: boolean
     user_image?: boolean
     user_alamat?: boolean
+    user_jabatan?: boolean
     user_name?: boolean
     user_pass?: boolean
+    user_level?: boolean
     user_lastip?: boolean
     user_lastlogin?: boolean
     user_created?: boolean
     user_updated?: boolean
     user_deleted?: boolean
+    jabatan?: boolean | users$jabatanArgs<ExtArgs>
+    sktm?: boolean | users$sktmArgs<ExtArgs>
+    _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
 
@@ -1155,8 +1407,10 @@ export namespace Prisma {
     user_hp?: boolean
     user_image?: boolean
     user_alamat?: boolean
+    user_jabatan?: boolean
     user_name?: boolean
     user_pass?: boolean
+    user_level?: boolean
     user_lastip?: boolean
     user_lastlogin?: boolean
     user_created?: boolean
@@ -1164,10 +1418,18 @@ export namespace Prisma {
     user_deleted?: boolean
   }
 
+  export type usersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    jabatan?: boolean | users$jabatanArgs<ExtArgs>
+    sktm?: boolean | users$sktmArgs<ExtArgs>
+    _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
+  }
 
   export type $usersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "users"
-    objects: {}
+    objects: {
+      jabatan: Prisma.$jabatanPayload<ExtArgs> | null
+      sktm: Prisma.$sktmPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       user_id: number
       user_nama: string
@@ -1176,8 +1438,10 @@ export namespace Prisma {
       user_hp: string
       user_image: string | null
       user_alamat: string
+      user_jabatan: number | null
       user_name: string
       user_pass: string
+      user_level: number | null
       user_lastip: string | null
       user_lastlogin: string | null
       user_created: Date
@@ -1523,6 +1787,8 @@ export namespace Prisma {
    */
   export interface Prisma__usersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    jabatan<T extends users$jabatanArgs<ExtArgs> = {}>(args?: Subset<T, users$jabatanArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    sktm<T extends users$sktmArgs<ExtArgs> = {}>(args?: Subset<T, users$sktmArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1559,8 +1825,10 @@ export namespace Prisma {
     readonly user_hp: FieldRef<"users", 'String'>
     readonly user_image: FieldRef<"users", 'String'>
     readonly user_alamat: FieldRef<"users", 'String'>
+    readonly user_jabatan: FieldRef<"users", 'Int'>
     readonly user_name: FieldRef<"users", 'String'>
     readonly user_pass: FieldRef<"users", 'String'>
+    readonly user_level: FieldRef<"users", 'Int'>
     readonly user_lastip: FieldRef<"users", 'String'>
     readonly user_lastlogin: FieldRef<"users", 'String'>
     readonly user_created: FieldRef<"users", 'DateTime'>
@@ -1579,6 +1847,10 @@ export namespace Prisma {
      */
     select?: usersSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    /**
      * Filter, which users to fetch.
      */
     where: usersWhereUniqueInput
@@ -1593,6 +1865,10 @@ export namespace Prisma {
      */
     select?: usersSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    /**
      * Filter, which users to fetch.
      */
     where: usersWhereUniqueInput
@@ -1606,6 +1882,10 @@ export namespace Prisma {
      * Select specific fields to fetch from the users
      */
     select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
     /**
      * Filter, which users to fetch.
      */
@@ -1651,6 +1931,10 @@ export namespace Prisma {
      */
     select?: usersSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    /**
      * Filter, which users to fetch.
      */
     where?: usersWhereInput
@@ -1695,6 +1979,10 @@ export namespace Prisma {
      */
     select?: usersSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    /**
      * Filter, which users to fetch.
      */
     where?: usersWhereInput
@@ -1734,6 +2022,10 @@ export namespace Prisma {
      */
     select?: usersSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    /**
      * The data needed to create a users.
      */
     data: XOR<usersCreateInput, usersUncheckedCreateInput>
@@ -1758,6 +2050,10 @@ export namespace Prisma {
      * Select specific fields to fetch from the users
      */
     select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
     /**
      * The data needed to update a users.
      */
@@ -1791,6 +2087,10 @@ export namespace Prisma {
      */
     select?: usersSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    /**
      * The filter to search for the users to update in case it exists.
      */
     where: usersWhereUniqueInput
@@ -1813,6 +2113,10 @@ export namespace Prisma {
      */
     select?: usersSelect<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    /**
      * Filter which users to delete.
      */
     where: usersWhereUniqueInput
@@ -1829,6 +2133,41 @@ export namespace Prisma {
   }
 
   /**
+   * users.jabatan
+   */
+  export type users$jabatanArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    where?: jabatanWhereInput
+  }
+
+  /**
+   * users.sktm
+   */
+  export type users$sktmArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    where?: sktmWhereInput
+    orderBy?: sktmOrderByWithRelationInput | sktmOrderByWithRelationInput[]
+    cursor?: sktmWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: SktmScalarFieldEnum | SktmScalarFieldEnum[]
+  }
+
+  /**
    * users without action
    */
   export type usersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1836,6 +2175,1958 @@ export namespace Prisma {
      * Select specific fields to fetch from the users
      */
     select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model jabatan
+   */
+
+  export type AggregateJabatan = {
+    _count: JabatanCountAggregateOutputType | null
+    _avg: JabatanAvgAggregateOutputType | null
+    _sum: JabatanSumAggregateOutputType | null
+    _min: JabatanMinAggregateOutputType | null
+    _max: JabatanMaxAggregateOutputType | null
+  }
+
+  export type JabatanAvgAggregateOutputType = {
+    jabatan_id: number | null
+  }
+
+  export type JabatanSumAggregateOutputType = {
+    jabatan_id: number | null
+  }
+
+  export type JabatanMinAggregateOutputType = {
+    jabatan_id: number | null
+    jabatan_nama: string | null
+    jabatan_created: Date | null
+    jabatan_updated: Date | null
+    jabatan_deleted: Date | null
+  }
+
+  export type JabatanMaxAggregateOutputType = {
+    jabatan_id: number | null
+    jabatan_nama: string | null
+    jabatan_created: Date | null
+    jabatan_updated: Date | null
+    jabatan_deleted: Date | null
+  }
+
+  export type JabatanCountAggregateOutputType = {
+    jabatan_id: number
+    jabatan_nama: number
+    jabatan_created: number
+    jabatan_updated: number
+    jabatan_deleted: number
+    _all: number
+  }
+
+
+  export type JabatanAvgAggregateInputType = {
+    jabatan_id?: true
+  }
+
+  export type JabatanSumAggregateInputType = {
+    jabatan_id?: true
+  }
+
+  export type JabatanMinAggregateInputType = {
+    jabatan_id?: true
+    jabatan_nama?: true
+    jabatan_created?: true
+    jabatan_updated?: true
+    jabatan_deleted?: true
+  }
+
+  export type JabatanMaxAggregateInputType = {
+    jabatan_id?: true
+    jabatan_nama?: true
+    jabatan_created?: true
+    jabatan_updated?: true
+    jabatan_deleted?: true
+  }
+
+  export type JabatanCountAggregateInputType = {
+    jabatan_id?: true
+    jabatan_nama?: true
+    jabatan_created?: true
+    jabatan_updated?: true
+    jabatan_deleted?: true
+    _all?: true
+  }
+
+  export type JabatanAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which jabatan to aggregate.
+     */
+    where?: jabatanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of jabatans to fetch.
+     */
+    orderBy?: jabatanOrderByWithRelationInput | jabatanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: jabatanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` jabatans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` jabatans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned jabatans
+    **/
+    _count?: true | JabatanCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: JabatanAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: JabatanSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: JabatanMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: JabatanMaxAggregateInputType
+  }
+
+  export type GetJabatanAggregateType<T extends JabatanAggregateArgs> = {
+        [P in keyof T & keyof AggregateJabatan]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateJabatan[P]>
+      : GetScalarType<T[P], AggregateJabatan[P]>
+  }
+
+
+
+
+  export type jabatanGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: jabatanWhereInput
+    orderBy?: jabatanOrderByWithAggregationInput | jabatanOrderByWithAggregationInput[]
+    by: JabatanScalarFieldEnum[] | JabatanScalarFieldEnum
+    having?: jabatanScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: JabatanCountAggregateInputType | true
+    _avg?: JabatanAvgAggregateInputType
+    _sum?: JabatanSumAggregateInputType
+    _min?: JabatanMinAggregateInputType
+    _max?: JabatanMaxAggregateInputType
+  }
+
+  export type JabatanGroupByOutputType = {
+    jabatan_id: number
+    jabatan_nama: string
+    jabatan_created: Date
+    jabatan_updated: Date
+    jabatan_deleted: Date | null
+    _count: JabatanCountAggregateOutputType | null
+    _avg: JabatanAvgAggregateOutputType | null
+    _sum: JabatanSumAggregateOutputType | null
+    _min: JabatanMinAggregateOutputType | null
+    _max: JabatanMaxAggregateOutputType | null
+  }
+
+  type GetJabatanGroupByPayload<T extends jabatanGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<JabatanGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof JabatanGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], JabatanGroupByOutputType[P]>
+            : GetScalarType<T[P], JabatanGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type jabatanSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    jabatan_id?: boolean
+    jabatan_nama?: boolean
+    jabatan_created?: boolean
+    jabatan_updated?: boolean
+    jabatan_deleted?: boolean
+    users?: boolean | jabatan$usersArgs<ExtArgs>
+    _count?: boolean | JabatanCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["jabatan"]>
+
+
+  export type jabatanSelectScalar = {
+    jabatan_id?: boolean
+    jabatan_nama?: boolean
+    jabatan_created?: boolean
+    jabatan_updated?: boolean
+    jabatan_deleted?: boolean
+  }
+
+  export type jabatanInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    users?: boolean | jabatan$usersArgs<ExtArgs>
+    _count?: boolean | JabatanCountOutputTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $jabatanPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "jabatan"
+    objects: {
+      users: Prisma.$usersPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      jabatan_id: number
+      jabatan_nama: string
+      jabatan_created: Date
+      jabatan_updated: Date
+      jabatan_deleted: Date | null
+    }, ExtArgs["result"]["jabatan"]>
+    composites: {}
+  }
+
+  type jabatanGetPayload<S extends boolean | null | undefined | jabatanDefaultArgs> = $Result.GetResult<Prisma.$jabatanPayload, S>
+
+  type jabatanCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<jabatanFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: JabatanCountAggregateInputType | true
+    }
+
+  export interface jabatanDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['jabatan'], meta: { name: 'jabatan' } }
+    /**
+     * Find zero or one Jabatan that matches the filter.
+     * @param {jabatanFindUniqueArgs} args - Arguments to find a Jabatan
+     * @example
+     * // Get one Jabatan
+     * const jabatan = await prisma.jabatan.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends jabatanFindUniqueArgs>(args: SelectSubset<T, jabatanFindUniqueArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Jabatan that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {jabatanFindUniqueOrThrowArgs} args - Arguments to find a Jabatan
+     * @example
+     * // Get one Jabatan
+     * const jabatan = await prisma.jabatan.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends jabatanFindUniqueOrThrowArgs>(args: SelectSubset<T, jabatanFindUniqueOrThrowArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Jabatan that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {jabatanFindFirstArgs} args - Arguments to find a Jabatan
+     * @example
+     * // Get one Jabatan
+     * const jabatan = await prisma.jabatan.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends jabatanFindFirstArgs>(args?: SelectSubset<T, jabatanFindFirstArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Jabatan that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {jabatanFindFirstOrThrowArgs} args - Arguments to find a Jabatan
+     * @example
+     * // Get one Jabatan
+     * const jabatan = await prisma.jabatan.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends jabatanFindFirstOrThrowArgs>(args?: SelectSubset<T, jabatanFindFirstOrThrowArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Jabatans that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {jabatanFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Jabatans
+     * const jabatans = await prisma.jabatan.findMany()
+     * 
+     * // Get first 10 Jabatans
+     * const jabatans = await prisma.jabatan.findMany({ take: 10 })
+     * 
+     * // Only select the `jabatan_id`
+     * const jabatanWithJabatan_idOnly = await prisma.jabatan.findMany({ select: { jabatan_id: true } })
+     * 
+     */
+    findMany<T extends jabatanFindManyArgs>(args?: SelectSubset<T, jabatanFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Jabatan.
+     * @param {jabatanCreateArgs} args - Arguments to create a Jabatan.
+     * @example
+     * // Create one Jabatan
+     * const Jabatan = await prisma.jabatan.create({
+     *   data: {
+     *     // ... data to create a Jabatan
+     *   }
+     * })
+     * 
+     */
+    create<T extends jabatanCreateArgs>(args: SelectSubset<T, jabatanCreateArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Jabatans.
+     * @param {jabatanCreateManyArgs} args - Arguments to create many Jabatans.
+     * @example
+     * // Create many Jabatans
+     * const jabatan = await prisma.jabatan.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends jabatanCreateManyArgs>(args?: SelectSubset<T, jabatanCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Jabatan.
+     * @param {jabatanDeleteArgs} args - Arguments to delete one Jabatan.
+     * @example
+     * // Delete one Jabatan
+     * const Jabatan = await prisma.jabatan.delete({
+     *   where: {
+     *     // ... filter to delete one Jabatan
+     *   }
+     * })
+     * 
+     */
+    delete<T extends jabatanDeleteArgs>(args: SelectSubset<T, jabatanDeleteArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Jabatan.
+     * @param {jabatanUpdateArgs} args - Arguments to update one Jabatan.
+     * @example
+     * // Update one Jabatan
+     * const jabatan = await prisma.jabatan.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends jabatanUpdateArgs>(args: SelectSubset<T, jabatanUpdateArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Jabatans.
+     * @param {jabatanDeleteManyArgs} args - Arguments to filter Jabatans to delete.
+     * @example
+     * // Delete a few Jabatans
+     * const { count } = await prisma.jabatan.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends jabatanDeleteManyArgs>(args?: SelectSubset<T, jabatanDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Jabatans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {jabatanUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Jabatans
+     * const jabatan = await prisma.jabatan.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends jabatanUpdateManyArgs>(args: SelectSubset<T, jabatanUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Jabatan.
+     * @param {jabatanUpsertArgs} args - Arguments to update or create a Jabatan.
+     * @example
+     * // Update or create a Jabatan
+     * const jabatan = await prisma.jabatan.upsert({
+     *   create: {
+     *     // ... data to create a Jabatan
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Jabatan we want to update
+     *   }
+     * })
+     */
+    upsert<T extends jabatanUpsertArgs>(args: SelectSubset<T, jabatanUpsertArgs<ExtArgs>>): Prisma__jabatanClient<$Result.GetResult<Prisma.$jabatanPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Jabatans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {jabatanCountArgs} args - Arguments to filter Jabatans to count.
+     * @example
+     * // Count the number of Jabatans
+     * const count = await prisma.jabatan.count({
+     *   where: {
+     *     // ... the filter for the Jabatans we want to count
+     *   }
+     * })
+    **/
+    count<T extends jabatanCountArgs>(
+      args?: Subset<T, jabatanCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], JabatanCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Jabatan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {JabatanAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends JabatanAggregateArgs>(args: Subset<T, JabatanAggregateArgs>): Prisma.PrismaPromise<GetJabatanAggregateType<T>>
+
+    /**
+     * Group by Jabatan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {jabatanGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends jabatanGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: jabatanGroupByArgs['orderBy'] }
+        : { orderBy?: jabatanGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, jabatanGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetJabatanGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the jabatan model
+   */
+  readonly fields: jabatanFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for jabatan.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__jabatanClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    users<T extends jabatan$usersArgs<ExtArgs> = {}>(args?: Subset<T, jabatan$usersArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findMany"> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the jabatan model
+   */ 
+  interface jabatanFieldRefs {
+    readonly jabatan_id: FieldRef<"jabatan", 'Int'>
+    readonly jabatan_nama: FieldRef<"jabatan", 'String'>
+    readonly jabatan_created: FieldRef<"jabatan", 'DateTime'>
+    readonly jabatan_updated: FieldRef<"jabatan", 'DateTime'>
+    readonly jabatan_deleted: FieldRef<"jabatan", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * jabatan findUnique
+   */
+  export type jabatanFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * Filter, which jabatan to fetch.
+     */
+    where: jabatanWhereUniqueInput
+  }
+
+  /**
+   * jabatan findUniqueOrThrow
+   */
+  export type jabatanFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * Filter, which jabatan to fetch.
+     */
+    where: jabatanWhereUniqueInput
+  }
+
+  /**
+   * jabatan findFirst
+   */
+  export type jabatanFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * Filter, which jabatan to fetch.
+     */
+    where?: jabatanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of jabatans to fetch.
+     */
+    orderBy?: jabatanOrderByWithRelationInput | jabatanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for jabatans.
+     */
+    cursor?: jabatanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` jabatans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` jabatans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of jabatans.
+     */
+    distinct?: JabatanScalarFieldEnum | JabatanScalarFieldEnum[]
+  }
+
+  /**
+   * jabatan findFirstOrThrow
+   */
+  export type jabatanFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * Filter, which jabatan to fetch.
+     */
+    where?: jabatanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of jabatans to fetch.
+     */
+    orderBy?: jabatanOrderByWithRelationInput | jabatanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for jabatans.
+     */
+    cursor?: jabatanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` jabatans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` jabatans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of jabatans.
+     */
+    distinct?: JabatanScalarFieldEnum | JabatanScalarFieldEnum[]
+  }
+
+  /**
+   * jabatan findMany
+   */
+  export type jabatanFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * Filter, which jabatans to fetch.
+     */
+    where?: jabatanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of jabatans to fetch.
+     */
+    orderBy?: jabatanOrderByWithRelationInput | jabatanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing jabatans.
+     */
+    cursor?: jabatanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` jabatans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` jabatans.
+     */
+    skip?: number
+    distinct?: JabatanScalarFieldEnum | JabatanScalarFieldEnum[]
+  }
+
+  /**
+   * jabatan create
+   */
+  export type jabatanCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * The data needed to create a jabatan.
+     */
+    data: XOR<jabatanCreateInput, jabatanUncheckedCreateInput>
+  }
+
+  /**
+   * jabatan createMany
+   */
+  export type jabatanCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many jabatans.
+     */
+    data: jabatanCreateManyInput | jabatanCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * jabatan update
+   */
+  export type jabatanUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * The data needed to update a jabatan.
+     */
+    data: XOR<jabatanUpdateInput, jabatanUncheckedUpdateInput>
+    /**
+     * Choose, which jabatan to update.
+     */
+    where: jabatanWhereUniqueInput
+  }
+
+  /**
+   * jabatan updateMany
+   */
+  export type jabatanUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update jabatans.
+     */
+    data: XOR<jabatanUpdateManyMutationInput, jabatanUncheckedUpdateManyInput>
+    /**
+     * Filter which jabatans to update
+     */
+    where?: jabatanWhereInput
+  }
+
+  /**
+   * jabatan upsert
+   */
+  export type jabatanUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * The filter to search for the jabatan to update in case it exists.
+     */
+    where: jabatanWhereUniqueInput
+    /**
+     * In case the jabatan found by the `where` argument doesn't exist, create a new jabatan with this data.
+     */
+    create: XOR<jabatanCreateInput, jabatanUncheckedCreateInput>
+    /**
+     * In case the jabatan was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<jabatanUpdateInput, jabatanUncheckedUpdateInput>
+  }
+
+  /**
+   * jabatan delete
+   */
+  export type jabatanDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+    /**
+     * Filter which jabatan to delete.
+     */
+    where: jabatanWhereUniqueInput
+  }
+
+  /**
+   * jabatan deleteMany
+   */
+  export type jabatanDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which jabatans to delete
+     */
+    where?: jabatanWhereInput
+  }
+
+  /**
+   * jabatan.users
+   */
+  export type jabatan$usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+    orderBy?: usersOrderByWithRelationInput | usersOrderByWithRelationInput[]
+    cursor?: usersWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: UsersScalarFieldEnum | UsersScalarFieldEnum[]
+  }
+
+  /**
+   * jabatan without action
+   */
+  export type jabatanDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the jabatan
+     */
+    select?: jabatanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: jabatanInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model sktm
+   */
+
+  export type AggregateSktm = {
+    _count: SktmCountAggregateOutputType | null
+    _avg: SktmAvgAggregateOutputType | null
+    _sum: SktmSumAggregateOutputType | null
+    _min: SktmMinAggregateOutputType | null
+    _max: SktmMaxAggregateOutputType | null
+  }
+
+  export type SktmAvgAggregateOutputType = {
+    sktm_id: number | null
+    sktm_user_nama: number | null
+    sktm_ttd: number | null
+  }
+
+  export type SktmSumAggregateOutputType = {
+    sktm_id: number | null
+    sktm_user_nama: number | null
+    sktm_ttd: number | null
+  }
+
+  export type SktmMinAggregateOutputType = {
+    sktm_id: number | null
+    sktm_user_nama: number | null
+    sktm_tgl_lahir: Date | null
+    sktm_tempat_lahir: string | null
+    sktm_alamat: string | null
+    sktm_nama_ortu: string | null
+    sktm_tgl_lahir_ortu: Date | null
+    sktm_pekerjaan_ortu: string | null
+    sktm_nik_ortu: string | null
+    sktm_alamat_ortu: string | null
+    sktm_kepentingan: string | null
+    sktm_ttd: number | null
+  }
+
+  export type SktmMaxAggregateOutputType = {
+    sktm_id: number | null
+    sktm_user_nama: number | null
+    sktm_tgl_lahir: Date | null
+    sktm_tempat_lahir: string | null
+    sktm_alamat: string | null
+    sktm_nama_ortu: string | null
+    sktm_tgl_lahir_ortu: Date | null
+    sktm_pekerjaan_ortu: string | null
+    sktm_nik_ortu: string | null
+    sktm_alamat_ortu: string | null
+    sktm_kepentingan: string | null
+    sktm_ttd: number | null
+  }
+
+  export type SktmCountAggregateOutputType = {
+    sktm_id: number
+    sktm_user_nama: number
+    sktm_tgl_lahir: number
+    sktm_tempat_lahir: number
+    sktm_alamat: number
+    sktm_nama_ortu: number
+    sktm_tgl_lahir_ortu: number
+    sktm_pekerjaan_ortu: number
+    sktm_nik_ortu: number
+    sktm_alamat_ortu: number
+    sktm_kepentingan: number
+    sktm_ttd: number
+    _all: number
+  }
+
+
+  export type SktmAvgAggregateInputType = {
+    sktm_id?: true
+    sktm_user_nama?: true
+    sktm_ttd?: true
+  }
+
+  export type SktmSumAggregateInputType = {
+    sktm_id?: true
+    sktm_user_nama?: true
+    sktm_ttd?: true
+  }
+
+  export type SktmMinAggregateInputType = {
+    sktm_id?: true
+    sktm_user_nama?: true
+    sktm_tgl_lahir?: true
+    sktm_tempat_lahir?: true
+    sktm_alamat?: true
+    sktm_nama_ortu?: true
+    sktm_tgl_lahir_ortu?: true
+    sktm_pekerjaan_ortu?: true
+    sktm_nik_ortu?: true
+    sktm_alamat_ortu?: true
+    sktm_kepentingan?: true
+    sktm_ttd?: true
+  }
+
+  export type SktmMaxAggregateInputType = {
+    sktm_id?: true
+    sktm_user_nama?: true
+    sktm_tgl_lahir?: true
+    sktm_tempat_lahir?: true
+    sktm_alamat?: true
+    sktm_nama_ortu?: true
+    sktm_tgl_lahir_ortu?: true
+    sktm_pekerjaan_ortu?: true
+    sktm_nik_ortu?: true
+    sktm_alamat_ortu?: true
+    sktm_kepentingan?: true
+    sktm_ttd?: true
+  }
+
+  export type SktmCountAggregateInputType = {
+    sktm_id?: true
+    sktm_user_nama?: true
+    sktm_tgl_lahir?: true
+    sktm_tempat_lahir?: true
+    sktm_alamat?: true
+    sktm_nama_ortu?: true
+    sktm_tgl_lahir_ortu?: true
+    sktm_pekerjaan_ortu?: true
+    sktm_nik_ortu?: true
+    sktm_alamat_ortu?: true
+    sktm_kepentingan?: true
+    sktm_ttd?: true
+    _all?: true
+  }
+
+  export type SktmAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which sktm to aggregate.
+     */
+    where?: sktmWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sktms to fetch.
+     */
+    orderBy?: sktmOrderByWithRelationInput | sktmOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: sktmWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sktms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sktms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned sktms
+    **/
+    _count?: true | SktmCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: SktmAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: SktmSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: SktmMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: SktmMaxAggregateInputType
+  }
+
+  export type GetSktmAggregateType<T extends SktmAggregateArgs> = {
+        [P in keyof T & keyof AggregateSktm]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSktm[P]>
+      : GetScalarType<T[P], AggregateSktm[P]>
+  }
+
+
+
+
+  export type sktmGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: sktmWhereInput
+    orderBy?: sktmOrderByWithAggregationInput | sktmOrderByWithAggregationInput[]
+    by: SktmScalarFieldEnum[] | SktmScalarFieldEnum
+    having?: sktmScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: SktmCountAggregateInputType | true
+    _avg?: SktmAvgAggregateInputType
+    _sum?: SktmSumAggregateInputType
+    _min?: SktmMinAggregateInputType
+    _max?: SktmMaxAggregateInputType
+  }
+
+  export type SktmGroupByOutputType = {
+    sktm_id: number
+    sktm_user_nama: number
+    sktm_tgl_lahir: Date
+    sktm_tempat_lahir: string
+    sktm_alamat: string
+    sktm_nama_ortu: string
+    sktm_tgl_lahir_ortu: Date
+    sktm_pekerjaan_ortu: string
+    sktm_nik_ortu: string
+    sktm_alamat_ortu: string
+    sktm_kepentingan: string
+    sktm_ttd: number | null
+    _count: SktmCountAggregateOutputType | null
+    _avg: SktmAvgAggregateOutputType | null
+    _sum: SktmSumAggregateOutputType | null
+    _min: SktmMinAggregateOutputType | null
+    _max: SktmMaxAggregateOutputType | null
+  }
+
+  type GetSktmGroupByPayload<T extends sktmGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<SktmGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof SktmGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], SktmGroupByOutputType[P]>
+            : GetScalarType<T[P], SktmGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type sktmSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    sktm_id?: boolean
+    sktm_user_nama?: boolean
+    sktm_tgl_lahir?: boolean
+    sktm_tempat_lahir?: boolean
+    sktm_alamat?: boolean
+    sktm_nama_ortu?: boolean
+    sktm_tgl_lahir_ortu?: boolean
+    sktm_pekerjaan_ortu?: boolean
+    sktm_nik_ortu?: boolean
+    sktm_alamat_ortu?: boolean
+    sktm_kepentingan?: boolean
+    sktm_ttd?: boolean
+    ttd_sktm?: boolean | sktm$ttd_sktmArgs<ExtArgs>
+  }, ExtArgs["result"]["sktm"]>
+
+
+  export type sktmSelectScalar = {
+    sktm_id?: boolean
+    sktm_user_nama?: boolean
+    sktm_tgl_lahir?: boolean
+    sktm_tempat_lahir?: boolean
+    sktm_alamat?: boolean
+    sktm_nama_ortu?: boolean
+    sktm_tgl_lahir_ortu?: boolean
+    sktm_pekerjaan_ortu?: boolean
+    sktm_nik_ortu?: boolean
+    sktm_alamat_ortu?: boolean
+    sktm_kepentingan?: boolean
+    sktm_ttd?: boolean
+  }
+
+  export type sktmInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ttd_sktm?: boolean | sktm$ttd_sktmArgs<ExtArgs>
+  }
+
+  export type $sktmPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "sktm"
+    objects: {
+      ttd_sktm: Prisma.$usersPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      sktm_id: number
+      sktm_user_nama: number
+      sktm_tgl_lahir: Date
+      sktm_tempat_lahir: string
+      sktm_alamat: string
+      sktm_nama_ortu: string
+      sktm_tgl_lahir_ortu: Date
+      sktm_pekerjaan_ortu: string
+      sktm_nik_ortu: string
+      sktm_alamat_ortu: string
+      sktm_kepentingan: string
+      sktm_ttd: number | null
+    }, ExtArgs["result"]["sktm"]>
+    composites: {}
+  }
+
+  type sktmGetPayload<S extends boolean | null | undefined | sktmDefaultArgs> = $Result.GetResult<Prisma.$sktmPayload, S>
+
+  type sktmCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<sktmFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: SktmCountAggregateInputType | true
+    }
+
+  export interface sktmDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['sktm'], meta: { name: 'sktm' } }
+    /**
+     * Find zero or one Sktm that matches the filter.
+     * @param {sktmFindUniqueArgs} args - Arguments to find a Sktm
+     * @example
+     * // Get one Sktm
+     * const sktm = await prisma.sktm.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends sktmFindUniqueArgs>(args: SelectSubset<T, sktmFindUniqueArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Sktm that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {sktmFindUniqueOrThrowArgs} args - Arguments to find a Sktm
+     * @example
+     * // Get one Sktm
+     * const sktm = await prisma.sktm.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends sktmFindUniqueOrThrowArgs>(args: SelectSubset<T, sktmFindUniqueOrThrowArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Sktm that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sktmFindFirstArgs} args - Arguments to find a Sktm
+     * @example
+     * // Get one Sktm
+     * const sktm = await prisma.sktm.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends sktmFindFirstArgs>(args?: SelectSubset<T, sktmFindFirstArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Sktm that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sktmFindFirstOrThrowArgs} args - Arguments to find a Sktm
+     * @example
+     * // Get one Sktm
+     * const sktm = await prisma.sktm.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends sktmFindFirstOrThrowArgs>(args?: SelectSubset<T, sktmFindFirstOrThrowArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Sktms that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sktmFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Sktms
+     * const sktms = await prisma.sktm.findMany()
+     * 
+     * // Get first 10 Sktms
+     * const sktms = await prisma.sktm.findMany({ take: 10 })
+     * 
+     * // Only select the `sktm_id`
+     * const sktmWithSktm_idOnly = await prisma.sktm.findMany({ select: { sktm_id: true } })
+     * 
+     */
+    findMany<T extends sktmFindManyArgs>(args?: SelectSubset<T, sktmFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Sktm.
+     * @param {sktmCreateArgs} args - Arguments to create a Sktm.
+     * @example
+     * // Create one Sktm
+     * const Sktm = await prisma.sktm.create({
+     *   data: {
+     *     // ... data to create a Sktm
+     *   }
+     * })
+     * 
+     */
+    create<T extends sktmCreateArgs>(args: SelectSubset<T, sktmCreateArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Sktms.
+     * @param {sktmCreateManyArgs} args - Arguments to create many Sktms.
+     * @example
+     * // Create many Sktms
+     * const sktm = await prisma.sktm.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends sktmCreateManyArgs>(args?: SelectSubset<T, sktmCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Sktm.
+     * @param {sktmDeleteArgs} args - Arguments to delete one Sktm.
+     * @example
+     * // Delete one Sktm
+     * const Sktm = await prisma.sktm.delete({
+     *   where: {
+     *     // ... filter to delete one Sktm
+     *   }
+     * })
+     * 
+     */
+    delete<T extends sktmDeleteArgs>(args: SelectSubset<T, sktmDeleteArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Sktm.
+     * @param {sktmUpdateArgs} args - Arguments to update one Sktm.
+     * @example
+     * // Update one Sktm
+     * const sktm = await prisma.sktm.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends sktmUpdateArgs>(args: SelectSubset<T, sktmUpdateArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Sktms.
+     * @param {sktmDeleteManyArgs} args - Arguments to filter Sktms to delete.
+     * @example
+     * // Delete a few Sktms
+     * const { count } = await prisma.sktm.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends sktmDeleteManyArgs>(args?: SelectSubset<T, sktmDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Sktms.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sktmUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Sktms
+     * const sktm = await prisma.sktm.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends sktmUpdateManyArgs>(args: SelectSubset<T, sktmUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Sktm.
+     * @param {sktmUpsertArgs} args - Arguments to update or create a Sktm.
+     * @example
+     * // Update or create a Sktm
+     * const sktm = await prisma.sktm.upsert({
+     *   create: {
+     *     // ... data to create a Sktm
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Sktm we want to update
+     *   }
+     * })
+     */
+    upsert<T extends sktmUpsertArgs>(args: SelectSubset<T, sktmUpsertArgs<ExtArgs>>): Prisma__sktmClient<$Result.GetResult<Prisma.$sktmPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Sktms.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sktmCountArgs} args - Arguments to filter Sktms to count.
+     * @example
+     * // Count the number of Sktms
+     * const count = await prisma.sktm.count({
+     *   where: {
+     *     // ... the filter for the Sktms we want to count
+     *   }
+     * })
+    **/
+    count<T extends sktmCountArgs>(
+      args?: Subset<T, sktmCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], SktmCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Sktm.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {SktmAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends SktmAggregateArgs>(args: Subset<T, SktmAggregateArgs>): Prisma.PrismaPromise<GetSktmAggregateType<T>>
+
+    /**
+     * Group by Sktm.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {sktmGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends sktmGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: sktmGroupByArgs['orderBy'] }
+        : { orderBy?: sktmGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, sktmGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSktmGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the sktm model
+   */
+  readonly fields: sktmFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for sktm.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__sktmClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    ttd_sktm<T extends sktm$ttd_sktmArgs<ExtArgs> = {}>(args?: Subset<T, sktm$ttd_sktmArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the sktm model
+   */ 
+  interface sktmFieldRefs {
+    readonly sktm_id: FieldRef<"sktm", 'Int'>
+    readonly sktm_user_nama: FieldRef<"sktm", 'Int'>
+    readonly sktm_tgl_lahir: FieldRef<"sktm", 'DateTime'>
+    readonly sktm_tempat_lahir: FieldRef<"sktm", 'String'>
+    readonly sktm_alamat: FieldRef<"sktm", 'String'>
+    readonly sktm_nama_ortu: FieldRef<"sktm", 'String'>
+    readonly sktm_tgl_lahir_ortu: FieldRef<"sktm", 'DateTime'>
+    readonly sktm_pekerjaan_ortu: FieldRef<"sktm", 'String'>
+    readonly sktm_nik_ortu: FieldRef<"sktm", 'String'>
+    readonly sktm_alamat_ortu: FieldRef<"sktm", 'String'>
+    readonly sktm_kepentingan: FieldRef<"sktm", 'String'>
+    readonly sktm_ttd: FieldRef<"sktm", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * sktm findUnique
+   */
+  export type sktmFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * Filter, which sktm to fetch.
+     */
+    where: sktmWhereUniqueInput
+  }
+
+  /**
+   * sktm findUniqueOrThrow
+   */
+  export type sktmFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * Filter, which sktm to fetch.
+     */
+    where: sktmWhereUniqueInput
+  }
+
+  /**
+   * sktm findFirst
+   */
+  export type sktmFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * Filter, which sktm to fetch.
+     */
+    where?: sktmWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sktms to fetch.
+     */
+    orderBy?: sktmOrderByWithRelationInput | sktmOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for sktms.
+     */
+    cursor?: sktmWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sktms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sktms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of sktms.
+     */
+    distinct?: SktmScalarFieldEnum | SktmScalarFieldEnum[]
+  }
+
+  /**
+   * sktm findFirstOrThrow
+   */
+  export type sktmFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * Filter, which sktm to fetch.
+     */
+    where?: sktmWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sktms to fetch.
+     */
+    orderBy?: sktmOrderByWithRelationInput | sktmOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for sktms.
+     */
+    cursor?: sktmWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sktms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sktms.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of sktms.
+     */
+    distinct?: SktmScalarFieldEnum | SktmScalarFieldEnum[]
+  }
+
+  /**
+   * sktm findMany
+   */
+  export type sktmFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * Filter, which sktms to fetch.
+     */
+    where?: sktmWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of sktms to fetch.
+     */
+    orderBy?: sktmOrderByWithRelationInput | sktmOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing sktms.
+     */
+    cursor?: sktmWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` sktms from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` sktms.
+     */
+    skip?: number
+    distinct?: SktmScalarFieldEnum | SktmScalarFieldEnum[]
+  }
+
+  /**
+   * sktm create
+   */
+  export type sktmCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * The data needed to create a sktm.
+     */
+    data: XOR<sktmCreateInput, sktmUncheckedCreateInput>
+  }
+
+  /**
+   * sktm createMany
+   */
+  export type sktmCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many sktms.
+     */
+    data: sktmCreateManyInput | sktmCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * sktm update
+   */
+  export type sktmUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * The data needed to update a sktm.
+     */
+    data: XOR<sktmUpdateInput, sktmUncheckedUpdateInput>
+    /**
+     * Choose, which sktm to update.
+     */
+    where: sktmWhereUniqueInput
+  }
+
+  /**
+   * sktm updateMany
+   */
+  export type sktmUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update sktms.
+     */
+    data: XOR<sktmUpdateManyMutationInput, sktmUncheckedUpdateManyInput>
+    /**
+     * Filter which sktms to update
+     */
+    where?: sktmWhereInput
+  }
+
+  /**
+   * sktm upsert
+   */
+  export type sktmUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * The filter to search for the sktm to update in case it exists.
+     */
+    where: sktmWhereUniqueInput
+    /**
+     * In case the sktm found by the `where` argument doesn't exist, create a new sktm with this data.
+     */
+    create: XOR<sktmCreateInput, sktmUncheckedCreateInput>
+    /**
+     * In case the sktm was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<sktmUpdateInput, sktmUncheckedUpdateInput>
+  }
+
+  /**
+   * sktm delete
+   */
+  export type sktmDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
+    /**
+     * Filter which sktm to delete.
+     */
+    where: sktmWhereUniqueInput
+  }
+
+  /**
+   * sktm deleteMany
+   */
+  export type sktmDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which sktms to delete
+     */
+    where?: sktmWhereInput
+  }
+
+  /**
+   * sktm.ttd_sktm
+   */
+  export type sktm$ttd_sktmArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
+   * sktm without action
+   */
+  export type sktmDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the sktm
+     */
+    select?: sktmSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: sktmInclude<ExtArgs> | null
   }
 
 
@@ -1861,8 +4152,10 @@ export namespace Prisma {
     user_hp: 'user_hp',
     user_image: 'user_image',
     user_alamat: 'user_alamat',
+    user_jabatan: 'user_jabatan',
     user_name: 'user_name',
     user_pass: 'user_pass',
+    user_level: 'user_level',
     user_lastip: 'user_lastip',
     user_lastlogin: 'user_lastlogin',
     user_created: 'user_created',
@@ -1871,6 +4164,35 @@ export namespace Prisma {
   };
 
   export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
+
+
+  export const JabatanScalarFieldEnum: {
+    jabatan_id: 'jabatan_id',
+    jabatan_nama: 'jabatan_nama',
+    jabatan_created: 'jabatan_created',
+    jabatan_updated: 'jabatan_updated',
+    jabatan_deleted: 'jabatan_deleted'
+  };
+
+  export type JabatanScalarFieldEnum = (typeof JabatanScalarFieldEnum)[keyof typeof JabatanScalarFieldEnum]
+
+
+  export const SktmScalarFieldEnum: {
+    sktm_id: 'sktm_id',
+    sktm_user_nama: 'sktm_user_nama',
+    sktm_tgl_lahir: 'sktm_tgl_lahir',
+    sktm_tempat_lahir: 'sktm_tempat_lahir',
+    sktm_alamat: 'sktm_alamat',
+    sktm_nama_ortu: 'sktm_nama_ortu',
+    sktm_tgl_lahir_ortu: 'sktm_tgl_lahir_ortu',
+    sktm_pekerjaan_ortu: 'sktm_pekerjaan_ortu',
+    sktm_nik_ortu: 'sktm_nik_ortu',
+    sktm_alamat_ortu: 'sktm_alamat_ortu',
+    sktm_kepentingan: 'sktm_kepentingan',
+    sktm_ttd: 'sktm_ttd'
+  };
+
+  export type SktmScalarFieldEnum = (typeof SktmScalarFieldEnum)[keyof typeof SktmScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -1936,13 +4258,17 @@ export namespace Prisma {
     user_hp?: StringFilter<"users"> | string
     user_image?: StringNullableFilter<"users"> | string | null
     user_alamat?: StringFilter<"users"> | string
+    user_jabatan?: IntNullableFilter<"users"> | number | null
     user_name?: StringFilter<"users"> | string
     user_pass?: StringFilter<"users"> | string
+    user_level?: IntNullableFilter<"users"> | number | null
     user_lastip?: StringNullableFilter<"users"> | string | null
     user_lastlogin?: StringNullableFilter<"users"> | string | null
     user_created?: DateTimeFilter<"users"> | Date | string
     user_updated?: DateTimeFilter<"users"> | Date | string
     user_deleted?: DateTimeNullableFilter<"users"> | Date | string | null
+    jabatan?: XOR<JabatanNullableRelationFilter, jabatanWhereInput> | null
+    sktm?: SktmListRelationFilter
   }
 
   export type usersOrderByWithRelationInput = {
@@ -1953,13 +4279,17 @@ export namespace Prisma {
     user_hp?: SortOrder
     user_image?: SortOrderInput | SortOrder
     user_alamat?: SortOrder
+    user_jabatan?: SortOrderInput | SortOrder
     user_name?: SortOrder
     user_pass?: SortOrder
+    user_level?: SortOrderInput | SortOrder
     user_lastip?: SortOrderInput | SortOrder
     user_lastlogin?: SortOrderInput | SortOrder
     user_created?: SortOrder
     user_updated?: SortOrder
     user_deleted?: SortOrderInput | SortOrder
+    jabatan?: jabatanOrderByWithRelationInput
+    sktm?: sktmOrderByRelationAggregateInput
   }
 
   export type usersWhereUniqueInput = Prisma.AtLeast<{
@@ -1973,13 +4303,17 @@ export namespace Prisma {
     user_hp?: StringFilter<"users"> | string
     user_image?: StringNullableFilter<"users"> | string | null
     user_alamat?: StringFilter<"users"> | string
+    user_jabatan?: IntNullableFilter<"users"> | number | null
     user_name?: StringFilter<"users"> | string
     user_pass?: StringFilter<"users"> | string
+    user_level?: IntNullableFilter<"users"> | number | null
     user_lastip?: StringNullableFilter<"users"> | string | null
     user_lastlogin?: StringNullableFilter<"users"> | string | null
     user_created?: DateTimeFilter<"users"> | Date | string
     user_updated?: DateTimeFilter<"users"> | Date | string
     user_deleted?: DateTimeNullableFilter<"users"> | Date | string | null
+    jabatan?: XOR<JabatanNullableRelationFilter, jabatanWhereInput> | null
+    sktm?: SktmListRelationFilter
   }, "user_id" | "user_nip">
 
   export type usersOrderByWithAggregationInput = {
@@ -1990,8 +4324,10 @@ export namespace Prisma {
     user_hp?: SortOrder
     user_image?: SortOrderInput | SortOrder
     user_alamat?: SortOrder
+    user_jabatan?: SortOrderInput | SortOrder
     user_name?: SortOrder
     user_pass?: SortOrder
+    user_level?: SortOrderInput | SortOrder
     user_lastip?: SortOrderInput | SortOrder
     user_lastlogin?: SortOrderInput | SortOrder
     user_created?: SortOrder
@@ -2015,13 +4351,164 @@ export namespace Prisma {
     user_hp?: StringWithAggregatesFilter<"users"> | string
     user_image?: StringNullableWithAggregatesFilter<"users"> | string | null
     user_alamat?: StringWithAggregatesFilter<"users"> | string
+    user_jabatan?: IntNullableWithAggregatesFilter<"users"> | number | null
     user_name?: StringWithAggregatesFilter<"users"> | string
     user_pass?: StringWithAggregatesFilter<"users"> | string
+    user_level?: IntNullableWithAggregatesFilter<"users"> | number | null
     user_lastip?: StringNullableWithAggregatesFilter<"users"> | string | null
     user_lastlogin?: StringNullableWithAggregatesFilter<"users"> | string | null
     user_created?: DateTimeWithAggregatesFilter<"users"> | Date | string
     user_updated?: DateTimeWithAggregatesFilter<"users"> | Date | string
     user_deleted?: DateTimeNullableWithAggregatesFilter<"users"> | Date | string | null
+  }
+
+  export type jabatanWhereInput = {
+    AND?: jabatanWhereInput | jabatanWhereInput[]
+    OR?: jabatanWhereInput[]
+    NOT?: jabatanWhereInput | jabatanWhereInput[]
+    jabatan_id?: IntFilter<"jabatan"> | number
+    jabatan_nama?: StringFilter<"jabatan"> | string
+    jabatan_created?: DateTimeFilter<"jabatan"> | Date | string
+    jabatan_updated?: DateTimeFilter<"jabatan"> | Date | string
+    jabatan_deleted?: DateTimeNullableFilter<"jabatan"> | Date | string | null
+    users?: UsersListRelationFilter
+  }
+
+  export type jabatanOrderByWithRelationInput = {
+    jabatan_id?: SortOrder
+    jabatan_nama?: SortOrder
+    jabatan_created?: SortOrder
+    jabatan_updated?: SortOrder
+    jabatan_deleted?: SortOrderInput | SortOrder
+    users?: usersOrderByRelationAggregateInput
+  }
+
+  export type jabatanWhereUniqueInput = Prisma.AtLeast<{
+    jabatan_id?: number
+    AND?: jabatanWhereInput | jabatanWhereInput[]
+    OR?: jabatanWhereInput[]
+    NOT?: jabatanWhereInput | jabatanWhereInput[]
+    jabatan_nama?: StringFilter<"jabatan"> | string
+    jabatan_created?: DateTimeFilter<"jabatan"> | Date | string
+    jabatan_updated?: DateTimeFilter<"jabatan"> | Date | string
+    jabatan_deleted?: DateTimeNullableFilter<"jabatan"> | Date | string | null
+    users?: UsersListRelationFilter
+  }, "jabatan_id">
+
+  export type jabatanOrderByWithAggregationInput = {
+    jabatan_id?: SortOrder
+    jabatan_nama?: SortOrder
+    jabatan_created?: SortOrder
+    jabatan_updated?: SortOrder
+    jabatan_deleted?: SortOrderInput | SortOrder
+    _count?: jabatanCountOrderByAggregateInput
+    _avg?: jabatanAvgOrderByAggregateInput
+    _max?: jabatanMaxOrderByAggregateInput
+    _min?: jabatanMinOrderByAggregateInput
+    _sum?: jabatanSumOrderByAggregateInput
+  }
+
+  export type jabatanScalarWhereWithAggregatesInput = {
+    AND?: jabatanScalarWhereWithAggregatesInput | jabatanScalarWhereWithAggregatesInput[]
+    OR?: jabatanScalarWhereWithAggregatesInput[]
+    NOT?: jabatanScalarWhereWithAggregatesInput | jabatanScalarWhereWithAggregatesInput[]
+    jabatan_id?: IntWithAggregatesFilter<"jabatan"> | number
+    jabatan_nama?: StringWithAggregatesFilter<"jabatan"> | string
+    jabatan_created?: DateTimeWithAggregatesFilter<"jabatan"> | Date | string
+    jabatan_updated?: DateTimeWithAggregatesFilter<"jabatan"> | Date | string
+    jabatan_deleted?: DateTimeNullableWithAggregatesFilter<"jabatan"> | Date | string | null
+  }
+
+  export type sktmWhereInput = {
+    AND?: sktmWhereInput | sktmWhereInput[]
+    OR?: sktmWhereInput[]
+    NOT?: sktmWhereInput | sktmWhereInput[]
+    sktm_id?: IntFilter<"sktm"> | number
+    sktm_user_nama?: IntFilter<"sktm"> | number
+    sktm_tgl_lahir?: DateTimeFilter<"sktm"> | Date | string
+    sktm_tempat_lahir?: StringFilter<"sktm"> | string
+    sktm_alamat?: StringFilter<"sktm"> | string
+    sktm_nama_ortu?: StringFilter<"sktm"> | string
+    sktm_tgl_lahir_ortu?: DateTimeFilter<"sktm"> | Date | string
+    sktm_pekerjaan_ortu?: StringFilter<"sktm"> | string
+    sktm_nik_ortu?: StringFilter<"sktm"> | string
+    sktm_alamat_ortu?: StringFilter<"sktm"> | string
+    sktm_kepentingan?: StringFilter<"sktm"> | string
+    sktm_ttd?: IntNullableFilter<"sktm"> | number | null
+    ttd_sktm?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }
+
+  export type sktmOrderByWithRelationInput = {
+    sktm_id?: SortOrder
+    sktm_user_nama?: SortOrder
+    sktm_tgl_lahir?: SortOrder
+    sktm_tempat_lahir?: SortOrder
+    sktm_alamat?: SortOrder
+    sktm_nama_ortu?: SortOrder
+    sktm_tgl_lahir_ortu?: SortOrder
+    sktm_pekerjaan_ortu?: SortOrder
+    sktm_nik_ortu?: SortOrder
+    sktm_alamat_ortu?: SortOrder
+    sktm_kepentingan?: SortOrder
+    sktm_ttd?: SortOrderInput | SortOrder
+    ttd_sktm?: usersOrderByWithRelationInput
+  }
+
+  export type sktmWhereUniqueInput = Prisma.AtLeast<{
+    sktm_id?: number
+    AND?: sktmWhereInput | sktmWhereInput[]
+    OR?: sktmWhereInput[]
+    NOT?: sktmWhereInput | sktmWhereInput[]
+    sktm_user_nama?: IntFilter<"sktm"> | number
+    sktm_tgl_lahir?: DateTimeFilter<"sktm"> | Date | string
+    sktm_tempat_lahir?: StringFilter<"sktm"> | string
+    sktm_alamat?: StringFilter<"sktm"> | string
+    sktm_nama_ortu?: StringFilter<"sktm"> | string
+    sktm_tgl_lahir_ortu?: DateTimeFilter<"sktm"> | Date | string
+    sktm_pekerjaan_ortu?: StringFilter<"sktm"> | string
+    sktm_nik_ortu?: StringFilter<"sktm"> | string
+    sktm_alamat_ortu?: StringFilter<"sktm"> | string
+    sktm_kepentingan?: StringFilter<"sktm"> | string
+    sktm_ttd?: IntNullableFilter<"sktm"> | number | null
+    ttd_sktm?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }, "sktm_id">
+
+  export type sktmOrderByWithAggregationInput = {
+    sktm_id?: SortOrder
+    sktm_user_nama?: SortOrder
+    sktm_tgl_lahir?: SortOrder
+    sktm_tempat_lahir?: SortOrder
+    sktm_alamat?: SortOrder
+    sktm_nama_ortu?: SortOrder
+    sktm_tgl_lahir_ortu?: SortOrder
+    sktm_pekerjaan_ortu?: SortOrder
+    sktm_nik_ortu?: SortOrder
+    sktm_alamat_ortu?: SortOrder
+    sktm_kepentingan?: SortOrder
+    sktm_ttd?: SortOrderInput | SortOrder
+    _count?: sktmCountOrderByAggregateInput
+    _avg?: sktmAvgOrderByAggregateInput
+    _max?: sktmMaxOrderByAggregateInput
+    _min?: sktmMinOrderByAggregateInput
+    _sum?: sktmSumOrderByAggregateInput
+  }
+
+  export type sktmScalarWhereWithAggregatesInput = {
+    AND?: sktmScalarWhereWithAggregatesInput | sktmScalarWhereWithAggregatesInput[]
+    OR?: sktmScalarWhereWithAggregatesInput[]
+    NOT?: sktmScalarWhereWithAggregatesInput | sktmScalarWhereWithAggregatesInput[]
+    sktm_id?: IntWithAggregatesFilter<"sktm"> | number
+    sktm_user_nama?: IntWithAggregatesFilter<"sktm"> | number
+    sktm_tgl_lahir?: DateTimeWithAggregatesFilter<"sktm"> | Date | string
+    sktm_tempat_lahir?: StringWithAggregatesFilter<"sktm"> | string
+    sktm_alamat?: StringWithAggregatesFilter<"sktm"> | string
+    sktm_nama_ortu?: StringWithAggregatesFilter<"sktm"> | string
+    sktm_tgl_lahir_ortu?: DateTimeWithAggregatesFilter<"sktm"> | Date | string
+    sktm_pekerjaan_ortu?: StringWithAggregatesFilter<"sktm"> | string
+    sktm_nik_ortu?: StringWithAggregatesFilter<"sktm"> | string
+    sktm_alamat_ortu?: StringWithAggregatesFilter<"sktm"> | string
+    sktm_kepentingan?: StringWithAggregatesFilter<"sktm"> | string
+    sktm_ttd?: IntNullableWithAggregatesFilter<"sktm"> | number | null
   }
 
   export type usersCreateInput = {
@@ -2033,11 +4520,14 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
+    user_level?: number | null
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
     user_updated?: Date | string
     user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
   }
 
   export type usersUncheckedCreateInput = {
@@ -2048,13 +4538,16 @@ export namespace Prisma {
     user_hp: string
     user_image?: string | null
     user_alamat: string
+    user_jabatan?: number | null
     user_name: string
     user_pass: string
+    user_level?: number | null
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
     user_updated?: Date | string
     user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
   }
 
   export type usersUpdateInput = {
@@ -2066,11 +4559,14 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
     user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
     user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
   }
 
   export type usersUncheckedUpdateInput = {
@@ -2081,13 +4577,16 @@ export namespace Prisma {
     user_hp?: StringFieldUpdateOperationsInput | string
     user_image?: NullableStringFieldUpdateOperationsInput | string | null
     user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
     user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
     user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
   }
 
   export type usersCreateManyInput = {
@@ -2098,8 +4597,10 @@ export namespace Prisma {
     user_hp: string
     user_image?: string | null
     user_alamat: string
+    user_jabatan?: number | null
     user_name: string
     user_pass: string
+    user_level?: number | null
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -2116,6 +4617,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -2131,13 +4633,173 @@ export namespace Prisma {
     user_hp?: StringFieldUpdateOperationsInput | string
     user_image?: NullableStringFieldUpdateOperationsInput | string | null
     user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
     user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
     user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type jabatanCreateInput = {
+    jabatan_nama: string
+    jabatan_created?: Date | string
+    jabatan_updated?: Date | string
+    jabatan_deleted?: Date | string | null
+    users?: usersCreateNestedManyWithoutJabatanInput
+  }
+
+  export type jabatanUncheckedCreateInput = {
+    jabatan_id?: number
+    jabatan_nama: string
+    jabatan_created?: Date | string
+    jabatan_updated?: Date | string
+    jabatan_deleted?: Date | string | null
+    users?: usersUncheckedCreateNestedManyWithoutJabatanInput
+  }
+
+  export type jabatanUpdateInput = {
+    jabatan_nama?: StringFieldUpdateOperationsInput | string
+    jabatan_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    users?: usersUpdateManyWithoutJabatanNestedInput
+  }
+
+  export type jabatanUncheckedUpdateInput = {
+    jabatan_id?: IntFieldUpdateOperationsInput | number
+    jabatan_nama?: StringFieldUpdateOperationsInput | string
+    jabatan_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    users?: usersUncheckedUpdateManyWithoutJabatanNestedInput
+  }
+
+  export type jabatanCreateManyInput = {
+    jabatan_id?: number
+    jabatan_nama: string
+    jabatan_created?: Date | string
+    jabatan_updated?: Date | string
+    jabatan_deleted?: Date | string | null
+  }
+
+  export type jabatanUpdateManyMutationInput = {
+    jabatan_nama?: StringFieldUpdateOperationsInput | string
+    jabatan_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type jabatanUncheckedUpdateManyInput = {
+    jabatan_id?: IntFieldUpdateOperationsInput | number
+    jabatan_nama?: StringFieldUpdateOperationsInput | string
+    jabatan_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type sktmCreateInput = {
+    sktm_user_nama: number
+    sktm_tgl_lahir: Date | string
+    sktm_tempat_lahir: string
+    sktm_alamat: string
+    sktm_nama_ortu: string
+    sktm_tgl_lahir_ortu: Date | string
+    sktm_pekerjaan_ortu: string
+    sktm_nik_ortu: string
+    sktm_alamat_ortu: string
+    sktm_kepentingan: string
+    ttd_sktm?: usersCreateNestedOneWithoutSktmInput
+  }
+
+  export type sktmUncheckedCreateInput = {
+    sktm_id?: number
+    sktm_user_nama: number
+    sktm_tgl_lahir: Date | string
+    sktm_tempat_lahir: string
+    sktm_alamat: string
+    sktm_nama_ortu: string
+    sktm_tgl_lahir_ortu: Date | string
+    sktm_pekerjaan_ortu: string
+    sktm_nik_ortu: string
+    sktm_alamat_ortu: string
+    sktm_kepentingan: string
+    sktm_ttd?: number | null
+  }
+
+  export type sktmUpdateInput = {
+    sktm_user_nama?: IntFieldUpdateOperationsInput | number
+    sktm_tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_tempat_lahir?: StringFieldUpdateOperationsInput | string
+    sktm_alamat?: StringFieldUpdateOperationsInput | string
+    sktm_nama_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_tgl_lahir_ortu?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_pekerjaan_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_nik_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_alamat_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_kepentingan?: StringFieldUpdateOperationsInput | string
+    ttd_sktm?: usersUpdateOneWithoutSktmNestedInput
+  }
+
+  export type sktmUncheckedUpdateInput = {
+    sktm_id?: IntFieldUpdateOperationsInput | number
+    sktm_user_nama?: IntFieldUpdateOperationsInput | number
+    sktm_tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_tempat_lahir?: StringFieldUpdateOperationsInput | string
+    sktm_alamat?: StringFieldUpdateOperationsInput | string
+    sktm_nama_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_tgl_lahir_ortu?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_pekerjaan_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_nik_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_alamat_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_kepentingan?: StringFieldUpdateOperationsInput | string
+    sktm_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type sktmCreateManyInput = {
+    sktm_id?: number
+    sktm_user_nama: number
+    sktm_tgl_lahir: Date | string
+    sktm_tempat_lahir: string
+    sktm_alamat: string
+    sktm_nama_ortu: string
+    sktm_tgl_lahir_ortu: Date | string
+    sktm_pekerjaan_ortu: string
+    sktm_nik_ortu: string
+    sktm_alamat_ortu: string
+    sktm_kepentingan: string
+    sktm_ttd?: number | null
+  }
+
+  export type sktmUpdateManyMutationInput = {
+    sktm_user_nama?: IntFieldUpdateOperationsInput | number
+    sktm_tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_tempat_lahir?: StringFieldUpdateOperationsInput | string
+    sktm_alamat?: StringFieldUpdateOperationsInput | string
+    sktm_nama_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_tgl_lahir_ortu?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_pekerjaan_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_nik_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_alamat_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_kepentingan?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type sktmUncheckedUpdateManyInput = {
+    sktm_id?: IntFieldUpdateOperationsInput | number
+    sktm_user_nama?: IntFieldUpdateOperationsInput | number
+    sktm_tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_tempat_lahir?: StringFieldUpdateOperationsInput | string
+    sktm_alamat?: StringFieldUpdateOperationsInput | string
+    sktm_nama_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_tgl_lahir_ortu?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_pekerjaan_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_nik_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_alamat_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_kepentingan?: StringFieldUpdateOperationsInput | string
+    sktm_ttd?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2179,6 +4841,17 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[]
@@ -2201,9 +4874,24 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
+  export type JabatanNullableRelationFilter = {
+    is?: jabatanWhereInput | null
+    isNot?: jabatanWhereInput | null
+  }
+
+  export type SktmListRelationFilter = {
+    every?: sktmWhereInput
+    some?: sktmWhereInput
+    none?: sktmWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
+  }
+
+  export type sktmOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type usersCountOrderByAggregateInput = {
@@ -2214,8 +4902,10 @@ export namespace Prisma {
     user_hp?: SortOrder
     user_image?: SortOrder
     user_alamat?: SortOrder
+    user_jabatan?: SortOrder
     user_name?: SortOrder
     user_pass?: SortOrder
+    user_level?: SortOrder
     user_lastip?: SortOrder
     user_lastlogin?: SortOrder
     user_created?: SortOrder
@@ -2225,6 +4915,8 @@ export namespace Prisma {
 
   export type usersAvgOrderByAggregateInput = {
     user_id?: SortOrder
+    user_jabatan?: SortOrder
+    user_level?: SortOrder
   }
 
   export type usersMaxOrderByAggregateInput = {
@@ -2235,8 +4927,10 @@ export namespace Prisma {
     user_hp?: SortOrder
     user_image?: SortOrder
     user_alamat?: SortOrder
+    user_jabatan?: SortOrder
     user_name?: SortOrder
     user_pass?: SortOrder
+    user_level?: SortOrder
     user_lastip?: SortOrder
     user_lastlogin?: SortOrder
     user_created?: SortOrder
@@ -2252,8 +4946,10 @@ export namespace Prisma {
     user_hp?: SortOrder
     user_image?: SortOrder
     user_alamat?: SortOrder
+    user_jabatan?: SortOrder
     user_name?: SortOrder
     user_pass?: SortOrder
+    user_level?: SortOrder
     user_lastip?: SortOrder
     user_lastlogin?: SortOrder
     user_created?: SortOrder
@@ -2263,6 +4959,8 @@ export namespace Prisma {
 
   export type usersSumOrderByAggregateInput = {
     user_id?: SortOrder
+    user_jabatan?: SortOrder
+    user_level?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2315,6 +5013,22 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[]
@@ -2343,12 +5057,144 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
+  export type UsersListRelationFilter = {
+    every?: usersWhereInput
+    some?: usersWhereInput
+    none?: usersWhereInput
+  }
+
+  export type usersOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type jabatanCountOrderByAggregateInput = {
+    jabatan_id?: SortOrder
+    jabatan_nama?: SortOrder
+    jabatan_created?: SortOrder
+    jabatan_updated?: SortOrder
+    jabatan_deleted?: SortOrder
+  }
+
+  export type jabatanAvgOrderByAggregateInput = {
+    jabatan_id?: SortOrder
+  }
+
+  export type jabatanMaxOrderByAggregateInput = {
+    jabatan_id?: SortOrder
+    jabatan_nama?: SortOrder
+    jabatan_created?: SortOrder
+    jabatan_updated?: SortOrder
+    jabatan_deleted?: SortOrder
+  }
+
+  export type jabatanMinOrderByAggregateInput = {
+    jabatan_id?: SortOrder
+    jabatan_nama?: SortOrder
+    jabatan_created?: SortOrder
+    jabatan_updated?: SortOrder
+    jabatan_deleted?: SortOrder
+  }
+
+  export type jabatanSumOrderByAggregateInput = {
+    jabatan_id?: SortOrder
+  }
+
+  export type UsersNullableRelationFilter = {
+    is?: usersWhereInput | null
+    isNot?: usersWhereInput | null
+  }
+
+  export type sktmCountOrderByAggregateInput = {
+    sktm_id?: SortOrder
+    sktm_user_nama?: SortOrder
+    sktm_tgl_lahir?: SortOrder
+    sktm_tempat_lahir?: SortOrder
+    sktm_alamat?: SortOrder
+    sktm_nama_ortu?: SortOrder
+    sktm_tgl_lahir_ortu?: SortOrder
+    sktm_pekerjaan_ortu?: SortOrder
+    sktm_nik_ortu?: SortOrder
+    sktm_alamat_ortu?: SortOrder
+    sktm_kepentingan?: SortOrder
+    sktm_ttd?: SortOrder
+  }
+
+  export type sktmAvgOrderByAggregateInput = {
+    sktm_id?: SortOrder
+    sktm_user_nama?: SortOrder
+    sktm_ttd?: SortOrder
+  }
+
+  export type sktmMaxOrderByAggregateInput = {
+    sktm_id?: SortOrder
+    sktm_user_nama?: SortOrder
+    sktm_tgl_lahir?: SortOrder
+    sktm_tempat_lahir?: SortOrder
+    sktm_alamat?: SortOrder
+    sktm_nama_ortu?: SortOrder
+    sktm_tgl_lahir_ortu?: SortOrder
+    sktm_pekerjaan_ortu?: SortOrder
+    sktm_nik_ortu?: SortOrder
+    sktm_alamat_ortu?: SortOrder
+    sktm_kepentingan?: SortOrder
+    sktm_ttd?: SortOrder
+  }
+
+  export type sktmMinOrderByAggregateInput = {
+    sktm_id?: SortOrder
+    sktm_user_nama?: SortOrder
+    sktm_tgl_lahir?: SortOrder
+    sktm_tempat_lahir?: SortOrder
+    sktm_alamat?: SortOrder
+    sktm_nama_ortu?: SortOrder
+    sktm_tgl_lahir_ortu?: SortOrder
+    sktm_pekerjaan_ortu?: SortOrder
+    sktm_nik_ortu?: SortOrder
+    sktm_alamat_ortu?: SortOrder
+    sktm_kepentingan?: SortOrder
+    sktm_ttd?: SortOrder
+  }
+
+  export type sktmSumOrderByAggregateInput = {
+    sktm_id?: SortOrder
+    sktm_user_nama?: SortOrder
+    sktm_ttd?: SortOrder
+  }
+
+  export type jabatanCreateNestedOneWithoutUsersInput = {
+    create?: XOR<jabatanCreateWithoutUsersInput, jabatanUncheckedCreateWithoutUsersInput>
+    connectOrCreate?: jabatanCreateOrConnectWithoutUsersInput
+    connect?: jabatanWhereUniqueInput
+  }
+
+  export type sktmCreateNestedManyWithoutTtd_sktmInput = {
+    create?: XOR<sktmCreateWithoutTtd_sktmInput, sktmUncheckedCreateWithoutTtd_sktmInput> | sktmCreateWithoutTtd_sktmInput[] | sktmUncheckedCreateWithoutTtd_sktmInput[]
+    connectOrCreate?: sktmCreateOrConnectWithoutTtd_sktmInput | sktmCreateOrConnectWithoutTtd_sktmInput[]
+    createMany?: sktmCreateManyTtd_sktmInputEnvelope
+    connect?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+  }
+
+  export type sktmUncheckedCreateNestedManyWithoutTtd_sktmInput = {
+    create?: XOR<sktmCreateWithoutTtd_sktmInput, sktmUncheckedCreateWithoutTtd_sktmInput> | sktmCreateWithoutTtd_sktmInput[] | sktmUncheckedCreateWithoutTtd_sktmInput[]
+    connectOrCreate?: sktmCreateOrConnectWithoutTtd_sktmInput | sktmCreateOrConnectWithoutTtd_sktmInput[]
+    createMany?: sktmCreateManyTtd_sktmInputEnvelope
+    connect?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -2359,12 +5205,108 @@ export namespace Prisma {
     set?: Date | string | null
   }
 
+  export type jabatanUpdateOneWithoutUsersNestedInput = {
+    create?: XOR<jabatanCreateWithoutUsersInput, jabatanUncheckedCreateWithoutUsersInput>
+    connectOrCreate?: jabatanCreateOrConnectWithoutUsersInput
+    upsert?: jabatanUpsertWithoutUsersInput
+    disconnect?: jabatanWhereInput | boolean
+    delete?: jabatanWhereInput | boolean
+    connect?: jabatanWhereUniqueInput
+    update?: XOR<XOR<jabatanUpdateToOneWithWhereWithoutUsersInput, jabatanUpdateWithoutUsersInput>, jabatanUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type sktmUpdateManyWithoutTtd_sktmNestedInput = {
+    create?: XOR<sktmCreateWithoutTtd_sktmInput, sktmUncheckedCreateWithoutTtd_sktmInput> | sktmCreateWithoutTtd_sktmInput[] | sktmUncheckedCreateWithoutTtd_sktmInput[]
+    connectOrCreate?: sktmCreateOrConnectWithoutTtd_sktmInput | sktmCreateOrConnectWithoutTtd_sktmInput[]
+    upsert?: sktmUpsertWithWhereUniqueWithoutTtd_sktmInput | sktmUpsertWithWhereUniqueWithoutTtd_sktmInput[]
+    createMany?: sktmCreateManyTtd_sktmInputEnvelope
+    set?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    disconnect?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    delete?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    connect?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    update?: sktmUpdateWithWhereUniqueWithoutTtd_sktmInput | sktmUpdateWithWhereUniqueWithoutTtd_sktmInput[]
+    updateMany?: sktmUpdateManyWithWhereWithoutTtd_sktmInput | sktmUpdateManyWithWhereWithoutTtd_sktmInput[]
+    deleteMany?: sktmScalarWhereInput | sktmScalarWhereInput[]
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput = {
+    create?: XOR<sktmCreateWithoutTtd_sktmInput, sktmUncheckedCreateWithoutTtd_sktmInput> | sktmCreateWithoutTtd_sktmInput[] | sktmUncheckedCreateWithoutTtd_sktmInput[]
+    connectOrCreate?: sktmCreateOrConnectWithoutTtd_sktmInput | sktmCreateOrConnectWithoutTtd_sktmInput[]
+    upsert?: sktmUpsertWithWhereUniqueWithoutTtd_sktmInput | sktmUpsertWithWhereUniqueWithoutTtd_sktmInput[]
+    createMany?: sktmCreateManyTtd_sktmInputEnvelope
+    set?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    disconnect?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    delete?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    connect?: sktmWhereUniqueInput | sktmWhereUniqueInput[]
+    update?: sktmUpdateWithWhereUniqueWithoutTtd_sktmInput | sktmUpdateWithWhereUniqueWithoutTtd_sktmInput[]
+    updateMany?: sktmUpdateManyWithWhereWithoutTtd_sktmInput | sktmUpdateManyWithWhereWithoutTtd_sktmInput[]
+    deleteMany?: sktmScalarWhereInput | sktmScalarWhereInput[]
+  }
+
+  export type usersCreateNestedManyWithoutJabatanInput = {
+    create?: XOR<usersCreateWithoutJabatanInput, usersUncheckedCreateWithoutJabatanInput> | usersCreateWithoutJabatanInput[] | usersUncheckedCreateWithoutJabatanInput[]
+    connectOrCreate?: usersCreateOrConnectWithoutJabatanInput | usersCreateOrConnectWithoutJabatanInput[]
+    createMany?: usersCreateManyJabatanInputEnvelope
+    connect?: usersWhereUniqueInput | usersWhereUniqueInput[]
+  }
+
+  export type usersUncheckedCreateNestedManyWithoutJabatanInput = {
+    create?: XOR<usersCreateWithoutJabatanInput, usersUncheckedCreateWithoutJabatanInput> | usersCreateWithoutJabatanInput[] | usersUncheckedCreateWithoutJabatanInput[]
+    connectOrCreate?: usersCreateOrConnectWithoutJabatanInput | usersCreateOrConnectWithoutJabatanInput[]
+    createMany?: usersCreateManyJabatanInputEnvelope
+    connect?: usersWhereUniqueInput | usersWhereUniqueInput[]
+  }
+
+  export type usersUpdateManyWithoutJabatanNestedInput = {
+    create?: XOR<usersCreateWithoutJabatanInput, usersUncheckedCreateWithoutJabatanInput> | usersCreateWithoutJabatanInput[] | usersUncheckedCreateWithoutJabatanInput[]
+    connectOrCreate?: usersCreateOrConnectWithoutJabatanInput | usersCreateOrConnectWithoutJabatanInput[]
+    upsert?: usersUpsertWithWhereUniqueWithoutJabatanInput | usersUpsertWithWhereUniqueWithoutJabatanInput[]
+    createMany?: usersCreateManyJabatanInputEnvelope
+    set?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    disconnect?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    delete?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    connect?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    update?: usersUpdateWithWhereUniqueWithoutJabatanInput | usersUpdateWithWhereUniqueWithoutJabatanInput[]
+    updateMany?: usersUpdateManyWithWhereWithoutJabatanInput | usersUpdateManyWithWhereWithoutJabatanInput[]
+    deleteMany?: usersScalarWhereInput | usersScalarWhereInput[]
+  }
+
+  export type usersUncheckedUpdateManyWithoutJabatanNestedInput = {
+    create?: XOR<usersCreateWithoutJabatanInput, usersUncheckedCreateWithoutJabatanInput> | usersCreateWithoutJabatanInput[] | usersUncheckedCreateWithoutJabatanInput[]
+    connectOrCreate?: usersCreateOrConnectWithoutJabatanInput | usersCreateOrConnectWithoutJabatanInput[]
+    upsert?: usersUpsertWithWhereUniqueWithoutJabatanInput | usersUpsertWithWhereUniqueWithoutJabatanInput[]
+    createMany?: usersCreateManyJabatanInputEnvelope
+    set?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    disconnect?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    delete?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    connect?: usersWhereUniqueInput | usersWhereUniqueInput[]
+    update?: usersUpdateWithWhereUniqueWithoutJabatanInput | usersUpdateWithWhereUniqueWithoutJabatanInput[]
+    updateMany?: usersUpdateManyWithWhereWithoutJabatanInput | usersUpdateManyWithWhereWithoutJabatanInput[]
+    deleteMany?: usersScalarWhereInput | usersScalarWhereInput[]
+  }
+
+  export type usersCreateNestedOneWithoutSktmInput = {
+    create?: XOR<usersCreateWithoutSktmInput, usersUncheckedCreateWithoutSktmInput>
+    connectOrCreate?: usersCreateOrConnectWithoutSktmInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type usersUpdateOneWithoutSktmNestedInput = {
+    create?: XOR<usersCreateWithoutSktmInput, usersUncheckedCreateWithoutSktmInput>
+    connectOrCreate?: usersCreateOrConnectWithoutSktmInput
+    upsert?: usersUpsertWithoutSktmInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutSktmInput, usersUpdateWithoutSktmInput>, usersUncheckedUpdateWithoutSktmInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -2404,6 +5346,17 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -2489,7 +5442,7 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | null
     notIn?: number[] | null
@@ -2497,7 +5450,23 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -2528,15 +5497,451 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
+  export type jabatanCreateWithoutUsersInput = {
+    jabatan_nama: string
+    jabatan_created?: Date | string
+    jabatan_updated?: Date | string
+    jabatan_deleted?: Date | string | null
+  }
+
+  export type jabatanUncheckedCreateWithoutUsersInput = {
+    jabatan_id?: number
+    jabatan_nama: string
+    jabatan_created?: Date | string
+    jabatan_updated?: Date | string
+    jabatan_deleted?: Date | string | null
+  }
+
+  export type jabatanCreateOrConnectWithoutUsersInput = {
+    where: jabatanWhereUniqueInput
+    create: XOR<jabatanCreateWithoutUsersInput, jabatanUncheckedCreateWithoutUsersInput>
+  }
+
+  export type sktmCreateWithoutTtd_sktmInput = {
+    sktm_user_nama: number
+    sktm_tgl_lahir: Date | string
+    sktm_tempat_lahir: string
+    sktm_alamat: string
+    sktm_nama_ortu: string
+    sktm_tgl_lahir_ortu: Date | string
+    sktm_pekerjaan_ortu: string
+    sktm_nik_ortu: string
+    sktm_alamat_ortu: string
+    sktm_kepentingan: string
+  }
+
+  export type sktmUncheckedCreateWithoutTtd_sktmInput = {
+    sktm_id?: number
+    sktm_user_nama: number
+    sktm_tgl_lahir: Date | string
+    sktm_tempat_lahir: string
+    sktm_alamat: string
+    sktm_nama_ortu: string
+    sktm_tgl_lahir_ortu: Date | string
+    sktm_pekerjaan_ortu: string
+    sktm_nik_ortu: string
+    sktm_alamat_ortu: string
+    sktm_kepentingan: string
+  }
+
+  export type sktmCreateOrConnectWithoutTtd_sktmInput = {
+    where: sktmWhereUniqueInput
+    create: XOR<sktmCreateWithoutTtd_sktmInput, sktmUncheckedCreateWithoutTtd_sktmInput>
+  }
+
+  export type sktmCreateManyTtd_sktmInputEnvelope = {
+    data: sktmCreateManyTtd_sktmInput | sktmCreateManyTtd_sktmInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type jabatanUpsertWithoutUsersInput = {
+    update: XOR<jabatanUpdateWithoutUsersInput, jabatanUncheckedUpdateWithoutUsersInput>
+    create: XOR<jabatanCreateWithoutUsersInput, jabatanUncheckedCreateWithoutUsersInput>
+    where?: jabatanWhereInput
+  }
+
+  export type jabatanUpdateToOneWithWhereWithoutUsersInput = {
+    where?: jabatanWhereInput
+    data: XOR<jabatanUpdateWithoutUsersInput, jabatanUncheckedUpdateWithoutUsersInput>
+  }
+
+  export type jabatanUpdateWithoutUsersInput = {
+    jabatan_nama?: StringFieldUpdateOperationsInput | string
+    jabatan_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type jabatanUncheckedUpdateWithoutUsersInput = {
+    jabatan_id?: IntFieldUpdateOperationsInput | number
+    jabatan_nama?: StringFieldUpdateOperationsInput | string
+    jabatan_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    jabatan_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type sktmUpsertWithWhereUniqueWithoutTtd_sktmInput = {
+    where: sktmWhereUniqueInput
+    update: XOR<sktmUpdateWithoutTtd_sktmInput, sktmUncheckedUpdateWithoutTtd_sktmInput>
+    create: XOR<sktmCreateWithoutTtd_sktmInput, sktmUncheckedCreateWithoutTtd_sktmInput>
+  }
+
+  export type sktmUpdateWithWhereUniqueWithoutTtd_sktmInput = {
+    where: sktmWhereUniqueInput
+    data: XOR<sktmUpdateWithoutTtd_sktmInput, sktmUncheckedUpdateWithoutTtd_sktmInput>
+  }
+
+  export type sktmUpdateManyWithWhereWithoutTtd_sktmInput = {
+    where: sktmScalarWhereInput
+    data: XOR<sktmUpdateManyMutationInput, sktmUncheckedUpdateManyWithoutTtd_sktmInput>
+  }
+
+  export type sktmScalarWhereInput = {
+    AND?: sktmScalarWhereInput | sktmScalarWhereInput[]
+    OR?: sktmScalarWhereInput[]
+    NOT?: sktmScalarWhereInput | sktmScalarWhereInput[]
+    sktm_id?: IntFilter<"sktm"> | number
+    sktm_user_nama?: IntFilter<"sktm"> | number
+    sktm_tgl_lahir?: DateTimeFilter<"sktm"> | Date | string
+    sktm_tempat_lahir?: StringFilter<"sktm"> | string
+    sktm_alamat?: StringFilter<"sktm"> | string
+    sktm_nama_ortu?: StringFilter<"sktm"> | string
+    sktm_tgl_lahir_ortu?: DateTimeFilter<"sktm"> | Date | string
+    sktm_pekerjaan_ortu?: StringFilter<"sktm"> | string
+    sktm_nik_ortu?: StringFilter<"sktm"> | string
+    sktm_alamat_ortu?: StringFilter<"sktm"> | string
+    sktm_kepentingan?: StringFilter<"sktm"> | string
+    sktm_ttd?: IntNullableFilter<"sktm"> | number | null
+  }
+
+  export type usersCreateWithoutJabatanInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level?: number | null
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
+  }
+
+  export type usersUncheckedCreateWithoutJabatanInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level?: number | null
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
+  }
+
+  export type usersCreateOrConnectWithoutJabatanInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutJabatanInput, usersUncheckedCreateWithoutJabatanInput>
+  }
+
+  export type usersCreateManyJabatanInputEnvelope = {
+    data: usersCreateManyJabatanInput | usersCreateManyJabatanInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type usersUpsertWithWhereUniqueWithoutJabatanInput = {
+    where: usersWhereUniqueInput
+    update: XOR<usersUpdateWithoutJabatanInput, usersUncheckedUpdateWithoutJabatanInput>
+    create: XOR<usersCreateWithoutJabatanInput, usersUncheckedCreateWithoutJabatanInput>
+  }
+
+  export type usersUpdateWithWhereUniqueWithoutJabatanInput = {
+    where: usersWhereUniqueInput
+    data: XOR<usersUpdateWithoutJabatanInput, usersUncheckedUpdateWithoutJabatanInput>
+  }
+
+  export type usersUpdateManyWithWhereWithoutJabatanInput = {
+    where: usersScalarWhereInput
+    data: XOR<usersUpdateManyMutationInput, usersUncheckedUpdateManyWithoutJabatanInput>
+  }
+
+  export type usersScalarWhereInput = {
+    AND?: usersScalarWhereInput | usersScalarWhereInput[]
+    OR?: usersScalarWhereInput[]
+    NOT?: usersScalarWhereInput | usersScalarWhereInput[]
+    user_id?: IntFilter<"users"> | number
+    user_nama?: StringFilter<"users"> | string
+    user_nip?: StringNullableFilter<"users"> | string | null
+    user_email?: StringNullableFilter<"users"> | string | null
+    user_hp?: StringFilter<"users"> | string
+    user_image?: StringNullableFilter<"users"> | string | null
+    user_alamat?: StringFilter<"users"> | string
+    user_jabatan?: IntNullableFilter<"users"> | number | null
+    user_name?: StringFilter<"users"> | string
+    user_pass?: StringFilter<"users"> | string
+    user_level?: IntNullableFilter<"users"> | number | null
+    user_lastip?: StringNullableFilter<"users"> | string | null
+    user_lastlogin?: StringNullableFilter<"users"> | string | null
+    user_created?: DateTimeFilter<"users"> | Date | string
+    user_updated?: DateTimeFilter<"users"> | Date | string
+    user_deleted?: DateTimeNullableFilter<"users"> | Date | string | null
+  }
+
+  export type usersCreateWithoutSktmInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level?: number | null
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+  }
+
+  export type usersUncheckedCreateWithoutSktmInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_jabatan?: number | null
+    user_name: string
+    user_pass: string
+    user_level?: number | null
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+  }
+
+  export type usersCreateOrConnectWithoutSktmInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutSktmInput, usersUncheckedCreateWithoutSktmInput>
+  }
+
+  export type usersUpsertWithoutSktmInput = {
+    update: XOR<usersUpdateWithoutSktmInput, usersUncheckedUpdateWithoutSktmInput>
+    create: XOR<usersCreateWithoutSktmInput, usersUncheckedCreateWithoutSktmInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutSktmInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutSktmInput, usersUncheckedUpdateWithoutSktmInput>
+  }
+
+  export type usersUpdateWithoutSktmInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutSktmInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type sktmCreateManyTtd_sktmInput = {
+    sktm_id?: number
+    sktm_user_nama: number
+    sktm_tgl_lahir: Date | string
+    sktm_tempat_lahir: string
+    sktm_alamat: string
+    sktm_nama_ortu: string
+    sktm_tgl_lahir_ortu: Date | string
+    sktm_pekerjaan_ortu: string
+    sktm_nik_ortu: string
+    sktm_alamat_ortu: string
+    sktm_kepentingan: string
+  }
+
+  export type sktmUpdateWithoutTtd_sktmInput = {
+    sktm_user_nama?: IntFieldUpdateOperationsInput | number
+    sktm_tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_tempat_lahir?: StringFieldUpdateOperationsInput | string
+    sktm_alamat?: StringFieldUpdateOperationsInput | string
+    sktm_nama_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_tgl_lahir_ortu?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_pekerjaan_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_nik_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_alamat_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_kepentingan?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type sktmUncheckedUpdateWithoutTtd_sktmInput = {
+    sktm_id?: IntFieldUpdateOperationsInput | number
+    sktm_user_nama?: IntFieldUpdateOperationsInput | number
+    sktm_tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_tempat_lahir?: StringFieldUpdateOperationsInput | string
+    sktm_alamat?: StringFieldUpdateOperationsInput | string
+    sktm_nama_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_tgl_lahir_ortu?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_pekerjaan_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_nik_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_alamat_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_kepentingan?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type sktmUncheckedUpdateManyWithoutTtd_sktmInput = {
+    sktm_id?: IntFieldUpdateOperationsInput | number
+    sktm_user_nama?: IntFieldUpdateOperationsInput | number
+    sktm_tgl_lahir?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_tempat_lahir?: StringFieldUpdateOperationsInput | string
+    sktm_alamat?: StringFieldUpdateOperationsInput | string
+    sktm_nama_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_tgl_lahir_ortu?: DateTimeFieldUpdateOperationsInput | Date | string
+    sktm_pekerjaan_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_nik_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_alamat_ortu?: StringFieldUpdateOperationsInput | string
+    sktm_kepentingan?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type usersCreateManyJabatanInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level?: number | null
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+  }
+
+  export type usersUpdateWithoutJabatanInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutJabatanInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
+  }
+
+  export type usersUncheckedUpdateManyWithoutJabatanInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
 
 
   /**
    * Aliases for legacy arg types
    */
     /**
+     * @deprecated Use UsersCountOutputTypeDefaultArgs instead
+     */
+    export type UsersCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = UsersCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use JabatanCountOutputTypeDefaultArgs instead
+     */
+    export type JabatanCountOutputTypeArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = JabatanCountOutputTypeDefaultArgs<ExtArgs>
+    /**
      * @deprecated Use usersDefaultArgs instead
      */
     export type usersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = usersDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use jabatanDefaultArgs instead
+     */
+    export type jabatanArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = jabatanDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use sktmDefaultArgs instead
+     */
+    export type sktmArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = sktmDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

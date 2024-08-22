@@ -12,23 +12,28 @@ import { cookies } from "next/headers";
 
 export async function saveUser(data: FormData) {
   const dt = JSON.parse(String(data.get("postData")));
+
   const file1 = data.get('image') as File;
   const fileList: File[] = [];
   fileList[0] = file1;
   dt.user_image = fileList;
-
-  dt.user_tgl_lahir = new Date(dt.user_tgl_lahir);
-  let nip = dt.user_nip.replace(/\s/g, "");
+  // dt.user_tgl_lahir = new Date(dt.user_tgl_lahir);
+  // let nip = dt.user_nip.replace(/\s/g, "");
   const result = UserSchema.safeParse(dt);
   if (result.success) {
-    const sessionToken =
-      cookies().get("next-auth.session-token")?.value ??
-      cookies().get("__Secure-next-auth.session-token")?.value;
+    // const sessionToken =
+    //   cookies().get("next-auth.session-token")?.value ??
+    //   cookies().get("__Secure-next-auth.session-token")?.value;
 
-    const decoded = await decode({
-      token: sessionToken,
-      secret: String(process.env.NEXTAUTH_SECRET),
-    });
+    // const decoded = await decode({
+    //   token: sessionToken,
+    //   secret: String(process.env.NEXTAUTH_SECRET),
+    // });
+
+    const namaFile = await saveFileFromBuffer(fileList[0], './public/users/');
+    result.data.user_image = '';
+    let nip = dt.user_nip.replace(/\s/g, '');
+
     try {
       await prisma.users.create({
         data: {
@@ -37,9 +42,12 @@ export async function saveUser(data: FormData) {
           user_name: dt.user_name,
           // user_pass: await hash(dt.user_pass),
           user_pass: dt.user_pass,
+          user_image: namaFile,
+          user_level: dt.user_level,
           user_email: dt.user_email,
           user_hp: dt.user_hp,
           user_alamat: dt.user_alamat,
+          user_jabatan: dt.user_jabatan,
         },
       });
     } catch (e) {
@@ -60,7 +68,7 @@ export async function saveUser(data: FormData) {
 export async function updateUser(data: FormData, user_id: number) {
   const dt = JSON.parse(String(data.get("postData")));
   const file1 = data.get("image") as File;
-  dt.user_tgl_lahir = new Date(dt.user_tgl_lahir);
+  // dt.user_tgl_lahir = new Date(dt.user_tgl_lahir);
   const fileList: File[] = [];
   fileList[0] = file1;
   dt.user_image = fileList;
@@ -79,9 +87,12 @@ export async function updateUser(data: FormData, user_id: number) {
           user_name: dt.user_name,
           // user_pass: dt.user_pass !== '' ? await hash(dt.user_pass) : undefined,
           user_pass: dt.user_pass !== "" ? dt.user_pass : undefined,
+          user_image: namaFile,
+          user_level: dt.user_level,
           user_email: dt.user_email,
           user_hp: dt.user_hp,
           user_alamat: dt.user_alamat,
+          user_jabatan: dt.user_jabatan,
         },
         where: { user_id: user_id },
       });

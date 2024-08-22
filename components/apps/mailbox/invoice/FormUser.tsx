@@ -3,6 +3,7 @@ import { saveUser, updateUser } from "@/app/(main)/pegawai/_action";
 import IconArrowBackward from "@/components/icon/icon-arrow-backward";
 import IconSave from "@/components/icon/icon-save";
 import { UserEditSchema, UserSchema } from "@/src/schema/users";
+import Jabatan_Type from "@/src/types/jabatan";
 import { zodResolver } from "@hookform/resolvers/zod";
 import clsx from "clsx";
 import Image from "next/image";
@@ -14,6 +15,7 @@ import { z } from "zod";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.css";
 import Swal, { SweetAlertIcon } from "sweetalert2";
+import level from "@/lib/level";
 
 type Inputs = z.infer<typeof UserSchema>;
 
@@ -25,6 +27,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
     user_hp: "",
   });
   const [loading, setLoading] = useState<string>();
+  const [jabatan, setJabatan] = useState<Jabatan_Type[]>();
   const {
     register,
     handleSubmit,
@@ -49,6 +52,12 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
     setImage(URL.createObjectURL(value));
   };
 
+  const getJabatan = async () => {
+    const res = await fetch("/api/jabatan");
+    const result = await res.json();
+    setJabatan(result.data);
+  };
+
   const showAlert = async (
     jenis: SweetAlertIcon = "success",
     pesan = "Data berhasil disimpan"
@@ -66,20 +75,15 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
     });
   };
 
-  // useEffect(() => {
-  //     getJabatan();
-  //     if (data) {
-  //         setDetail(data);
-  //         reset(data);
-  //         if (data.bank.length === 1) {
-  //             setValue('bank', data.bank[0].bank_name);
-  //             setValue('nama_rekening', data.bank[0].bank_account);
-  //             setValue('nomor_rekening', data.bank[0].bank_number);
-  //         }
-  //         // setValue('user_id', data.user_id);
-  //         // console.log(data);
-  //     }
-  // }, []);
+  useEffect(() => {
+    getJabatan();
+    if (data) {
+      setDetail(data);
+      reset(data);
+      // setValue('user_id', data.user_id);
+      // console.log(data);
+    }
+  }, []);
 
   const processForm: SubmitHandler<Inputs> = async (dt) => {
     setLoading("loading");
@@ -108,7 +112,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
   };
 
   const onFormError: SubmitErrorHandler<any> = (e) => {
-    console.log("error gaes", e);
+    console.log("There is error here!", e);
     setLoading(undefined);
   };
 
@@ -152,6 +156,28 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
               />
             </div>
           </div>
+        </div>
+        <div
+          className={clsx("mt-4 flex items-center", {
+            "has-error": errors.user_jabatan,
+          })}
+        >
+          <label htmlFor="startDate" className="mb-0 flex-1 ltr:mr-2 rtl:ml-2">
+            Jabatan
+          </label>
+          {jabatan && (
+            <select
+              {...register("user_jabatan")}
+              className="form-select w-2/3 lg:w-[250px]"
+            >
+              <option value="">Pilih Jabatan</option>
+              {jabatan?.map((i) => (
+                <option key={i.jabatan_id} value={i.jabatan_id}>
+                  {i.jabatan_nama}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
         <hr className="my-6 border-white-light dark:border-[#1b2e4b]" />
         <div className="mt-8 px-4">
@@ -321,21 +347,30 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                             </div> */}
             </div>
             <div className="w-full lg:w-1/2">
-              {/* <div className="text-lg">&nbsp;</div>
-                            <div className={clsx('mt-4 flex items-center', { 'has-error': errors.user_level, hidden: mode === 'profile' })}>
-                                <label htmlFor="level" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
-                                    Level
-                                </label>
-                                <select id="level" {...register('user_level')} className="form-select flex-1">
-                                    {level
-                                        .filter((a) => a.id > 1)
-                                        .map((e) => (
-                                            <option value={e.id} key={e.id}>
-                                                {e.text}
-                                            </option>
-                                        ))}
-                                </select>
-                            </div> */}
+              <div className="text-lg">&nbsp;</div>
+              <div
+                className={clsx("mt-4 flex items-center", {
+                  "has-error": errors.user_level,
+                  hidden: mode === "profile",
+                })}
+              >
+                <label htmlFor="level" className="mb-0 w-1/3 ltr:mr-2 rtl:ml-2">
+                  Level
+                </label>
+                <select
+                  id="level"
+                  {...register("user_level")}
+                  className="form-select flex-1"
+                >
+                  {level
+                    .filter((a) => a.id > 1)
+                    .map((e) => (
+                      <option value={e.id} key={e.id}>
+                        {e.text}
+                      </option>
+                    ))}
+                </select>
+              </div>
               <div
                 className={clsx("mt-4 flex items-center", {
                   "has-error": errors.confirm_password,
@@ -352,7 +387,7 @@ const FormPegawai = ({ data, mode }: { data?: any; mode?: string }) => {
                   type="password"
                   {...register("confirm_password")}
                   className="form-input flex-1"
-                  placeholder="Enter confirm password"
+                  placeholder="confirm password"
                 />
               </div>
             </div>

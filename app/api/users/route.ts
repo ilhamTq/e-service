@@ -22,11 +22,15 @@ export async function GET(request: Request) {
       user_email: true,
       user_hp: true,
       user_alamat: true,
+      jabatan: {
+        select: { jabatan_nama: true},
+      }
     },
     // take: limit ? limit : undefined,
     // skip: page === 1 ? 0 : limit * (page - 1),
     where: {
       user_nama: { contains: q ?? undefined },
+      user_level: {gt: 1},
       user_deleted: null,
       // jabatan: { jabatan_ttd: ttd ? true : undefined },
     },

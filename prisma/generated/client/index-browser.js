@@ -127,13 +127,38 @@ exports.Prisma.UsersScalarFieldEnum = {
   user_hp: 'user_hp',
   user_image: 'user_image',
   user_alamat: 'user_alamat',
+  user_jabatan: 'user_jabatan',
   user_name: 'user_name',
   user_pass: 'user_pass',
+  user_level: 'user_level',
   user_lastip: 'user_lastip',
   user_lastlogin: 'user_lastlogin',
   user_created: 'user_created',
   user_updated: 'user_updated',
   user_deleted: 'user_deleted'
+};
+
+exports.Prisma.JabatanScalarFieldEnum = {
+  jabatan_id: 'jabatan_id',
+  jabatan_nama: 'jabatan_nama',
+  jabatan_created: 'jabatan_created',
+  jabatan_updated: 'jabatan_updated',
+  jabatan_deleted: 'jabatan_deleted'
+};
+
+exports.Prisma.SktmScalarFieldEnum = {
+  sktm_id: 'sktm_id',
+  sktm_user_nama: 'sktm_user_nama',
+  sktm_tgl_lahir: 'sktm_tgl_lahir',
+  sktm_tempat_lahir: 'sktm_tempat_lahir',
+  sktm_alamat: 'sktm_alamat',
+  sktm_nama_ortu: 'sktm_nama_ortu',
+  sktm_tgl_lahir_ortu: 'sktm_tgl_lahir_ortu',
+  sktm_pekerjaan_ortu: 'sktm_pekerjaan_ortu',
+  sktm_nik_ortu: 'sktm_nik_ortu',
+  sktm_alamat_ortu: 'sktm_alamat_ortu',
+  sktm_kepentingan: 'sktm_kepentingan',
+  sktm_ttd: 'sktm_ttd'
 };
 
 exports.Prisma.SortOrder = {
@@ -148,7 +173,9 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  users: 'users'
+  users: 'users',
+  jabatan: 'jabatan',
+  sktm: 'sktm'
 };
 
 /**
