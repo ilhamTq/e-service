@@ -1558,7 +1558,7 @@ export namespace Prisma {
     user_jabatan: number | null
     user_name: string
     user_pass: string
-    user_level: number | null
+    user_level: number
     user_lastip: string | null
     user_lastlogin: string | null
     user_created: Date
@@ -1665,7 +1665,7 @@ export namespace Prisma {
       user_jabatan: number | null
       user_name: string
       user_pass: string
-      user_level: number | null
+      user_level: number
       user_lastip: string | null
       user_lastlogin: string | null
       user_created: Date
@@ -6945,7 +6945,7 @@ export namespace Prisma {
     user_jabatan?: IntNullableFilter<"users"> | number | null
     user_name?: StringFilter<"users"> | string
     user_pass?: StringFilter<"users"> | string
-    user_level?: IntNullableFilter<"users"> | number | null
+    user_level?: IntFilter<"users"> | number
     user_lastip?: StringNullableFilter<"users"> | string | null
     user_lastlogin?: StringNullableFilter<"users"> | string | null
     user_created?: DateTimeFilter<"users"> | Date | string
@@ -6971,7 +6971,7 @@ export namespace Prisma {
     user_jabatan?: SortOrderInput | SortOrder
     user_name?: SortOrder
     user_pass?: SortOrder
-    user_level?: SortOrderInput | SortOrder
+    user_level?: SortOrder
     user_lastip?: SortOrderInput | SortOrder
     user_lastlogin?: SortOrderInput | SortOrder
     user_created?: SortOrder
@@ -6989,6 +6989,7 @@ export namespace Prisma {
   export type usersWhereUniqueInput = Prisma.AtLeast<{
     user_id?: number
     user_nip?: string
+    user_name?: string
     AND?: usersWhereInput | usersWhereInput[]
     OR?: usersWhereInput[]
     NOT?: usersWhereInput | usersWhereInput[]
@@ -6998,9 +6999,8 @@ export namespace Prisma {
     user_image?: StringNullableFilter<"users"> | string | null
     user_alamat?: StringFilter<"users"> | string
     user_jabatan?: IntNullableFilter<"users"> | number | null
-    user_name?: StringFilter<"users"> | string
     user_pass?: StringFilter<"users"> | string
-    user_level?: IntNullableFilter<"users"> | number | null
+    user_level?: IntFilter<"users"> | number
     user_lastip?: StringNullableFilter<"users"> | string | null
     user_lastlogin?: StringNullableFilter<"users"> | string | null
     user_created?: DateTimeFilter<"users"> | Date | string
@@ -7013,7 +7013,7 @@ export namespace Prisma {
     nikah_createdBy?: BelumNikahListRelationFilter
     skck?: SkckListRelationFilter
     skck_createdBy?: SkckListRelationFilter
-  }, "user_id" | "user_nip">
+  }, "user_id" | "user_nip" | "user_name">
 
   export type usersOrderByWithAggregationInput = {
     user_id?: SortOrder
@@ -7026,7 +7026,7 @@ export namespace Prisma {
     user_jabatan?: SortOrderInput | SortOrder
     user_name?: SortOrder
     user_pass?: SortOrder
-    user_level?: SortOrderInput | SortOrder
+    user_level?: SortOrder
     user_lastip?: SortOrderInput | SortOrder
     user_lastlogin?: SortOrderInput | SortOrder
     user_created?: SortOrder
@@ -7053,7 +7053,7 @@ export namespace Prisma {
     user_jabatan?: IntNullableWithAggregatesFilter<"users"> | number | null
     user_name?: StringWithAggregatesFilter<"users"> | string
     user_pass?: StringWithAggregatesFilter<"users"> | string
-    user_level?: IntNullableWithAggregatesFilter<"users"> | number | null
+    user_level?: IntWithAggregatesFilter<"users"> | number
     user_lastip?: StringNullableWithAggregatesFilter<"users"> | string | null
     user_lastlogin?: StringNullableWithAggregatesFilter<"users"> | string | null
     user_created?: DateTimeWithAggregatesFilter<"users"> | Date | string
@@ -7497,7 +7497,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -7523,7 +7523,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -7546,7 +7546,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7572,7 +7572,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7597,7 +7597,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -7614,7 +7614,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7633,7 +7633,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -8775,8 +8775,8 @@ export namespace Prisma {
     set?: string | null
   }
 
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
     increment?: number
     decrement?: number
     multiply?: number
@@ -8885,8 +8885,8 @@ export namespace Prisma {
     deleteMany?: skckScalarWhereInput | skckScalarWhereInput[]
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
     increment?: number
     decrement?: number
     multiply?: number
@@ -9815,7 +9815,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -9839,7 +9839,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -9893,7 +9893,7 @@ export namespace Prisma {
     user_jabatan?: IntNullableFilter<"users"> | number | null
     user_name?: StringFilter<"users"> | string
     user_pass?: StringFilter<"users"> | string
-    user_level?: IntNullableFilter<"users"> | number | null
+    user_level?: IntFilter<"users"> | number
     user_lastip?: StringNullableFilter<"users"> | string | null
     user_lastlogin?: StringNullableFilter<"users"> | string | null
     user_created?: DateTimeFilter<"users"> | Date | string
@@ -9910,7 +9910,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -9935,7 +9935,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -9962,7 +9962,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -9987,7 +9987,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10025,7 +10025,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10050,7 +10050,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10083,7 +10083,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10108,7 +10108,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10130,7 +10130,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10155,7 +10155,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10182,7 +10182,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10207,7 +10207,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10245,7 +10245,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10270,7 +10270,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10303,7 +10303,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10328,7 +10328,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10350,7 +10350,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10375,7 +10375,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10402,7 +10402,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10427,7 +10427,7 @@ export namespace Prisma {
     user_jabatan?: number | null
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -10465,7 +10465,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10490,7 +10490,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10523,7 +10523,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -10548,7 +10548,7 @@ export namespace Prisma {
     user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11037,7 +11037,7 @@ export namespace Prisma {
     user_alamat: string
     user_name: string
     user_pass: string
-    user_level?: number | null
+    user_level: number
     user_lastip?: string | null
     user_lastlogin?: string | null
     user_created?: Date | string
@@ -11054,7 +11054,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11078,7 +11078,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -11102,7 +11102,7 @@ export namespace Prisma {
     user_alamat?: StringFieldUpdateOperationsInput | string
     user_name?: StringFieldUpdateOperationsInput | string
     user_pass?: StringFieldUpdateOperationsInput | string
-    user_level?: NullableIntFieldUpdateOperationsInput | number | null
+    user_level?: IntFieldUpdateOperationsInput | number
     user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
     user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
     user_created?: DateTimeFieldUpdateOperationsInput | Date | string

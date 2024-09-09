@@ -39,7 +39,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { getTranslation } from "@/i18n";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-// import level from '@/lib/level';
+import level from '@/lib/level';
 
 const Header = () => {
   const { data: session } = useSession();
@@ -447,8 +447,8 @@ const Header = () => {
                 button={
                   <Image
                     className="h-9 w-9 rounded-full object-cover saturate-50 group-hover:saturate-100"
-                    // src={`/api/image/users/${session?.user?.image}`}
-                    src="/userProfileExample.jpeg"
+                    src={`/api/image/users/${session?.user?.image}`}
+                    // src="/userProfileExample.jpeg"
                     alt="userProfile"
                     width={50}
                     height={50}
@@ -460,8 +460,8 @@ const Header = () => {
                     <div className="flex items-center px-4 py-4">
                       <Image
                         className="h-10 w-10 rounded-md object-cover"
-                        // src={`/api/image/users/${session?.user?.image}`}
-                        src="/userProfileExample.jpeg"
+                        src={`/api/image/users/${session?.user?.image}`}
+                        // src="/userProfileExample.jpeg"
                         alt="userProfile"
                         width={50}
                         height={50}
@@ -477,10 +477,10 @@ const Header = () => {
                           type="button"
                           className="text-black/60 hover:text-primary dark:text-dark-light/60 dark:hover:text-white"
                         >
-                          {/* {
+                          {
                             level.find((a) => a.id === session?.user?.role)
                               ?.text
-                          } */}
+                          }
                         </button>
                       </div>
                     </div>
