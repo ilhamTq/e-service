@@ -54,6 +54,12 @@ const menu = [
     // level: [1, 2, 3, 4],
   },
   {
+    title: "Pengumuman",
+    icon: IconNotes,
+    href: "/pengumuman",
+    // level: [1, 2, 3, 4],
+  },
+  {
     title: "Data Master",
     // level: [1, 2, 3, 4],
   },
