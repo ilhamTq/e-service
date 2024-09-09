@@ -148,17 +148,64 @@ exports.Prisma.JabatanScalarFieldEnum = {
 
 exports.Prisma.SktmScalarFieldEnum = {
   sktm_id: 'sktm_id',
-  sktm_user_nama: 'sktm_user_nama',
+  sktm_noSurat: 'sktm_noSurat',
+  sktm_nama: 'sktm_nama',
   sktm_tgl_lahir: 'sktm_tgl_lahir',
   sktm_tempat_lahir: 'sktm_tempat_lahir',
+  sktm_suku: 'sktm_suku',
+  sktm_agama: 'sktm_agama',
+  sktm_jk: 'sktm_jk',
+  sktm_noKtp: 'sktm_noKtp',
+  sktm_pekerjaan: 'sktm_pekerjaan',
   sktm_alamat: 'sktm_alamat',
-  sktm_nama_ortu: 'sktm_nama_ortu',
-  sktm_tgl_lahir_ortu: 'sktm_tgl_lahir_ortu',
-  sktm_pekerjaan_ortu: 'sktm_pekerjaan_ortu',
-  sktm_nik_ortu: 'sktm_nik_ortu',
-  sktm_alamat_ortu: 'sktm_alamat_ortu',
+  sktm_dusun: 'sktm_dusun',
   sktm_kepentingan: 'sktm_kepentingan',
-  sktm_ttd: 'sktm_ttd'
+  sktm_ttd: 'sktm_ttd',
+  sktm_createdBy: 'sktm_createdBy',
+  sktm_created: 'sktm_created',
+  sktm_updated: 'sktm_updated',
+  sktm_deleted: 'sktm_deleted'
+};
+
+exports.Prisma.BelumNikahScalarFieldEnum = {
+  nikah_id: 'nikah_id',
+  nikah_nomor: 'nikah_nomor',
+  nikah_nama: 'nikah_nama',
+  nikah_jk: 'nikah_jk',
+  nikah_tempat_lahir: 'nikah_tempat_lahir',
+  nikah_tgl_lahir: 'nikah_tgl_lahir',
+  nikah_suku: 'nikah_suku',
+  nikah_agama: 'nikah_agama',
+  nikah_nik: 'nikah_nik',
+  nikah_alamat: 'nikah_alamat',
+  nikah_kepentingan: 'nikah_kepentingan',
+  nikah_ttd: 'nikah_ttd',
+  nikah_createdBy: 'nikah_createdBy',
+  nikah_created: 'nikah_created',
+  nikah_updated: 'nikah_updated',
+  nikah_deleted: 'nikah_deleted'
+};
+
+exports.Prisma.SkckScalarFieldEnum = {
+  skck_id: 'skck_id',
+  skck_nomor: 'skck_nomor',
+  skck_nama: 'skck_nama',
+  skck_tempat_lahir: 'skck_tempat_lahir',
+  skck_tanggal_lahir: 'skck_tanggal_lahir',
+  skck_jk: 'skck_jk',
+  skck_agama: 'skck_agama',
+  skck_statusKawin: 'skck_statusKawin',
+  skck_pekerjaan: 'skck_pekerjaan',
+  skck_suku: 'skck_suku',
+  skck_nik: 'skck_nik',
+  skck_alamat: 'skck_alamat',
+  skck_pendidikan_terakhir: 'skck_pendidikan_terakhir',
+  skck_kepentingan: 'skck_kepentingan',
+  skck_ttd: 'skck_ttd',
+  skck_createdBy: 'skck_createdBy',
+  skck_created: 'skck_created',
+  skck_updated: 'skck_updated',
+  skck_deleted: 'skck_deleted'
 };
 
 exports.Prisma.SortOrder = {
@@ -175,7 +222,9 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   users: 'users',
   jabatan: 'jabatan',
-  sktm: 'sktm'
+  sktm: 'sktm',
+  belumNikah: 'belumNikah',
+  skck: 'skck'
 };
 
 /**

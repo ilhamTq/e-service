@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
-import TableSktm from './TableSktm';
+import TableBelumNikah from './TableBelumNikah';
 import prisma from '@/lib/prisma';
 import { SktmEditSchema } from '@/src/schema/sktm';
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 
 const Sktm = async () => {
-    return <TableSktm  />;
+    return <TableBelumNikah  />;
 };
 
 export default Sktm;

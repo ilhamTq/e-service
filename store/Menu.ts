@@ -24,9 +24,15 @@ const menu = [
     // level: [1, 2, 3, 4],
   },
   {
-    title: "Surat Pengantar Nikah",
+    title: "Keterangan Belum Menikah",
     icon: IconNotes,
-    href: "/pengantar_nikah",
+    href: "/belum_nikah",
+    // level: [1, 2, 3, 4],
+  },
+  {
+    title: "SKCK",
+    icon: IconNotes,
+    href: "/skck",
     // level: [1, 2, 3, 4],
   },
   {

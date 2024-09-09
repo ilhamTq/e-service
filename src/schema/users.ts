@@ -14,7 +14,7 @@ export const UserSchema = z
     user_nip: z.string(),
     user_email: z.string(),
     user_level: z.coerce.number({
-      required_error: "Level is required"
+      required_error: "Level is required",
     }),
     user_hp: z.string({
       required_error: "No HP is required",
@@ -40,8 +40,14 @@ export const UserSchema = z
     user_image: z
       .any()
       .refine((files) => files?.length == 1, "Image is required.")
-      .refine((files) => files?.[0]?.size <= MAX_FILE_SIZE, `Max file size is 5MB.`)
-      .refine((files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type), ".jpg, .jpeg, .png and .webp files are accepted.")
+      .refine(
+        (files) => files?.[0]?.size <= MAX_FILE_SIZE,
+        `Max file size is 5MB.`
+      )
+      .refine(
+        (files) => ACCEPTED_IMAGE_TYPES.includes(files?.[0]?.type),
+        ".jpg, .jpeg, .png and .webp files are accepted."
+      ),
   })
   .superRefine(({ confirm_password, user_pass }, ctx) => {
     if (confirm_password != user_pass) {
@@ -59,7 +65,7 @@ export const UserEditSchema = z
     user_nip: z.string(),
     user_email: z.string(),
     user_level: z.coerce.number({
-      required_error: "Level is required"
+      required_error: "Level is required",
     }),
     user_hp: z.string({
       required_error: "No HP is required",

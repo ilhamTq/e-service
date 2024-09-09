@@ -1,16 +1,16 @@
 import { Metadata } from 'next';
 import React from 'react';
-import TableSktm from './TableSktm';
+import TableSkck from './TableSkck';
 import prisma from '@/lib/prisma';
-import { SktmEditSchema } from '@/src/schema/sktm';
+import { SkckEditSchema } from '@/src/schema/skck';
 
 export const metadata: Metadata = {
-    title: 'Data SKTM',
+    title: 'Data SKCK',
 };
 
 
 const Sktm = async () => {
-    return <TableSktm  />;
+    return <TableSkck  />;
 };
 
 export default Sktm;

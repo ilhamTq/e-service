@@ -15,24 +15,29 @@ datasource db {
 }
 
 model users {
-  user_id        Int       @id @default(autoincrement())
-  user_nama      String
-  user_nip       String?   @unique
-  user_email     String?
-  user_hp        String
-  user_image     String?
-  user_alamat    String
-  user_jabatan   Int?
-  user_name      String
-  user_pass      String
-  user_level     Int?
-  user_lastip    String?
-  user_lastlogin String?
-  user_created   DateTime  @default(now())
-  user_updated   DateTime  @updatedAt
-  user_deleted   DateTime?
-  jabatan        jabatan?  @relation(fields: [user_jabatan], references: [jabatan_id])
-  sktm           sktm[]
+  user_id         Int          @id @default(autoincrement())
+  user_nama       String
+  user_nip        String?      @unique
+  user_email      String?
+  user_hp         String
+  user_image      String?
+  user_alamat     String
+  user_jabatan    Int?
+  user_name       String
+  user_pass       String
+  user_level      Int?
+  user_lastip     String?
+  user_lastlogin  String?
+  user_created    DateTime     @default(now())
+  user_updated    DateTime     @updatedAt
+  user_deleted    DateTime?
+  jabatan         jabatan?     @relation(fields: [user_jabatan], references: [jabatan_id])
+  sktm            sktm[]
+  sktm_createdBy  sktm[]       @relation("CreatedBy")
+  belumNikah      belumNikah[]
+  nikah_createdBy belumNikah[] @relation("CreatedBy")
+  skck            skck[]
+  skck_createdBy  skck[]       @relation("CreatedBy")
 }
 
 model jabatan {
@@ -45,17 +50,69 @@ model jabatan {
 }
 
 model sktm {
-  sktm_id             Int      @id @default(autoincrement())
-  sktm_user_nama      Int
-  sktm_tgl_lahir      DateTime @db.Date
-  sktm_tempat_lahir   String
-  sktm_alamat         String
-  sktm_nama_ortu      String
-  sktm_tgl_lahir_ortu DateTime @db.Date
-  sktm_pekerjaan_ortu String
-  sktm_nik_ortu       String
-  sktm_alamat_ortu    String
-  sktm_kepentingan    String
-  sktm_ttd            Int?
-  ttd_sktm            users?   @relation(fields: [sktm_ttd], references: [user_id])
+  sktm_id           Int       @id @default(autoincrement())
+  sktm_noSurat      String?
+  sktm_nama         String
+  sktm_tgl_lahir    DateTime  @db.Date
+  sktm_tempat_lahir String
+  sktm_suku         String
+  sktm_agama        Int
+  sktm_jk           Int
+  sktm_noKtp        String
+  sktm_pekerjaan    String
+  sktm_alamat       String
+  sktm_dusun        String
+  sktm_kepentingan  String
+  sktm_ttd          Int?
+  sktm_createdBy    Int?
+  sktm_created      DateTime  @default(now())
+  sktm_updated      DateTime  @updatedAt
+  sktm_deleted      DateTime?
+  ttd_sktm          users?    @relation(fields: [sktm_ttd], references: [user_id])
+  created_by        users?    @relation("CreatedBy", fields: [sktm_createdBy], references: [user_id])
+}
+
+model belumNikah {
+  nikah_id           Int       @id @default(autoincrement())
+  nikah_nomor        String?
+  nikah_nama         String
+  nikah_jk           Int
+  nikah_tempat_lahir String
+  nikah_tgl_lahir    DateTime  @db.Date
+  nikah_suku         String
+  nikah_agama        Int
+  nikah_nik          String
+  nikah_alamat       String
+  nikah_kepentingan  String
+  nikah_ttd          Int?
+  nikah_createdBy    Int?
+  nikah_created      DateTime  @default(now())
+  nikah_updated      DateTime  @updatedAt
+  nikah_deleted      DateTime?
+  ttd_nikah          users?    @relation(fields: [nikah_ttd], references: [user_id])
+  created_by         users?    @relation("CreatedBy", fields: [nikah_createdBy], references: [user_id])
+}
+
+model skck {
+  skck_id                  Int       @id @default(autoincrement())
+  skck_nomor               String?
+  skck_nama                String
+  skck_tempat_lahir        String
+  skck_tanggal_lahir       DateTime  @db.Date
+  skck_jk                  Int
+  skck_agama               Int
+  skck_statusKawin         Int
+  skck_pekerjaan           String
+  skck_suku                String
+  skck_nik                 String
+  skck_alamat              String
+  skck_pendidikan_terakhir Int
+  skck_kepentingan         String
+  skck_ttd                 Int?
+  skck_createdBy           Int?
+  skck_created             DateTime  @default(now())
+  skck_updated             DateTime  @updatedAt
+  skck_deleted             DateTime?
+  ttd_skck                 users?    @relation(fields: [skck_ttd], references: [user_id])
+  createdBy                users?    @relation("CreatedBy", fields: [skck_createdBy], references: [user_id])
 }
