@@ -1,19 +1,24 @@
-// pages/api/generateSktmPdf.ts
-import type { NextApiRequest, NextApiResponse } from 'next';
+// app/api/generateSktm/route.ts
+import type { NextRequest } from 'next/server';
 import puppeteer from 'puppeteer';
 import jk from '@/lib/jk';
 import agama from '@/lib/agama';
-import dayjs from "dayjs";
-require("dayjs/locale/id");
-dayjs.locale("id");
+import dayjs from 'dayjs';
+require('dayjs/locale/id');
+dayjs.locale('id');
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query;
+export async function GET(request: NextRequest) {
+  const url = new URL(request.url);
+  const id = url.searchParams.get('id');
+
+  if (!id) {
+    return new Response('ID is required', { status: 400 });
+  }
 
   // Fetch data berdasarkan id dari database
   const response = await fetch(`http://localhost:3000/api/sktm/${id}`);
   const data = await response.json();
-  
+
   // Template HTML untuk PDF
   const htmlContent = `
     <!DOCTYPE html>
@@ -238,7 +243,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   await browser.close();
 
-  res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', `attachment; filename="sktm_${id}.pdf"`);
-  res.send(pdfBuffer);
+  return new Response(pdfBuffer, {
+    headers: {
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': `attachment; filename="sktm_${id}.pdf"`,
+    },
+  });
 }
