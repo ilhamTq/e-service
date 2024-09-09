@@ -1,4 +1,5 @@
 "use client";
+import IconDownload from "@/components/icon/icon-download";
 import IconPencil from "@/components/icon/icon-pencil";
 import IconPlus from "@/components/icon/icon-plus";
 import IconTrashLines from "@/components/icon/icon-trash-lines";
@@ -57,6 +58,29 @@ const TableBelumNikah = () => {
     },
     resolver: zodResolver(BelumNikahSchema),
   });
+
+  const downloadPdf = async (id: number) => {
+    try {
+      const response = await fetch(`/api/generatePdf?id=${id}`, {
+        method: "GET",
+      });
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `suket_belum_nikah_${id}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      } else {
+        console.error("Failed to download PDF: ", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error downloading PDF:", error);
+    }
+  };
 
   const loadModals = async () => {
     reset({});
@@ -211,6 +235,12 @@ const TableBelumNikah = () => {
                   >
                     <IconTrashLines className="text-danger" />
                   </span>
+                  <span
+                    onClick={() => downloadPdf(nikah_id)}
+                    className="cursor-pointer"
+                  >
+                    <IconDownload className="ltr:mr-2 rtl:ml-2" />
+                  </span>
                 </div>
               ),
             },
@@ -260,7 +290,9 @@ const TableBelumNikah = () => {
                 }`}
               >
                 <div className="flex items-center justify-between bg-[#fbfbfb] px-5 py-3 dark:bg-[#121c2c]">
-                  <h5 className="text-lg font-bold">Form Keterangan Belum Nikah</h5>
+                  <h5 className="text-lg font-bold">
+                    Form Keterangan Belum Nikah
+                  </h5>
                   <button
                     onClick={() => setShow(false)}
                     type="button"
@@ -290,8 +322,8 @@ const TableBelumNikah = () => {
                         ""
                       )}
                     </div>
-                    <div className="flex flex-col justify-between lg:flex-row mt-4">
-                    <div
+                    <div className="mt-4 flex flex-col justify-between lg:flex-row">
+                      <div
                         className={clsx("relative", {
                           "has-error": errors.nikah_tempat_lahir,
                         })}
@@ -310,24 +342,27 @@ const TableBelumNikah = () => {
                           ""
                         )}
                       </div>
-                    <div
-                      className={clsx(" flex items-center", {
-                        "has-error": errors.nikah_tgl_lahir,
-                      })}
-                    >
-                      <Flatpickr
-                        placeholder="Tanggal Lahir"
-                        options={{ dateFormat: "Y-m-d", position: "auto left" }}
-                        className="form-input flex-1"
-                        {...register("nikah_tgl_lahir")}
-                        onChange={(date) => {
-                          setValue("nikah_tgl_lahir", date[0]);
-                        }}
-                      />
-                    </div>
+                      <div
+                        className={clsx(" flex items-center", {
+                          "has-error": errors.nikah_tgl_lahir,
+                        })}
+                      >
+                        <Flatpickr
+                          placeholder="Tanggal Lahir"
+                          options={{
+                            dateFormat: "Y-m-d",
+                            position: "auto left",
+                          }}
+                          className="form-input flex-1"
+                          {...register("nikah_tgl_lahir")}
+                          onChange={(date) => {
+                            setValue("nikah_tgl_lahir", date[0]);
+                          }}
+                        />
+                      </div>
                     </div>
 
-                    <div className="flex flex-col justify-between lg:flex-row mt-4">
+                    <div className="mt-4 flex flex-col justify-between lg:flex-row">
                       <div
                         className={clsx("relative mb-4", {
                           "has-error": errors.nikah_suku,
@@ -419,44 +454,44 @@ const TableBelumNikah = () => {
                       </div>
                     </div>
 
-                      <div
-                        className={clsx("relative mb-4", {
-                          "has-error": errors.nikah_alamat,
-                        })}
-                      >
-                        <input
-                          type="text"
-                          placeholder="Alamat"
-                          className="form-input"
-                          {...register("nikah_alamat")}
-                        />
-                        {errors.nikah_alamat ? (
-                          <div className="mt-1 text-danger">
-                            {errors.nikah_alamat.message}
-                          </div>
-                        ) : (
-                          ""
-                        )}
-                      </div>
-                      <div
-                        className={clsx("relative mb-4", {
-                          "has-error": errors.nikah_kepentingan,
-                        })}
-                      >
-                        <input
-                          type="text"
-                          placeholder="Kepentingan"
-                          className="form-input"
-                          {...register("nikah_kepentingan")}
-                        />
-                        {errors.nikah_kepentingan ? (
-                          <div className="mt-1 text-danger">
-                            {errors.nikah_kepentingan.message}
-                          </div>
-                        ) : (
-                          ""
-                        )}
-                      </div>
+                    <div
+                      className={clsx("relative mb-4", {
+                        "has-error": errors.nikah_alamat,
+                      })}
+                    >
+                      <input
+                        type="text"
+                        placeholder="Alamat"
+                        className="form-input"
+                        {...register("nikah_alamat")}
+                      />
+                      {errors.nikah_alamat ? (
+                        <div className="mt-1 text-danger">
+                          {errors.nikah_alamat.message}
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                    <div
+                      className={clsx("relative mb-4", {
+                        "has-error": errors.nikah_kepentingan,
+                      })}
+                    >
+                      <input
+                        type="text"
+                        placeholder="Kepentingan"
+                        className="form-input"
+                        {...register("nikah_kepentingan")}
+                      />
+                      {errors.nikah_kepentingan ? (
+                        <div className="mt-1 text-danger">
+                          {errors.nikah_kepentingan.message}
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                    </div>
 
                     <div className="mt-8 flex items-center justify-end">
                       <button

@@ -1,4 +1,5 @@
 "use client";
+import IconDownload from "@/components/icon/icon-download";
 import IconPencil from "@/components/icon/icon-pencil";
 import IconPlus from "@/components/icon/icon-plus";
 import IconTrashLines from "@/components/icon/icon-trash-lines";
@@ -59,6 +60,29 @@ const TableSktm = () => {
     },
     resolver: zodResolver(SktmSchema),
   });
+  
+  const downloadPdf = async (id: number) => {
+    try {
+      const response = await fetch(`/api/generateSktm?id=${id}`, {
+        method: "GET",
+      });
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `SKTM_${id}.pdf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      } else {
+        console.error("Failed to download PDF: ", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error downloading PDF:", error);
+    }
+  };
 
   const loadModals = async () => {
     reset({});
@@ -130,7 +154,9 @@ const TableSktm = () => {
       showCancelButton: true,
       confirmButtonText: "Delete",
       padding: "2em",
-      customClass: "sweet-alerts",
+      customClass: {
+        popup: "sweet-alerts"
+      },
     }).then(async (result) => {
       if (result.value) {
         await deleteSktm(id);
@@ -210,6 +236,12 @@ const TableSktm = () => {
                     className="cursor-pointer"
                   >
                     <IconTrashLines className="text-danger" />
+                  </span>
+                  <span
+                    onClick={() => downloadPdf(sktm_id)}
+                    className="cursor-pointer"
+                  >
+                    <IconDownload className="ltr:mr-2 rtl:ml-2" />
                   </span>
                 </div>
               ),

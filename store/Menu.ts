@@ -42,6 +42,18 @@ const menu = [
     // level: [1, 2, 3, 4],
   },
   {
+    title: "Keterangan Penghasilan Tidak Tetap",
+    icon: IconNotes,
+    href: "/penghasilan",
+    // level: [1, 2, 3, 4],
+  },
+  {
+    title: "Rekomendasi Kelompok Tani",
+    icon: IconNotes,
+    href: "/tani",
+    // level: [1, 2, 3, 4],
+  },
+  {
     title: "Data Master",
     // level: [1, 2, 3, 4],
   },

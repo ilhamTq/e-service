@@ -1,47 +1,22 @@
-import prisma from "@/lib/prisma";
-// import {
-//   users,
-//   sktm,
-//   jabatan,
-// } from "../../../../prisma/generated/client/index";
+import { NextResponse } from 'next/server';
+import prisma  from '@/lib/prisma'; // Sesuaikan dengan lokasi Prisma client Anda
 
-(BigInt.prototype as any).toJSON = function () {
-  return this.toString();
-};
+export async function GET(request: Request, { params }: { params: { id: string } }) {
+  const { id } = params;
 
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
-  const id = Number(params.id);
-  const { data } = await getNikahByID(id);
+  try {
+    // Ambil data dari database berdasarkan ID
+    const data = await prisma.belumNikah.findUnique({
+      where: { nikah_id: Number(id) },
+    });
 
-  return Response.json({ data });
+    if (!data) {
+      return NextResponse.json({ error: 'Data not found' }, { status: 404 });
+    }
+
+    return NextResponse.json(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+  }
 }
-
-const getNikahByID = async (id: number) => {
-  const data = await prisma.belumNikah.findUnique({
-    where: { nikah_id: Number(id) },
-    include: {
-      ttd_nikah: {
-        where: {
-          user_jabatan: 1,
-        },
-        select: {
-          user_nama: true,
-          user_nip: true,
-          user_email: true,
-          user_hp: true,
-          user_alamat: true,
-          jabatan: {
-            select: {
-              jabatan_nama: true,
-            },
-          },
-        },
-      },
-    },
-  });
-
-  return { data };
-};

@@ -7,7 +7,7 @@ export const HilangSchema = z.object({
   hilang_jk: z.coerce.number({
     required_error: "Jenis Kelamin is required",
   }),
-  hilang_umur: z.number({
+  hilang_umur: z.coerce.number({
     required_error: "Umur is required",
   }),
   hilang_pekerjaan: z.string({

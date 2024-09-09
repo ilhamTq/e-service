@@ -42,6 +42,7 @@
     "next": "14.2.5",
     "next-auth": "^4.24.5",
     "ni18n": "^1.0.5",
+    "puppeteer": "^23.3.0",
     "react": "^18",
     "react-animate-height": "^3.1.0",
     "react-apexcharts": "^1.4.0",

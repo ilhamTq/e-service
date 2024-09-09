@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 
 const Sktm = async () => {
-    return <TableTani  />;
+    return <TableTani />;
 };
 
 export default Sktm;
