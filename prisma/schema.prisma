@@ -44,6 +44,8 @@ model users {
   penghasilan_createdBy penghasilan[] @relation("CreatedBy")
   tani                  tani[]
   tani_createdBy        tani[]        @relation("CreatedBy")
+
+  pengumuman pengumuman[] @relation("CreatedBy")
 }
 
 model jabatan {
@@ -177,4 +179,15 @@ model tani {
   tani_deleted       DateTime?
   ttd_tani           users?    @relation(fields: [tani_ttd], references: [user_id])
   createdBy          users?    @relation("CreatedBy", fields: [tani_createdBy], references: [user_id])
+}
+
+model pengumuman {
+  pengumuman_id        Int       @id @default(autoincrement())
+  pengumuman_judul     String
+  pengumuman_isi       String
+  pengumuman_createdBy Int?
+  pengumuman_created   DateTime  @default(now())
+  pengumuman_updated   DateTime  @updatedAt
+  pengumuman_deleted   DateTime?
+  createdBy            users?    @relation("CreatedBy", fields: [pengumuman_createdBy], references: [user_id])
 }

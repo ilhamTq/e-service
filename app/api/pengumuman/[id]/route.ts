@@ -6,8 +6,8 @@ export async function GET(request: Request, { params }: { params: { id: string }
 
   try {
     // Ambil data dari database berdasarkan ID
-    const data = await prisma.sktm.findUnique({
-      where: { sktm_id: Number(id) },
+    const data = await prisma.pengumuman.findUnique({
+      where: { pengumuman_id: Number(id) },
     });
 
     if (!data) {

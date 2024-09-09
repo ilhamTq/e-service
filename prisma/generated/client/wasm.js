@@ -216,6 +216,10 @@ exports.Prisma.KehilanganScalarFieldEnum = {
   hilang_umur: 'hilang_umur',
   hilang_pekerjaan: 'hilang_pekerjaan',
   hilang_alamat: 'hilang_alamat',
+  hilang_hari: 'hilang_hari',
+  hilang_barang: 'hilang_barang',
+  hilang_dari: 'hilang_dari',
+  hilang_ke: 'hilang_ke',
   hilang_ttd: 'hilang_ttd',
   hilang_createdBy: 'hilang_createdBy',
   hilang_created: 'hilang_created',
@@ -254,6 +258,16 @@ exports.Prisma.TaniScalarFieldEnum = {
   tani_deleted: 'tani_deleted'
 };
 
+exports.Prisma.PengumumanScalarFieldEnum = {
+  pengumuman_id: 'pengumuman_id',
+  pengumuman_judul: 'pengumuman_judul',
+  pengumuman_isi: 'pengumuman_isi',
+  pengumuman_createdBy: 'pengumuman_createdBy',
+  pengumuman_created: 'pengumuman_created',
+  pengumuman_updated: 'pengumuman_updated',
+  pengumuman_deleted: 'pengumuman_deleted'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -273,7 +287,8 @@ exports.Prisma.ModelName = {
   skck: 'skck',
   kehilangan: 'kehilangan',
   penghasilan: 'penghasilan',
-  tani: 'tani'
+  tani: 'tani',
+  pengumuman: 'pengumuman'
 };
 
 /**
