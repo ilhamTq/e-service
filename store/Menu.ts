@@ -36,6 +36,12 @@ const menu = [
     // level: [1, 2, 3, 4],
   },
   {
+    title: "Keterangan Kehilangan",
+    icon: IconNotes,
+    href: "/hilang",
+    // level: [1, 2, 3, 4],
+  },
+  {
     title: "Data Master",
     // level: [1, 2, 3, 4],
   },

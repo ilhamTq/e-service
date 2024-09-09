@@ -208,6 +208,52 @@ exports.Prisma.SkckScalarFieldEnum = {
   skck_deleted: 'skck_deleted'
 };
 
+exports.Prisma.KehilanganScalarFieldEnum = {
+  hilang_id: 'hilang_id',
+  hilang_nomor: 'hilang_nomor',
+  hilang_nama: 'hilang_nama',
+  hilang_jk: 'hilang_jk',
+  hilang_umur: 'hilang_umur',
+  hilang_pekerjaan: 'hilang_pekerjaan',
+  hilang_alamat: 'hilang_alamat',
+  hilang_ttd: 'hilang_ttd',
+  hilang_createdBy: 'hilang_createdBy',
+  hilang_created: 'hilang_created',
+  hilang_updated: 'hilang_updated',
+  hilang_deleted: 'hilang_deleted'
+};
+
+exports.Prisma.PenghasilanScalarFieldEnum = {
+  hasil_id: 'hasil_id',
+  hasil_nomor: 'hasil_nomor',
+  hasil_nama: 'hasil_nama',
+  hasil_umur: 'hasil_umur',
+  hasil_pekerjaan: 'hasil_pekerjaan',
+  hasil_alamat: 'hasil_alamat',
+  hasil_penghasilan: 'hasil_penghasilan',
+  hasil_ttd: 'hasil_ttd',
+  hasil_createdBy: 'hasil_createdBy',
+  hasil_created: 'hasil_created',
+  hasil_updated: 'hasil_updated',
+  hasil_deleted: 'hasil_deleted'
+};
+
+exports.Prisma.TaniScalarFieldEnum = {
+  tani_id: 'tani_id',
+  tani_nomor: 'tani_nomor',
+  tani_nama: 'tani_nama',
+  tani_jabatan: 'tani_jabatan',
+  tani_sekretariat: 'tani_sekretariat',
+  tani_alamat: 'tani_alamat',
+  tani_keperluan: 'tani_keperluan',
+  tani_tujuanBantuan: 'tani_tujuanBantuan',
+  tani_ttd: 'tani_ttd',
+  tani_createdBy: 'tani_createdBy',
+  tani_created: 'tani_created',
+  tani_updated: 'tani_updated',
+  tani_deleted: 'tani_deleted'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -224,7 +270,10 @@ exports.Prisma.ModelName = {
   jabatan: 'jabatan',
   sktm: 'sktm',
   belumNikah: 'belumNikah',
-  skck: 'skck'
+  skck: 'skck',
+  kehilangan: 'kehilangan',
+  penghasilan: 'penghasilan',
+  tani: 'tani'
 };
 
 /**

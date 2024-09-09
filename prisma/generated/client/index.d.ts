@@ -38,6 +38,21 @@ export type belumNikah = $Result.DefaultSelection<Prisma.$belumNikahPayload>
  * 
  */
 export type skck = $Result.DefaultSelection<Prisma.$skckPayload>
+/**
+ * Model kehilangan
+ * 
+ */
+export type kehilangan = $Result.DefaultSelection<Prisma.$kehilanganPayload>
+/**
+ * Model penghasilan
+ * 
+ */
+export type penghasilan = $Result.DefaultSelection<Prisma.$penghasilanPayload>
+/**
+ * Model tani
+ * 
+ */
+export type tani = $Result.DefaultSelection<Prisma.$taniPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -210,6 +225,36 @@ export class PrismaClient<
     * ```
     */
   get skck(): Prisma.skckDelegate<ExtArgs>;
+
+  /**
+   * `prisma.kehilangan`: Exposes CRUD operations for the **kehilangan** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Kehilangans
+    * const kehilangans = await prisma.kehilangan.findMany()
+    * ```
+    */
+  get kehilangan(): Prisma.kehilanganDelegate<ExtArgs>;
+
+  /**
+   * `prisma.penghasilan`: Exposes CRUD operations for the **penghasilan** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Penghasilans
+    * const penghasilans = await prisma.penghasilan.findMany()
+    * ```
+    */
+  get penghasilan(): Prisma.penghasilanDelegate<ExtArgs>;
+
+  /**
+   * `prisma.tani`: Exposes CRUD operations for the **tani** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tanis
+    * const tanis = await prisma.tani.findMany()
+    * ```
+    */
+  get tani(): Prisma.taniDelegate<ExtArgs>;
 }
 
 export namespace Prisma {
@@ -691,7 +736,10 @@ export namespace Prisma {
     jabatan: 'jabatan',
     sktm: 'sktm',
     belumNikah: 'belumNikah',
-    skck: 'skck'
+    skck: 'skck',
+    kehilangan: 'kehilangan',
+    penghasilan: 'penghasilan',
+    tani: 'tani'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -707,7 +755,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "users" | "jabatan" | "sktm" | "belumNikah" | "skck"
+      modelProps: "users" | "jabatan" | "sktm" | "belumNikah" | "skck" | "kehilangan" | "penghasilan" | "tani"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1041,6 +1089,204 @@ export namespace Prisma {
           }
         }
       }
+      kehilangan: {
+        payload: Prisma.$kehilanganPayload<ExtArgs>
+        fields: Prisma.kehilanganFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.kehilanganFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.kehilanganFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload>
+          }
+          findFirst: {
+            args: Prisma.kehilanganFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.kehilanganFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload>
+          }
+          findMany: {
+            args: Prisma.kehilanganFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload>[]
+          }
+          create: {
+            args: Prisma.kehilanganCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload>
+          }
+          createMany: {
+            args: Prisma.kehilanganCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.kehilanganDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload>
+          }
+          update: {
+            args: Prisma.kehilanganUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload>
+          }
+          deleteMany: {
+            args: Prisma.kehilanganDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.kehilanganUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.kehilanganUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$kehilanganPayload>
+          }
+          aggregate: {
+            args: Prisma.KehilanganAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateKehilangan>
+          }
+          groupBy: {
+            args: Prisma.kehilanganGroupByArgs<ExtArgs>
+            result: $Utils.Optional<KehilanganGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.kehilanganCountArgs<ExtArgs>
+            result: $Utils.Optional<KehilanganCountAggregateOutputType> | number
+          }
+        }
+      }
+      penghasilan: {
+        payload: Prisma.$penghasilanPayload<ExtArgs>
+        fields: Prisma.penghasilanFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.penghasilanFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.penghasilanFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload>
+          }
+          findFirst: {
+            args: Prisma.penghasilanFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.penghasilanFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload>
+          }
+          findMany: {
+            args: Prisma.penghasilanFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload>[]
+          }
+          create: {
+            args: Prisma.penghasilanCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload>
+          }
+          createMany: {
+            args: Prisma.penghasilanCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.penghasilanDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload>
+          }
+          update: {
+            args: Prisma.penghasilanUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload>
+          }
+          deleteMany: {
+            args: Prisma.penghasilanDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.penghasilanUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.penghasilanUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$penghasilanPayload>
+          }
+          aggregate: {
+            args: Prisma.PenghasilanAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePenghasilan>
+          }
+          groupBy: {
+            args: Prisma.penghasilanGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PenghasilanGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.penghasilanCountArgs<ExtArgs>
+            result: $Utils.Optional<PenghasilanCountAggregateOutputType> | number
+          }
+        }
+      }
+      tani: {
+        payload: Prisma.$taniPayload<ExtArgs>
+        fields: Prisma.taniFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.taniFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.taniFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload>
+          }
+          findFirst: {
+            args: Prisma.taniFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.taniFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload>
+          }
+          findMany: {
+            args: Prisma.taniFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload>[]
+          }
+          create: {
+            args: Prisma.taniCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload>
+          }
+          createMany: {
+            args: Prisma.taniCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          delete: {
+            args: Prisma.taniDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload>
+          }
+          update: {
+            args: Prisma.taniUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload>
+          }
+          deleteMany: {
+            args: Prisma.taniDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.taniUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          upsert: {
+            args: Prisma.taniUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$taniPayload>
+          }
+          aggregate: {
+            args: Prisma.TaniAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTani>
+          }
+          groupBy: {
+            args: Prisma.taniGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TaniGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.taniCountArgs<ExtArgs>
+            result: $Utils.Optional<TaniCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1208,6 +1454,12 @@ export namespace Prisma {
     nikah_createdBy: number
     skck: number
     skck_createdBy: number
+    kehilangan: number
+    kehilangan_createdBy: number
+    penghasilan: number
+    penghasilan_createdBy: number
+    tani: number
+    tani_createdBy: number
   }
 
   export type UsersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1217,6 +1469,12 @@ export namespace Prisma {
     nikah_createdBy?: boolean | UsersCountOutputTypeCountNikah_createdByArgs
     skck?: boolean | UsersCountOutputTypeCountSkckArgs
     skck_createdBy?: boolean | UsersCountOutputTypeCountSkck_createdByArgs
+    kehilangan?: boolean | UsersCountOutputTypeCountKehilanganArgs
+    kehilangan_createdBy?: boolean | UsersCountOutputTypeCountKehilangan_createdByArgs
+    penghasilan?: boolean | UsersCountOutputTypeCountPenghasilanArgs
+    penghasilan_createdBy?: boolean | UsersCountOutputTypeCountPenghasilan_createdByArgs
+    tani?: boolean | UsersCountOutputTypeCountTaniArgs
+    tani_createdBy?: boolean | UsersCountOutputTypeCountTani_createdByArgs
   }
 
   // Custom InputTypes
@@ -1270,6 +1528,48 @@ export namespace Prisma {
    */
   export type UsersCountOutputTypeCountSkck_createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: skckWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountKehilanganArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: kehilanganWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountKehilangan_createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: kehilanganWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountPenghasilanArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: penghasilanWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountPenghasilan_createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: penghasilanWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountTaniArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: taniWhereInput
+  }
+
+  /**
+   * UsersCountOutputType without action
+   */
+  export type UsersCountOutputTypeCountTani_createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: taniWhereInput
   }
 
 
@@ -1609,6 +1909,12 @@ export namespace Prisma {
     nikah_createdBy?: boolean | users$nikah_createdByArgs<ExtArgs>
     skck?: boolean | users$skckArgs<ExtArgs>
     skck_createdBy?: boolean | users$skck_createdByArgs<ExtArgs>
+    kehilangan?: boolean | users$kehilanganArgs<ExtArgs>
+    kehilangan_createdBy?: boolean | users$kehilangan_createdByArgs<ExtArgs>
+    penghasilan?: boolean | users$penghasilanArgs<ExtArgs>
+    penghasilan_createdBy?: boolean | users$penghasilan_createdByArgs<ExtArgs>
+    tani?: boolean | users$taniArgs<ExtArgs>
+    tani_createdBy?: boolean | users$tani_createdByArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["users"]>
 
@@ -1640,6 +1946,12 @@ export namespace Prisma {
     nikah_createdBy?: boolean | users$nikah_createdByArgs<ExtArgs>
     skck?: boolean | users$skckArgs<ExtArgs>
     skck_createdBy?: boolean | users$skck_createdByArgs<ExtArgs>
+    kehilangan?: boolean | users$kehilanganArgs<ExtArgs>
+    kehilangan_createdBy?: boolean | users$kehilangan_createdByArgs<ExtArgs>
+    penghasilan?: boolean | users$penghasilanArgs<ExtArgs>
+    penghasilan_createdBy?: boolean | users$penghasilan_createdByArgs<ExtArgs>
+    tani?: boolean | users$taniArgs<ExtArgs>
+    tani_createdBy?: boolean | users$tani_createdByArgs<ExtArgs>
     _count?: boolean | UsersCountOutputTypeDefaultArgs<ExtArgs>
   }
 
@@ -1653,6 +1965,12 @@ export namespace Prisma {
       nikah_createdBy: Prisma.$belumNikahPayload<ExtArgs>[]
       skck: Prisma.$skckPayload<ExtArgs>[]
       skck_createdBy: Prisma.$skckPayload<ExtArgs>[]
+      kehilangan: Prisma.$kehilanganPayload<ExtArgs>[]
+      kehilangan_createdBy: Prisma.$kehilanganPayload<ExtArgs>[]
+      penghasilan: Prisma.$penghasilanPayload<ExtArgs>[]
+      penghasilan_createdBy: Prisma.$penghasilanPayload<ExtArgs>[]
+      tani: Prisma.$taniPayload<ExtArgs>[]
+      tani_createdBy: Prisma.$taniPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       user_id: number
@@ -2018,6 +2336,12 @@ export namespace Prisma {
     nikah_createdBy<T extends users$nikah_createdByArgs<ExtArgs> = {}>(args?: Subset<T, users$nikah_createdByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$belumNikahPayload<ExtArgs>, T, "findMany"> | Null>
     skck<T extends users$skckArgs<ExtArgs> = {}>(args?: Subset<T, users$skckArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$skckPayload<ExtArgs>, T, "findMany"> | Null>
     skck_createdBy<T extends users$skck_createdByArgs<ExtArgs> = {}>(args?: Subset<T, users$skck_createdByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$skckPayload<ExtArgs>, T, "findMany"> | Null>
+    kehilangan<T extends users$kehilanganArgs<ExtArgs> = {}>(args?: Subset<T, users$kehilanganArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "findMany"> | Null>
+    kehilangan_createdBy<T extends users$kehilangan_createdByArgs<ExtArgs> = {}>(args?: Subset<T, users$kehilangan_createdByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "findMany"> | Null>
+    penghasilan<T extends users$penghasilanArgs<ExtArgs> = {}>(args?: Subset<T, users$penghasilanArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "findMany"> | Null>
+    penghasilan_createdBy<T extends users$penghasilan_createdByArgs<ExtArgs> = {}>(args?: Subset<T, users$penghasilan_createdByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "findMany"> | Null>
+    tani<T extends users$taniArgs<ExtArgs> = {}>(args?: Subset<T, users$taniArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "findMany"> | Null>
+    tani_createdBy<T extends users$tani_createdByArgs<ExtArgs> = {}>(args?: Subset<T, users$tani_createdByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2494,6 +2818,126 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: SkckScalarFieldEnum | SkckScalarFieldEnum[]
+  }
+
+  /**
+   * users.kehilangan
+   */
+  export type users$kehilanganArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    where?: kehilanganWhereInput
+    orderBy?: kehilanganOrderByWithRelationInput | kehilanganOrderByWithRelationInput[]
+    cursor?: kehilanganWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: KehilanganScalarFieldEnum | KehilanganScalarFieldEnum[]
+  }
+
+  /**
+   * users.kehilangan_createdBy
+   */
+  export type users$kehilangan_createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    where?: kehilanganWhereInput
+    orderBy?: kehilanganOrderByWithRelationInput | kehilanganOrderByWithRelationInput[]
+    cursor?: kehilanganWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: KehilanganScalarFieldEnum | KehilanganScalarFieldEnum[]
+  }
+
+  /**
+   * users.penghasilan
+   */
+  export type users$penghasilanArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    where?: penghasilanWhereInput
+    orderBy?: penghasilanOrderByWithRelationInput | penghasilanOrderByWithRelationInput[]
+    cursor?: penghasilanWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PenghasilanScalarFieldEnum | PenghasilanScalarFieldEnum[]
+  }
+
+  /**
+   * users.penghasilan_createdBy
+   */
+  export type users$penghasilan_createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    where?: penghasilanWhereInput
+    orderBy?: penghasilanOrderByWithRelationInput | penghasilanOrderByWithRelationInput[]
+    cursor?: penghasilanWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PenghasilanScalarFieldEnum | PenghasilanScalarFieldEnum[]
+  }
+
+  /**
+   * users.tani
+   */
+  export type users$taniArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    where?: taniWhereInput
+    orderBy?: taniOrderByWithRelationInput | taniOrderByWithRelationInput[]
+    cursor?: taniWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TaniScalarFieldEnum | TaniScalarFieldEnum[]
+  }
+
+  /**
+   * users.tani_createdBy
+   */
+  export type users$tani_createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    where?: taniWhereInput
+    orderBy?: taniOrderByWithRelationInput | taniOrderByWithRelationInput[]
+    cursor?: taniWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TaniScalarFieldEnum | TaniScalarFieldEnum[]
   }
 
   /**
@@ -6762,6 +7206,3125 @@ export namespace Prisma {
 
 
   /**
+   * Model kehilangan
+   */
+
+  export type AggregateKehilangan = {
+    _count: KehilanganCountAggregateOutputType | null
+    _avg: KehilanganAvgAggregateOutputType | null
+    _sum: KehilanganSumAggregateOutputType | null
+    _min: KehilanganMinAggregateOutputType | null
+    _max: KehilanganMaxAggregateOutputType | null
+  }
+
+  export type KehilanganAvgAggregateOutputType = {
+    hilang_id: number | null
+    hilang_jk: number | null
+    hilang_umur: number | null
+    hilang_ttd: number | null
+    hilang_createdBy: number | null
+  }
+
+  export type KehilanganSumAggregateOutputType = {
+    hilang_id: number | null
+    hilang_jk: number | null
+    hilang_umur: number | null
+    hilang_ttd: number | null
+    hilang_createdBy: number | null
+  }
+
+  export type KehilanganMinAggregateOutputType = {
+    hilang_id: number | null
+    hilang_nomor: string | null
+    hilang_nama: string | null
+    hilang_jk: number | null
+    hilang_umur: number | null
+    hilang_pekerjaan: string | null
+    hilang_alamat: string | null
+    hilang_ttd: number | null
+    hilang_createdBy: number | null
+    hilang_created: Date | null
+    hilang_updated: Date | null
+    hilang_deleted: Date | null
+  }
+
+  export type KehilanganMaxAggregateOutputType = {
+    hilang_id: number | null
+    hilang_nomor: string | null
+    hilang_nama: string | null
+    hilang_jk: number | null
+    hilang_umur: number | null
+    hilang_pekerjaan: string | null
+    hilang_alamat: string | null
+    hilang_ttd: number | null
+    hilang_createdBy: number | null
+    hilang_created: Date | null
+    hilang_updated: Date | null
+    hilang_deleted: Date | null
+  }
+
+  export type KehilanganCountAggregateOutputType = {
+    hilang_id: number
+    hilang_nomor: number
+    hilang_nama: number
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: number
+    hilang_alamat: number
+    hilang_ttd: number
+    hilang_createdBy: number
+    hilang_created: number
+    hilang_updated: number
+    hilang_deleted: number
+    _all: number
+  }
+
+
+  export type KehilanganAvgAggregateInputType = {
+    hilang_id?: true
+    hilang_jk?: true
+    hilang_umur?: true
+    hilang_ttd?: true
+    hilang_createdBy?: true
+  }
+
+  export type KehilanganSumAggregateInputType = {
+    hilang_id?: true
+    hilang_jk?: true
+    hilang_umur?: true
+    hilang_ttd?: true
+    hilang_createdBy?: true
+  }
+
+  export type KehilanganMinAggregateInputType = {
+    hilang_id?: true
+    hilang_nomor?: true
+    hilang_nama?: true
+    hilang_jk?: true
+    hilang_umur?: true
+    hilang_pekerjaan?: true
+    hilang_alamat?: true
+    hilang_ttd?: true
+    hilang_createdBy?: true
+    hilang_created?: true
+    hilang_updated?: true
+    hilang_deleted?: true
+  }
+
+  export type KehilanganMaxAggregateInputType = {
+    hilang_id?: true
+    hilang_nomor?: true
+    hilang_nama?: true
+    hilang_jk?: true
+    hilang_umur?: true
+    hilang_pekerjaan?: true
+    hilang_alamat?: true
+    hilang_ttd?: true
+    hilang_createdBy?: true
+    hilang_created?: true
+    hilang_updated?: true
+    hilang_deleted?: true
+  }
+
+  export type KehilanganCountAggregateInputType = {
+    hilang_id?: true
+    hilang_nomor?: true
+    hilang_nama?: true
+    hilang_jk?: true
+    hilang_umur?: true
+    hilang_pekerjaan?: true
+    hilang_alamat?: true
+    hilang_ttd?: true
+    hilang_createdBy?: true
+    hilang_created?: true
+    hilang_updated?: true
+    hilang_deleted?: true
+    _all?: true
+  }
+
+  export type KehilanganAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which kehilangan to aggregate.
+     */
+    where?: kehilanganWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of kehilangans to fetch.
+     */
+    orderBy?: kehilanganOrderByWithRelationInput | kehilanganOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: kehilanganWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` kehilangans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` kehilangans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned kehilangans
+    **/
+    _count?: true | KehilanganCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: KehilanganAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: KehilanganSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: KehilanganMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: KehilanganMaxAggregateInputType
+  }
+
+  export type GetKehilanganAggregateType<T extends KehilanganAggregateArgs> = {
+        [P in keyof T & keyof AggregateKehilangan]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateKehilangan[P]>
+      : GetScalarType<T[P], AggregateKehilangan[P]>
+  }
+
+
+
+
+  export type kehilanganGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: kehilanganWhereInput
+    orderBy?: kehilanganOrderByWithAggregationInput | kehilanganOrderByWithAggregationInput[]
+    by: KehilanganScalarFieldEnum[] | KehilanganScalarFieldEnum
+    having?: kehilanganScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: KehilanganCountAggregateInputType | true
+    _avg?: KehilanganAvgAggregateInputType
+    _sum?: KehilanganSumAggregateInputType
+    _min?: KehilanganMinAggregateInputType
+    _max?: KehilanganMaxAggregateInputType
+  }
+
+  export type KehilanganGroupByOutputType = {
+    hilang_id: number
+    hilang_nomor: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_ttd: number | null
+    hilang_createdBy: number | null
+    hilang_created: Date
+    hilang_updated: Date
+    hilang_deleted: Date | null
+    _count: KehilanganCountAggregateOutputType | null
+    _avg: KehilanganAvgAggregateOutputType | null
+    _sum: KehilanganSumAggregateOutputType | null
+    _min: KehilanganMinAggregateOutputType | null
+    _max: KehilanganMaxAggregateOutputType | null
+  }
+
+  type GetKehilanganGroupByPayload<T extends kehilanganGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<KehilanganGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof KehilanganGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], KehilanganGroupByOutputType[P]>
+            : GetScalarType<T[P], KehilanganGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type kehilanganSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    hilang_id?: boolean
+    hilang_nomor?: boolean
+    hilang_nama?: boolean
+    hilang_jk?: boolean
+    hilang_umur?: boolean
+    hilang_pekerjaan?: boolean
+    hilang_alamat?: boolean
+    hilang_ttd?: boolean
+    hilang_createdBy?: boolean
+    hilang_created?: boolean
+    hilang_updated?: boolean
+    hilang_deleted?: boolean
+    ttd_hilang?: boolean | kehilangan$ttd_hilangArgs<ExtArgs>
+    createdBy?: boolean | kehilangan$createdByArgs<ExtArgs>
+  }, ExtArgs["result"]["kehilangan"]>
+
+
+  export type kehilanganSelectScalar = {
+    hilang_id?: boolean
+    hilang_nomor?: boolean
+    hilang_nama?: boolean
+    hilang_jk?: boolean
+    hilang_umur?: boolean
+    hilang_pekerjaan?: boolean
+    hilang_alamat?: boolean
+    hilang_ttd?: boolean
+    hilang_createdBy?: boolean
+    hilang_created?: boolean
+    hilang_updated?: boolean
+    hilang_deleted?: boolean
+  }
+
+  export type kehilanganInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ttd_hilang?: boolean | kehilangan$ttd_hilangArgs<ExtArgs>
+    createdBy?: boolean | kehilangan$createdByArgs<ExtArgs>
+  }
+
+  export type $kehilanganPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "kehilangan"
+    objects: {
+      ttd_hilang: Prisma.$usersPayload<ExtArgs> | null
+      createdBy: Prisma.$usersPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      hilang_id: number
+      hilang_nomor: string | null
+      hilang_nama: string
+      hilang_jk: number
+      hilang_umur: number
+      hilang_pekerjaan: string
+      hilang_alamat: string
+      hilang_ttd: number | null
+      hilang_createdBy: number | null
+      hilang_created: Date
+      hilang_updated: Date
+      hilang_deleted: Date | null
+    }, ExtArgs["result"]["kehilangan"]>
+    composites: {}
+  }
+
+  type kehilanganGetPayload<S extends boolean | null | undefined | kehilanganDefaultArgs> = $Result.GetResult<Prisma.$kehilanganPayload, S>
+
+  type kehilanganCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<kehilanganFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: KehilanganCountAggregateInputType | true
+    }
+
+  export interface kehilanganDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['kehilangan'], meta: { name: 'kehilangan' } }
+    /**
+     * Find zero or one Kehilangan that matches the filter.
+     * @param {kehilanganFindUniqueArgs} args - Arguments to find a Kehilangan
+     * @example
+     * // Get one Kehilangan
+     * const kehilangan = await prisma.kehilangan.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends kehilanganFindUniqueArgs>(args: SelectSubset<T, kehilanganFindUniqueArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Kehilangan that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {kehilanganFindUniqueOrThrowArgs} args - Arguments to find a Kehilangan
+     * @example
+     * // Get one Kehilangan
+     * const kehilangan = await prisma.kehilangan.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends kehilanganFindUniqueOrThrowArgs>(args: SelectSubset<T, kehilanganFindUniqueOrThrowArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Kehilangan that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {kehilanganFindFirstArgs} args - Arguments to find a Kehilangan
+     * @example
+     * // Get one Kehilangan
+     * const kehilangan = await prisma.kehilangan.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends kehilanganFindFirstArgs>(args?: SelectSubset<T, kehilanganFindFirstArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Kehilangan that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {kehilanganFindFirstOrThrowArgs} args - Arguments to find a Kehilangan
+     * @example
+     * // Get one Kehilangan
+     * const kehilangan = await prisma.kehilangan.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends kehilanganFindFirstOrThrowArgs>(args?: SelectSubset<T, kehilanganFindFirstOrThrowArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Kehilangans that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {kehilanganFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Kehilangans
+     * const kehilangans = await prisma.kehilangan.findMany()
+     * 
+     * // Get first 10 Kehilangans
+     * const kehilangans = await prisma.kehilangan.findMany({ take: 10 })
+     * 
+     * // Only select the `hilang_id`
+     * const kehilanganWithHilang_idOnly = await prisma.kehilangan.findMany({ select: { hilang_id: true } })
+     * 
+     */
+    findMany<T extends kehilanganFindManyArgs>(args?: SelectSubset<T, kehilanganFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Kehilangan.
+     * @param {kehilanganCreateArgs} args - Arguments to create a Kehilangan.
+     * @example
+     * // Create one Kehilangan
+     * const Kehilangan = await prisma.kehilangan.create({
+     *   data: {
+     *     // ... data to create a Kehilangan
+     *   }
+     * })
+     * 
+     */
+    create<T extends kehilanganCreateArgs>(args: SelectSubset<T, kehilanganCreateArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Kehilangans.
+     * @param {kehilanganCreateManyArgs} args - Arguments to create many Kehilangans.
+     * @example
+     * // Create many Kehilangans
+     * const kehilangan = await prisma.kehilangan.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends kehilanganCreateManyArgs>(args?: SelectSubset<T, kehilanganCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Kehilangan.
+     * @param {kehilanganDeleteArgs} args - Arguments to delete one Kehilangan.
+     * @example
+     * // Delete one Kehilangan
+     * const Kehilangan = await prisma.kehilangan.delete({
+     *   where: {
+     *     // ... filter to delete one Kehilangan
+     *   }
+     * })
+     * 
+     */
+    delete<T extends kehilanganDeleteArgs>(args: SelectSubset<T, kehilanganDeleteArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Kehilangan.
+     * @param {kehilanganUpdateArgs} args - Arguments to update one Kehilangan.
+     * @example
+     * // Update one Kehilangan
+     * const kehilangan = await prisma.kehilangan.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends kehilanganUpdateArgs>(args: SelectSubset<T, kehilanganUpdateArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Kehilangans.
+     * @param {kehilanganDeleteManyArgs} args - Arguments to filter Kehilangans to delete.
+     * @example
+     * // Delete a few Kehilangans
+     * const { count } = await prisma.kehilangan.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends kehilanganDeleteManyArgs>(args?: SelectSubset<T, kehilanganDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Kehilangans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {kehilanganUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Kehilangans
+     * const kehilangan = await prisma.kehilangan.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends kehilanganUpdateManyArgs>(args: SelectSubset<T, kehilanganUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Kehilangan.
+     * @param {kehilanganUpsertArgs} args - Arguments to update or create a Kehilangan.
+     * @example
+     * // Update or create a Kehilangan
+     * const kehilangan = await prisma.kehilangan.upsert({
+     *   create: {
+     *     // ... data to create a Kehilangan
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Kehilangan we want to update
+     *   }
+     * })
+     */
+    upsert<T extends kehilanganUpsertArgs>(args: SelectSubset<T, kehilanganUpsertArgs<ExtArgs>>): Prisma__kehilanganClient<$Result.GetResult<Prisma.$kehilanganPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Kehilangans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {kehilanganCountArgs} args - Arguments to filter Kehilangans to count.
+     * @example
+     * // Count the number of Kehilangans
+     * const count = await prisma.kehilangan.count({
+     *   where: {
+     *     // ... the filter for the Kehilangans we want to count
+     *   }
+     * })
+    **/
+    count<T extends kehilanganCountArgs>(
+      args?: Subset<T, kehilanganCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], KehilanganCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Kehilangan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {KehilanganAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends KehilanganAggregateArgs>(args: Subset<T, KehilanganAggregateArgs>): Prisma.PrismaPromise<GetKehilanganAggregateType<T>>
+
+    /**
+     * Group by Kehilangan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {kehilanganGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends kehilanganGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: kehilanganGroupByArgs['orderBy'] }
+        : { orderBy?: kehilanganGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, kehilanganGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetKehilanganGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the kehilangan model
+   */
+  readonly fields: kehilanganFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for kehilangan.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__kehilanganClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    ttd_hilang<T extends kehilangan$ttd_hilangArgs<ExtArgs> = {}>(args?: Subset<T, kehilangan$ttd_hilangArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    createdBy<T extends kehilangan$createdByArgs<ExtArgs> = {}>(args?: Subset<T, kehilangan$createdByArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the kehilangan model
+   */ 
+  interface kehilanganFieldRefs {
+    readonly hilang_id: FieldRef<"kehilangan", 'Int'>
+    readonly hilang_nomor: FieldRef<"kehilangan", 'String'>
+    readonly hilang_nama: FieldRef<"kehilangan", 'String'>
+    readonly hilang_jk: FieldRef<"kehilangan", 'Int'>
+    readonly hilang_umur: FieldRef<"kehilangan", 'Int'>
+    readonly hilang_pekerjaan: FieldRef<"kehilangan", 'String'>
+    readonly hilang_alamat: FieldRef<"kehilangan", 'String'>
+    readonly hilang_ttd: FieldRef<"kehilangan", 'Int'>
+    readonly hilang_createdBy: FieldRef<"kehilangan", 'Int'>
+    readonly hilang_created: FieldRef<"kehilangan", 'DateTime'>
+    readonly hilang_updated: FieldRef<"kehilangan", 'DateTime'>
+    readonly hilang_deleted: FieldRef<"kehilangan", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * kehilangan findUnique
+   */
+  export type kehilanganFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * Filter, which kehilangan to fetch.
+     */
+    where: kehilanganWhereUniqueInput
+  }
+
+  /**
+   * kehilangan findUniqueOrThrow
+   */
+  export type kehilanganFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * Filter, which kehilangan to fetch.
+     */
+    where: kehilanganWhereUniqueInput
+  }
+
+  /**
+   * kehilangan findFirst
+   */
+  export type kehilanganFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * Filter, which kehilangan to fetch.
+     */
+    where?: kehilanganWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of kehilangans to fetch.
+     */
+    orderBy?: kehilanganOrderByWithRelationInput | kehilanganOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for kehilangans.
+     */
+    cursor?: kehilanganWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` kehilangans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` kehilangans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of kehilangans.
+     */
+    distinct?: KehilanganScalarFieldEnum | KehilanganScalarFieldEnum[]
+  }
+
+  /**
+   * kehilangan findFirstOrThrow
+   */
+  export type kehilanganFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * Filter, which kehilangan to fetch.
+     */
+    where?: kehilanganWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of kehilangans to fetch.
+     */
+    orderBy?: kehilanganOrderByWithRelationInput | kehilanganOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for kehilangans.
+     */
+    cursor?: kehilanganWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` kehilangans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` kehilangans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of kehilangans.
+     */
+    distinct?: KehilanganScalarFieldEnum | KehilanganScalarFieldEnum[]
+  }
+
+  /**
+   * kehilangan findMany
+   */
+  export type kehilanganFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * Filter, which kehilangans to fetch.
+     */
+    where?: kehilanganWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of kehilangans to fetch.
+     */
+    orderBy?: kehilanganOrderByWithRelationInput | kehilanganOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing kehilangans.
+     */
+    cursor?: kehilanganWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` kehilangans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` kehilangans.
+     */
+    skip?: number
+    distinct?: KehilanganScalarFieldEnum | KehilanganScalarFieldEnum[]
+  }
+
+  /**
+   * kehilangan create
+   */
+  export type kehilanganCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * The data needed to create a kehilangan.
+     */
+    data: XOR<kehilanganCreateInput, kehilanganUncheckedCreateInput>
+  }
+
+  /**
+   * kehilangan createMany
+   */
+  export type kehilanganCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many kehilangans.
+     */
+    data: kehilanganCreateManyInput | kehilanganCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * kehilangan update
+   */
+  export type kehilanganUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * The data needed to update a kehilangan.
+     */
+    data: XOR<kehilanganUpdateInput, kehilanganUncheckedUpdateInput>
+    /**
+     * Choose, which kehilangan to update.
+     */
+    where: kehilanganWhereUniqueInput
+  }
+
+  /**
+   * kehilangan updateMany
+   */
+  export type kehilanganUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update kehilangans.
+     */
+    data: XOR<kehilanganUpdateManyMutationInput, kehilanganUncheckedUpdateManyInput>
+    /**
+     * Filter which kehilangans to update
+     */
+    where?: kehilanganWhereInput
+  }
+
+  /**
+   * kehilangan upsert
+   */
+  export type kehilanganUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * The filter to search for the kehilangan to update in case it exists.
+     */
+    where: kehilanganWhereUniqueInput
+    /**
+     * In case the kehilangan found by the `where` argument doesn't exist, create a new kehilangan with this data.
+     */
+    create: XOR<kehilanganCreateInput, kehilanganUncheckedCreateInput>
+    /**
+     * In case the kehilangan was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<kehilanganUpdateInput, kehilanganUncheckedUpdateInput>
+  }
+
+  /**
+   * kehilangan delete
+   */
+  export type kehilanganDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+    /**
+     * Filter which kehilangan to delete.
+     */
+    where: kehilanganWhereUniqueInput
+  }
+
+  /**
+   * kehilangan deleteMany
+   */
+  export type kehilanganDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which kehilangans to delete
+     */
+    where?: kehilanganWhereInput
+  }
+
+  /**
+   * kehilangan.ttd_hilang
+   */
+  export type kehilangan$ttd_hilangArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
+   * kehilangan.createdBy
+   */
+  export type kehilangan$createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
+   * kehilangan without action
+   */
+  export type kehilanganDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the kehilangan
+     */
+    select?: kehilanganSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: kehilanganInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model penghasilan
+   */
+
+  export type AggregatePenghasilan = {
+    _count: PenghasilanCountAggregateOutputType | null
+    _avg: PenghasilanAvgAggregateOutputType | null
+    _sum: PenghasilanSumAggregateOutputType | null
+    _min: PenghasilanMinAggregateOutputType | null
+    _max: PenghasilanMaxAggregateOutputType | null
+  }
+
+  export type PenghasilanAvgAggregateOutputType = {
+    hasil_id: number | null
+    hasil_umur: number | null
+    hasil_ttd: number | null
+    hasil_createdBy: number | null
+  }
+
+  export type PenghasilanSumAggregateOutputType = {
+    hasil_id: number | null
+    hasil_umur: number | null
+    hasil_ttd: number | null
+    hasil_createdBy: number | null
+  }
+
+  export type PenghasilanMinAggregateOutputType = {
+    hasil_id: number | null
+    hasil_nomor: string | null
+    hasil_nama: string | null
+    hasil_umur: number | null
+    hasil_pekerjaan: string | null
+    hasil_alamat: string | null
+    hasil_penghasilan: string | null
+    hasil_ttd: number | null
+    hasil_createdBy: number | null
+    hasil_created: Date | null
+    hasil_updated: Date | null
+    hasil_deleted: Date | null
+  }
+
+  export type PenghasilanMaxAggregateOutputType = {
+    hasil_id: number | null
+    hasil_nomor: string | null
+    hasil_nama: string | null
+    hasil_umur: number | null
+    hasil_pekerjaan: string | null
+    hasil_alamat: string | null
+    hasil_penghasilan: string | null
+    hasil_ttd: number | null
+    hasil_createdBy: number | null
+    hasil_created: Date | null
+    hasil_updated: Date | null
+    hasil_deleted: Date | null
+  }
+
+  export type PenghasilanCountAggregateOutputType = {
+    hasil_id: number
+    hasil_nomor: number
+    hasil_nama: number
+    hasil_umur: number
+    hasil_pekerjaan: number
+    hasil_alamat: number
+    hasil_penghasilan: number
+    hasil_ttd: number
+    hasil_createdBy: number
+    hasil_created: number
+    hasil_updated: number
+    hasil_deleted: number
+    _all: number
+  }
+
+
+  export type PenghasilanAvgAggregateInputType = {
+    hasil_id?: true
+    hasil_umur?: true
+    hasil_ttd?: true
+    hasil_createdBy?: true
+  }
+
+  export type PenghasilanSumAggregateInputType = {
+    hasil_id?: true
+    hasil_umur?: true
+    hasil_ttd?: true
+    hasil_createdBy?: true
+  }
+
+  export type PenghasilanMinAggregateInputType = {
+    hasil_id?: true
+    hasil_nomor?: true
+    hasil_nama?: true
+    hasil_umur?: true
+    hasil_pekerjaan?: true
+    hasil_alamat?: true
+    hasil_penghasilan?: true
+    hasil_ttd?: true
+    hasil_createdBy?: true
+    hasil_created?: true
+    hasil_updated?: true
+    hasil_deleted?: true
+  }
+
+  export type PenghasilanMaxAggregateInputType = {
+    hasil_id?: true
+    hasil_nomor?: true
+    hasil_nama?: true
+    hasil_umur?: true
+    hasil_pekerjaan?: true
+    hasil_alamat?: true
+    hasil_penghasilan?: true
+    hasil_ttd?: true
+    hasil_createdBy?: true
+    hasil_created?: true
+    hasil_updated?: true
+    hasil_deleted?: true
+  }
+
+  export type PenghasilanCountAggregateInputType = {
+    hasil_id?: true
+    hasil_nomor?: true
+    hasil_nama?: true
+    hasil_umur?: true
+    hasil_pekerjaan?: true
+    hasil_alamat?: true
+    hasil_penghasilan?: true
+    hasil_ttd?: true
+    hasil_createdBy?: true
+    hasil_created?: true
+    hasil_updated?: true
+    hasil_deleted?: true
+    _all?: true
+  }
+
+  export type PenghasilanAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which penghasilan to aggregate.
+     */
+    where?: penghasilanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of penghasilans to fetch.
+     */
+    orderBy?: penghasilanOrderByWithRelationInput | penghasilanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: penghasilanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` penghasilans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` penghasilans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned penghasilans
+    **/
+    _count?: true | PenghasilanCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: PenghasilanAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: PenghasilanSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PenghasilanMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PenghasilanMaxAggregateInputType
+  }
+
+  export type GetPenghasilanAggregateType<T extends PenghasilanAggregateArgs> = {
+        [P in keyof T & keyof AggregatePenghasilan]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePenghasilan[P]>
+      : GetScalarType<T[P], AggregatePenghasilan[P]>
+  }
+
+
+
+
+  export type penghasilanGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: penghasilanWhereInput
+    orderBy?: penghasilanOrderByWithAggregationInput | penghasilanOrderByWithAggregationInput[]
+    by: PenghasilanScalarFieldEnum[] | PenghasilanScalarFieldEnum
+    having?: penghasilanScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PenghasilanCountAggregateInputType | true
+    _avg?: PenghasilanAvgAggregateInputType
+    _sum?: PenghasilanSumAggregateInputType
+    _min?: PenghasilanMinAggregateInputType
+    _max?: PenghasilanMaxAggregateInputType
+  }
+
+  export type PenghasilanGroupByOutputType = {
+    hasil_id: number
+    hasil_nomor: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_ttd: number | null
+    hasil_createdBy: number | null
+    hasil_created: Date
+    hasil_updated: Date
+    hasil_deleted: Date | null
+    _count: PenghasilanCountAggregateOutputType | null
+    _avg: PenghasilanAvgAggregateOutputType | null
+    _sum: PenghasilanSumAggregateOutputType | null
+    _min: PenghasilanMinAggregateOutputType | null
+    _max: PenghasilanMaxAggregateOutputType | null
+  }
+
+  type GetPenghasilanGroupByPayload<T extends penghasilanGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PenghasilanGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PenghasilanGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PenghasilanGroupByOutputType[P]>
+            : GetScalarType<T[P], PenghasilanGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type penghasilanSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    hasil_id?: boolean
+    hasil_nomor?: boolean
+    hasil_nama?: boolean
+    hasil_umur?: boolean
+    hasil_pekerjaan?: boolean
+    hasil_alamat?: boolean
+    hasil_penghasilan?: boolean
+    hasil_ttd?: boolean
+    hasil_createdBy?: boolean
+    hasil_created?: boolean
+    hasil_updated?: boolean
+    hasil_deleted?: boolean
+    ttd_hasil?: boolean | penghasilan$ttd_hasilArgs<ExtArgs>
+    createdBy?: boolean | penghasilan$createdByArgs<ExtArgs>
+  }, ExtArgs["result"]["penghasilan"]>
+
+
+  export type penghasilanSelectScalar = {
+    hasil_id?: boolean
+    hasil_nomor?: boolean
+    hasil_nama?: boolean
+    hasil_umur?: boolean
+    hasil_pekerjaan?: boolean
+    hasil_alamat?: boolean
+    hasil_penghasilan?: boolean
+    hasil_ttd?: boolean
+    hasil_createdBy?: boolean
+    hasil_created?: boolean
+    hasil_updated?: boolean
+    hasil_deleted?: boolean
+  }
+
+  export type penghasilanInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ttd_hasil?: boolean | penghasilan$ttd_hasilArgs<ExtArgs>
+    createdBy?: boolean | penghasilan$createdByArgs<ExtArgs>
+  }
+
+  export type $penghasilanPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "penghasilan"
+    objects: {
+      ttd_hasil: Prisma.$usersPayload<ExtArgs> | null
+      createdBy: Prisma.$usersPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      hasil_id: number
+      hasil_nomor: string | null
+      hasil_nama: string
+      hasil_umur: number
+      hasil_pekerjaan: string
+      hasil_alamat: string
+      hasil_penghasilan: string
+      hasil_ttd: number | null
+      hasil_createdBy: number | null
+      hasil_created: Date
+      hasil_updated: Date
+      hasil_deleted: Date | null
+    }, ExtArgs["result"]["penghasilan"]>
+    composites: {}
+  }
+
+  type penghasilanGetPayload<S extends boolean | null | undefined | penghasilanDefaultArgs> = $Result.GetResult<Prisma.$penghasilanPayload, S>
+
+  type penghasilanCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<penghasilanFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: PenghasilanCountAggregateInputType | true
+    }
+
+  export interface penghasilanDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['penghasilan'], meta: { name: 'penghasilan' } }
+    /**
+     * Find zero or one Penghasilan that matches the filter.
+     * @param {penghasilanFindUniqueArgs} args - Arguments to find a Penghasilan
+     * @example
+     * // Get one Penghasilan
+     * const penghasilan = await prisma.penghasilan.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends penghasilanFindUniqueArgs>(args: SelectSubset<T, penghasilanFindUniqueArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Penghasilan that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {penghasilanFindUniqueOrThrowArgs} args - Arguments to find a Penghasilan
+     * @example
+     * // Get one Penghasilan
+     * const penghasilan = await prisma.penghasilan.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends penghasilanFindUniqueOrThrowArgs>(args: SelectSubset<T, penghasilanFindUniqueOrThrowArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Penghasilan that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {penghasilanFindFirstArgs} args - Arguments to find a Penghasilan
+     * @example
+     * // Get one Penghasilan
+     * const penghasilan = await prisma.penghasilan.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends penghasilanFindFirstArgs>(args?: SelectSubset<T, penghasilanFindFirstArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Penghasilan that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {penghasilanFindFirstOrThrowArgs} args - Arguments to find a Penghasilan
+     * @example
+     * // Get one Penghasilan
+     * const penghasilan = await prisma.penghasilan.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends penghasilanFindFirstOrThrowArgs>(args?: SelectSubset<T, penghasilanFindFirstOrThrowArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Penghasilans that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {penghasilanFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Penghasilans
+     * const penghasilans = await prisma.penghasilan.findMany()
+     * 
+     * // Get first 10 Penghasilans
+     * const penghasilans = await prisma.penghasilan.findMany({ take: 10 })
+     * 
+     * // Only select the `hasil_id`
+     * const penghasilanWithHasil_idOnly = await prisma.penghasilan.findMany({ select: { hasil_id: true } })
+     * 
+     */
+    findMany<T extends penghasilanFindManyArgs>(args?: SelectSubset<T, penghasilanFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Penghasilan.
+     * @param {penghasilanCreateArgs} args - Arguments to create a Penghasilan.
+     * @example
+     * // Create one Penghasilan
+     * const Penghasilan = await prisma.penghasilan.create({
+     *   data: {
+     *     // ... data to create a Penghasilan
+     *   }
+     * })
+     * 
+     */
+    create<T extends penghasilanCreateArgs>(args: SelectSubset<T, penghasilanCreateArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Penghasilans.
+     * @param {penghasilanCreateManyArgs} args - Arguments to create many Penghasilans.
+     * @example
+     * // Create many Penghasilans
+     * const penghasilan = await prisma.penghasilan.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends penghasilanCreateManyArgs>(args?: SelectSubset<T, penghasilanCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Penghasilan.
+     * @param {penghasilanDeleteArgs} args - Arguments to delete one Penghasilan.
+     * @example
+     * // Delete one Penghasilan
+     * const Penghasilan = await prisma.penghasilan.delete({
+     *   where: {
+     *     // ... filter to delete one Penghasilan
+     *   }
+     * })
+     * 
+     */
+    delete<T extends penghasilanDeleteArgs>(args: SelectSubset<T, penghasilanDeleteArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Penghasilan.
+     * @param {penghasilanUpdateArgs} args - Arguments to update one Penghasilan.
+     * @example
+     * // Update one Penghasilan
+     * const penghasilan = await prisma.penghasilan.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends penghasilanUpdateArgs>(args: SelectSubset<T, penghasilanUpdateArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Penghasilans.
+     * @param {penghasilanDeleteManyArgs} args - Arguments to filter Penghasilans to delete.
+     * @example
+     * // Delete a few Penghasilans
+     * const { count } = await prisma.penghasilan.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends penghasilanDeleteManyArgs>(args?: SelectSubset<T, penghasilanDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Penghasilans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {penghasilanUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Penghasilans
+     * const penghasilan = await prisma.penghasilan.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends penghasilanUpdateManyArgs>(args: SelectSubset<T, penghasilanUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Penghasilan.
+     * @param {penghasilanUpsertArgs} args - Arguments to update or create a Penghasilan.
+     * @example
+     * // Update or create a Penghasilan
+     * const penghasilan = await prisma.penghasilan.upsert({
+     *   create: {
+     *     // ... data to create a Penghasilan
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Penghasilan we want to update
+     *   }
+     * })
+     */
+    upsert<T extends penghasilanUpsertArgs>(args: SelectSubset<T, penghasilanUpsertArgs<ExtArgs>>): Prisma__penghasilanClient<$Result.GetResult<Prisma.$penghasilanPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Penghasilans.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {penghasilanCountArgs} args - Arguments to filter Penghasilans to count.
+     * @example
+     * // Count the number of Penghasilans
+     * const count = await prisma.penghasilan.count({
+     *   where: {
+     *     // ... the filter for the Penghasilans we want to count
+     *   }
+     * })
+    **/
+    count<T extends penghasilanCountArgs>(
+      args?: Subset<T, penghasilanCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PenghasilanCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Penghasilan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PenghasilanAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PenghasilanAggregateArgs>(args: Subset<T, PenghasilanAggregateArgs>): Prisma.PrismaPromise<GetPenghasilanAggregateType<T>>
+
+    /**
+     * Group by Penghasilan.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {penghasilanGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends penghasilanGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: penghasilanGroupByArgs['orderBy'] }
+        : { orderBy?: penghasilanGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, penghasilanGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPenghasilanGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the penghasilan model
+   */
+  readonly fields: penghasilanFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for penghasilan.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__penghasilanClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    ttd_hasil<T extends penghasilan$ttd_hasilArgs<ExtArgs> = {}>(args?: Subset<T, penghasilan$ttd_hasilArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    createdBy<T extends penghasilan$createdByArgs<ExtArgs> = {}>(args?: Subset<T, penghasilan$createdByArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the penghasilan model
+   */ 
+  interface penghasilanFieldRefs {
+    readonly hasil_id: FieldRef<"penghasilan", 'Int'>
+    readonly hasil_nomor: FieldRef<"penghasilan", 'String'>
+    readonly hasil_nama: FieldRef<"penghasilan", 'String'>
+    readonly hasil_umur: FieldRef<"penghasilan", 'Int'>
+    readonly hasil_pekerjaan: FieldRef<"penghasilan", 'String'>
+    readonly hasil_alamat: FieldRef<"penghasilan", 'String'>
+    readonly hasil_penghasilan: FieldRef<"penghasilan", 'String'>
+    readonly hasil_ttd: FieldRef<"penghasilan", 'Int'>
+    readonly hasil_createdBy: FieldRef<"penghasilan", 'Int'>
+    readonly hasil_created: FieldRef<"penghasilan", 'DateTime'>
+    readonly hasil_updated: FieldRef<"penghasilan", 'DateTime'>
+    readonly hasil_deleted: FieldRef<"penghasilan", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * penghasilan findUnique
+   */
+  export type penghasilanFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * Filter, which penghasilan to fetch.
+     */
+    where: penghasilanWhereUniqueInput
+  }
+
+  /**
+   * penghasilan findUniqueOrThrow
+   */
+  export type penghasilanFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * Filter, which penghasilan to fetch.
+     */
+    where: penghasilanWhereUniqueInput
+  }
+
+  /**
+   * penghasilan findFirst
+   */
+  export type penghasilanFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * Filter, which penghasilan to fetch.
+     */
+    where?: penghasilanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of penghasilans to fetch.
+     */
+    orderBy?: penghasilanOrderByWithRelationInput | penghasilanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for penghasilans.
+     */
+    cursor?: penghasilanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` penghasilans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` penghasilans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of penghasilans.
+     */
+    distinct?: PenghasilanScalarFieldEnum | PenghasilanScalarFieldEnum[]
+  }
+
+  /**
+   * penghasilan findFirstOrThrow
+   */
+  export type penghasilanFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * Filter, which penghasilan to fetch.
+     */
+    where?: penghasilanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of penghasilans to fetch.
+     */
+    orderBy?: penghasilanOrderByWithRelationInput | penghasilanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for penghasilans.
+     */
+    cursor?: penghasilanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` penghasilans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` penghasilans.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of penghasilans.
+     */
+    distinct?: PenghasilanScalarFieldEnum | PenghasilanScalarFieldEnum[]
+  }
+
+  /**
+   * penghasilan findMany
+   */
+  export type penghasilanFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * Filter, which penghasilans to fetch.
+     */
+    where?: penghasilanWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of penghasilans to fetch.
+     */
+    orderBy?: penghasilanOrderByWithRelationInput | penghasilanOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing penghasilans.
+     */
+    cursor?: penghasilanWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` penghasilans from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` penghasilans.
+     */
+    skip?: number
+    distinct?: PenghasilanScalarFieldEnum | PenghasilanScalarFieldEnum[]
+  }
+
+  /**
+   * penghasilan create
+   */
+  export type penghasilanCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * The data needed to create a penghasilan.
+     */
+    data: XOR<penghasilanCreateInput, penghasilanUncheckedCreateInput>
+  }
+
+  /**
+   * penghasilan createMany
+   */
+  export type penghasilanCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many penghasilans.
+     */
+    data: penghasilanCreateManyInput | penghasilanCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * penghasilan update
+   */
+  export type penghasilanUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * The data needed to update a penghasilan.
+     */
+    data: XOR<penghasilanUpdateInput, penghasilanUncheckedUpdateInput>
+    /**
+     * Choose, which penghasilan to update.
+     */
+    where: penghasilanWhereUniqueInput
+  }
+
+  /**
+   * penghasilan updateMany
+   */
+  export type penghasilanUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update penghasilans.
+     */
+    data: XOR<penghasilanUpdateManyMutationInput, penghasilanUncheckedUpdateManyInput>
+    /**
+     * Filter which penghasilans to update
+     */
+    where?: penghasilanWhereInput
+  }
+
+  /**
+   * penghasilan upsert
+   */
+  export type penghasilanUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * The filter to search for the penghasilan to update in case it exists.
+     */
+    where: penghasilanWhereUniqueInput
+    /**
+     * In case the penghasilan found by the `where` argument doesn't exist, create a new penghasilan with this data.
+     */
+    create: XOR<penghasilanCreateInput, penghasilanUncheckedCreateInput>
+    /**
+     * In case the penghasilan was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<penghasilanUpdateInput, penghasilanUncheckedUpdateInput>
+  }
+
+  /**
+   * penghasilan delete
+   */
+  export type penghasilanDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+    /**
+     * Filter which penghasilan to delete.
+     */
+    where: penghasilanWhereUniqueInput
+  }
+
+  /**
+   * penghasilan deleteMany
+   */
+  export type penghasilanDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which penghasilans to delete
+     */
+    where?: penghasilanWhereInput
+  }
+
+  /**
+   * penghasilan.ttd_hasil
+   */
+  export type penghasilan$ttd_hasilArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
+   * penghasilan.createdBy
+   */
+  export type penghasilan$createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
+   * penghasilan without action
+   */
+  export type penghasilanDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the penghasilan
+     */
+    select?: penghasilanSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: penghasilanInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tani
+   */
+
+  export type AggregateTani = {
+    _count: TaniCountAggregateOutputType | null
+    _avg: TaniAvgAggregateOutputType | null
+    _sum: TaniSumAggregateOutputType | null
+    _min: TaniMinAggregateOutputType | null
+    _max: TaniMaxAggregateOutputType | null
+  }
+
+  export type TaniAvgAggregateOutputType = {
+    tani_id: number | null
+    tani_ttd: number | null
+    tani_createdBy: number | null
+  }
+
+  export type TaniSumAggregateOutputType = {
+    tani_id: number | null
+    tani_ttd: number | null
+    tani_createdBy: number | null
+  }
+
+  export type TaniMinAggregateOutputType = {
+    tani_id: number | null
+    tani_nomor: string | null
+    tani_nama: string | null
+    tani_jabatan: string | null
+    tani_sekretariat: string | null
+    tani_alamat: string | null
+    tani_keperluan: string | null
+    tani_tujuanBantuan: string | null
+    tani_ttd: number | null
+    tani_createdBy: number | null
+    tani_created: Date | null
+    tani_updated: Date | null
+    tani_deleted: Date | null
+  }
+
+  export type TaniMaxAggregateOutputType = {
+    tani_id: number | null
+    tani_nomor: string | null
+    tani_nama: string | null
+    tani_jabatan: string | null
+    tani_sekretariat: string | null
+    tani_alamat: string | null
+    tani_keperluan: string | null
+    tani_tujuanBantuan: string | null
+    tani_ttd: number | null
+    tani_createdBy: number | null
+    tani_created: Date | null
+    tani_updated: Date | null
+    tani_deleted: Date | null
+  }
+
+  export type TaniCountAggregateOutputType = {
+    tani_id: number
+    tani_nomor: number
+    tani_nama: number
+    tani_jabatan: number
+    tani_sekretariat: number
+    tani_alamat: number
+    tani_keperluan: number
+    tani_tujuanBantuan: number
+    tani_ttd: number
+    tani_createdBy: number
+    tani_created: number
+    tani_updated: number
+    tani_deleted: number
+    _all: number
+  }
+
+
+  export type TaniAvgAggregateInputType = {
+    tani_id?: true
+    tani_ttd?: true
+    tani_createdBy?: true
+  }
+
+  export type TaniSumAggregateInputType = {
+    tani_id?: true
+    tani_ttd?: true
+    tani_createdBy?: true
+  }
+
+  export type TaniMinAggregateInputType = {
+    tani_id?: true
+    tani_nomor?: true
+    tani_nama?: true
+    tani_jabatan?: true
+    tani_sekretariat?: true
+    tani_alamat?: true
+    tani_keperluan?: true
+    tani_tujuanBantuan?: true
+    tani_ttd?: true
+    tani_createdBy?: true
+    tani_created?: true
+    tani_updated?: true
+    tani_deleted?: true
+  }
+
+  export type TaniMaxAggregateInputType = {
+    tani_id?: true
+    tani_nomor?: true
+    tani_nama?: true
+    tani_jabatan?: true
+    tani_sekretariat?: true
+    tani_alamat?: true
+    tani_keperluan?: true
+    tani_tujuanBantuan?: true
+    tani_ttd?: true
+    tani_createdBy?: true
+    tani_created?: true
+    tani_updated?: true
+    tani_deleted?: true
+  }
+
+  export type TaniCountAggregateInputType = {
+    tani_id?: true
+    tani_nomor?: true
+    tani_nama?: true
+    tani_jabatan?: true
+    tani_sekretariat?: true
+    tani_alamat?: true
+    tani_keperluan?: true
+    tani_tujuanBantuan?: true
+    tani_ttd?: true
+    tani_createdBy?: true
+    tani_created?: true
+    tani_updated?: true
+    tani_deleted?: true
+    _all?: true
+  }
+
+  export type TaniAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tani to aggregate.
+     */
+    where?: taniWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tanis to fetch.
+     */
+    orderBy?: taniOrderByWithRelationInput | taniOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: taniWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tanis from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tanis.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tanis
+    **/
+    _count?: true | TaniCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TaniAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TaniSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TaniMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TaniMaxAggregateInputType
+  }
+
+  export type GetTaniAggregateType<T extends TaniAggregateArgs> = {
+        [P in keyof T & keyof AggregateTani]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTani[P]>
+      : GetScalarType<T[P], AggregateTani[P]>
+  }
+
+
+
+
+  export type taniGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: taniWhereInput
+    orderBy?: taniOrderByWithAggregationInput | taniOrderByWithAggregationInput[]
+    by: TaniScalarFieldEnum[] | TaniScalarFieldEnum
+    having?: taniScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TaniCountAggregateInputType | true
+    _avg?: TaniAvgAggregateInputType
+    _sum?: TaniSumAggregateInputType
+    _min?: TaniMinAggregateInputType
+    _max?: TaniMaxAggregateInputType
+  }
+
+  export type TaniGroupByOutputType = {
+    tani_id: number
+    tani_nomor: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_ttd: number | null
+    tani_createdBy: number | null
+    tani_created: Date
+    tani_updated: Date
+    tani_deleted: Date | null
+    _count: TaniCountAggregateOutputType | null
+    _avg: TaniAvgAggregateOutputType | null
+    _sum: TaniSumAggregateOutputType | null
+    _min: TaniMinAggregateOutputType | null
+    _max: TaniMaxAggregateOutputType | null
+  }
+
+  type GetTaniGroupByPayload<T extends taniGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TaniGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TaniGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TaniGroupByOutputType[P]>
+            : GetScalarType<T[P], TaniGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type taniSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    tani_id?: boolean
+    tani_nomor?: boolean
+    tani_nama?: boolean
+    tani_jabatan?: boolean
+    tani_sekretariat?: boolean
+    tani_alamat?: boolean
+    tani_keperluan?: boolean
+    tani_tujuanBantuan?: boolean
+    tani_ttd?: boolean
+    tani_createdBy?: boolean
+    tani_created?: boolean
+    tani_updated?: boolean
+    tani_deleted?: boolean
+    ttd_tani?: boolean | tani$ttd_taniArgs<ExtArgs>
+    createdBy?: boolean | tani$createdByArgs<ExtArgs>
+  }, ExtArgs["result"]["tani"]>
+
+
+  export type taniSelectScalar = {
+    tani_id?: boolean
+    tani_nomor?: boolean
+    tani_nama?: boolean
+    tani_jabatan?: boolean
+    tani_sekretariat?: boolean
+    tani_alamat?: boolean
+    tani_keperluan?: boolean
+    tani_tujuanBantuan?: boolean
+    tani_ttd?: boolean
+    tani_createdBy?: boolean
+    tani_created?: boolean
+    tani_updated?: boolean
+    tani_deleted?: boolean
+  }
+
+  export type taniInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ttd_tani?: boolean | tani$ttd_taniArgs<ExtArgs>
+    createdBy?: boolean | tani$createdByArgs<ExtArgs>
+  }
+
+  export type $taniPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tani"
+    objects: {
+      ttd_tani: Prisma.$usersPayload<ExtArgs> | null
+      createdBy: Prisma.$usersPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      tani_id: number
+      tani_nomor: string | null
+      tani_nama: string
+      tani_jabatan: string
+      tani_sekretariat: string
+      tani_alamat: string
+      tani_keperluan: string
+      tani_tujuanBantuan: string
+      tani_ttd: number | null
+      tani_createdBy: number | null
+      tani_created: Date
+      tani_updated: Date
+      tani_deleted: Date | null
+    }, ExtArgs["result"]["tani"]>
+    composites: {}
+  }
+
+  type taniGetPayload<S extends boolean | null | undefined | taniDefaultArgs> = $Result.GetResult<Prisma.$taniPayload, S>
+
+  type taniCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<taniFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: TaniCountAggregateInputType | true
+    }
+
+  export interface taniDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tani'], meta: { name: 'tani' } }
+    /**
+     * Find zero or one Tani that matches the filter.
+     * @param {taniFindUniqueArgs} args - Arguments to find a Tani
+     * @example
+     * // Get one Tani
+     * const tani = await prisma.tani.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends taniFindUniqueArgs>(args: SelectSubset<T, taniFindUniqueArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+
+    /**
+     * Find one Tani that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
+     * @param {taniFindUniqueOrThrowArgs} args - Arguments to find a Tani
+     * @example
+     * // Get one Tani
+     * const tani = await prisma.tani.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends taniFindUniqueOrThrowArgs>(args: SelectSubset<T, taniFindUniqueOrThrowArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+
+    /**
+     * Find the first Tani that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {taniFindFirstArgs} args - Arguments to find a Tani
+     * @example
+     * // Get one Tani
+     * const tani = await prisma.tani.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends taniFindFirstArgs>(args?: SelectSubset<T, taniFindFirstArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+
+    /**
+     * Find the first Tani that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {taniFindFirstOrThrowArgs} args - Arguments to find a Tani
+     * @example
+     * // Get one Tani
+     * const tani = await prisma.tani.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends taniFindFirstOrThrowArgs>(args?: SelectSubset<T, taniFindFirstOrThrowArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+
+    /**
+     * Find zero or more Tanis that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {taniFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tanis
+     * const tanis = await prisma.tani.findMany()
+     * 
+     * // Get first 10 Tanis
+     * const tanis = await prisma.tani.findMany({ take: 10 })
+     * 
+     * // Only select the `tani_id`
+     * const taniWithTani_idOnly = await prisma.tani.findMany({ select: { tani_id: true } })
+     * 
+     */
+    findMany<T extends taniFindManyArgs>(args?: SelectSubset<T, taniFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "findMany">>
+
+    /**
+     * Create a Tani.
+     * @param {taniCreateArgs} args - Arguments to create a Tani.
+     * @example
+     * // Create one Tani
+     * const Tani = await prisma.tani.create({
+     *   data: {
+     *     // ... data to create a Tani
+     *   }
+     * })
+     * 
+     */
+    create<T extends taniCreateArgs>(args: SelectSubset<T, taniCreateArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "create">, never, ExtArgs>
+
+    /**
+     * Create many Tanis.
+     * @param {taniCreateManyArgs} args - Arguments to create many Tanis.
+     * @example
+     * // Create many Tanis
+     * const tani = await prisma.tani.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends taniCreateManyArgs>(args?: SelectSubset<T, taniCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Delete a Tani.
+     * @param {taniDeleteArgs} args - Arguments to delete one Tani.
+     * @example
+     * // Delete one Tani
+     * const Tani = await prisma.tani.delete({
+     *   where: {
+     *     // ... filter to delete one Tani
+     *   }
+     * })
+     * 
+     */
+    delete<T extends taniDeleteArgs>(args: SelectSubset<T, taniDeleteArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+
+    /**
+     * Update one Tani.
+     * @param {taniUpdateArgs} args - Arguments to update one Tani.
+     * @example
+     * // Update one Tani
+     * const tani = await prisma.tani.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends taniUpdateArgs>(args: SelectSubset<T, taniUpdateArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "update">, never, ExtArgs>
+
+    /**
+     * Delete zero or more Tanis.
+     * @param {taniDeleteManyArgs} args - Arguments to filter Tanis to delete.
+     * @example
+     * // Delete a few Tanis
+     * const { count } = await prisma.tani.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends taniDeleteManyArgs>(args?: SelectSubset<T, taniDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tanis.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {taniUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tanis
+     * const tani = await prisma.tani.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends taniUpdateManyArgs>(args: SelectSubset<T, taniUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create or update one Tani.
+     * @param {taniUpsertArgs} args - Arguments to update or create a Tani.
+     * @example
+     * // Update or create a Tani
+     * const tani = await prisma.tani.upsert({
+     *   create: {
+     *     // ... data to create a Tani
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tani we want to update
+     *   }
+     * })
+     */
+    upsert<T extends taniUpsertArgs>(args: SelectSubset<T, taniUpsertArgs<ExtArgs>>): Prisma__taniClient<$Result.GetResult<Prisma.$taniPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+
+
+    /**
+     * Count the number of Tanis.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {taniCountArgs} args - Arguments to filter Tanis to count.
+     * @example
+     * // Count the number of Tanis
+     * const count = await prisma.tani.count({
+     *   where: {
+     *     // ... the filter for the Tanis we want to count
+     *   }
+     * })
+    **/
+    count<T extends taniCountArgs>(
+      args?: Subset<T, taniCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TaniCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tani.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TaniAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TaniAggregateArgs>(args: Subset<T, TaniAggregateArgs>): Prisma.PrismaPromise<GetTaniAggregateType<T>>
+
+    /**
+     * Group by Tani.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {taniGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends taniGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: taniGroupByArgs['orderBy'] }
+        : { orderBy?: taniGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, taniGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTaniGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tani model
+   */
+  readonly fields: taniFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tani.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__taniClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    ttd_tani<T extends tani$ttd_taniArgs<ExtArgs> = {}>(args?: Subset<T, tani$ttd_taniArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    createdBy<T extends tani$createdByArgs<ExtArgs> = {}>(args?: Subset<T, tani$createdByArgs<ExtArgs>>): Prisma__usersClient<$Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tani model
+   */ 
+  interface taniFieldRefs {
+    readonly tani_id: FieldRef<"tani", 'Int'>
+    readonly tani_nomor: FieldRef<"tani", 'String'>
+    readonly tani_nama: FieldRef<"tani", 'String'>
+    readonly tani_jabatan: FieldRef<"tani", 'String'>
+    readonly tani_sekretariat: FieldRef<"tani", 'String'>
+    readonly tani_alamat: FieldRef<"tani", 'String'>
+    readonly tani_keperluan: FieldRef<"tani", 'String'>
+    readonly tani_tujuanBantuan: FieldRef<"tani", 'String'>
+    readonly tani_ttd: FieldRef<"tani", 'Int'>
+    readonly tani_createdBy: FieldRef<"tani", 'Int'>
+    readonly tani_created: FieldRef<"tani", 'DateTime'>
+    readonly tani_updated: FieldRef<"tani", 'DateTime'>
+    readonly tani_deleted: FieldRef<"tani", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tani findUnique
+   */
+  export type taniFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * Filter, which tani to fetch.
+     */
+    where: taniWhereUniqueInput
+  }
+
+  /**
+   * tani findUniqueOrThrow
+   */
+  export type taniFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * Filter, which tani to fetch.
+     */
+    where: taniWhereUniqueInput
+  }
+
+  /**
+   * tani findFirst
+   */
+  export type taniFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * Filter, which tani to fetch.
+     */
+    where?: taniWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tanis to fetch.
+     */
+    orderBy?: taniOrderByWithRelationInput | taniOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tanis.
+     */
+    cursor?: taniWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tanis from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tanis.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tanis.
+     */
+    distinct?: TaniScalarFieldEnum | TaniScalarFieldEnum[]
+  }
+
+  /**
+   * tani findFirstOrThrow
+   */
+  export type taniFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * Filter, which tani to fetch.
+     */
+    where?: taniWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tanis to fetch.
+     */
+    orderBy?: taniOrderByWithRelationInput | taniOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tanis.
+     */
+    cursor?: taniWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tanis from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tanis.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tanis.
+     */
+    distinct?: TaniScalarFieldEnum | TaniScalarFieldEnum[]
+  }
+
+  /**
+   * tani findMany
+   */
+  export type taniFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * Filter, which tanis to fetch.
+     */
+    where?: taniWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tanis to fetch.
+     */
+    orderBy?: taniOrderByWithRelationInput | taniOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tanis.
+     */
+    cursor?: taniWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tanis from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tanis.
+     */
+    skip?: number
+    distinct?: TaniScalarFieldEnum | TaniScalarFieldEnum[]
+  }
+
+  /**
+   * tani create
+   */
+  export type taniCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * The data needed to create a tani.
+     */
+    data: XOR<taniCreateInput, taniUncheckedCreateInput>
+  }
+
+  /**
+   * tani createMany
+   */
+  export type taniCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tanis.
+     */
+    data: taniCreateManyInput | taniCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tani update
+   */
+  export type taniUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * The data needed to update a tani.
+     */
+    data: XOR<taniUpdateInput, taniUncheckedUpdateInput>
+    /**
+     * Choose, which tani to update.
+     */
+    where: taniWhereUniqueInput
+  }
+
+  /**
+   * tani updateMany
+   */
+  export type taniUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tanis.
+     */
+    data: XOR<taniUpdateManyMutationInput, taniUncheckedUpdateManyInput>
+    /**
+     * Filter which tanis to update
+     */
+    where?: taniWhereInput
+  }
+
+  /**
+   * tani upsert
+   */
+  export type taniUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * The filter to search for the tani to update in case it exists.
+     */
+    where: taniWhereUniqueInput
+    /**
+     * In case the tani found by the `where` argument doesn't exist, create a new tani with this data.
+     */
+    create: XOR<taniCreateInput, taniUncheckedCreateInput>
+    /**
+     * In case the tani was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<taniUpdateInput, taniUncheckedUpdateInput>
+  }
+
+  /**
+   * tani delete
+   */
+  export type taniDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+    /**
+     * Filter which tani to delete.
+     */
+    where: taniWhereUniqueInput
+  }
+
+  /**
+   * tani deleteMany
+   */
+  export type taniDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tanis to delete
+     */
+    where?: taniWhereInput
+  }
+
+  /**
+   * tani.ttd_tani
+   */
+  export type tani$ttd_taniArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
+   * tani.createdBy
+   */
+  export type tani$createdByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the users
+     */
+    select?: usersSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: usersInclude<ExtArgs> | null
+    where?: usersWhereInput
+  }
+
+  /**
+   * tani without action
+   */
+  export type taniDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tani
+     */
+    select?: taniSelect<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: taniInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -6879,6 +10442,61 @@ export namespace Prisma {
   export type SkckScalarFieldEnum = (typeof SkckScalarFieldEnum)[keyof typeof SkckScalarFieldEnum]
 
 
+  export const KehilanganScalarFieldEnum: {
+    hilang_id: 'hilang_id',
+    hilang_nomor: 'hilang_nomor',
+    hilang_nama: 'hilang_nama',
+    hilang_jk: 'hilang_jk',
+    hilang_umur: 'hilang_umur',
+    hilang_pekerjaan: 'hilang_pekerjaan',
+    hilang_alamat: 'hilang_alamat',
+    hilang_ttd: 'hilang_ttd',
+    hilang_createdBy: 'hilang_createdBy',
+    hilang_created: 'hilang_created',
+    hilang_updated: 'hilang_updated',
+    hilang_deleted: 'hilang_deleted'
+  };
+
+  export type KehilanganScalarFieldEnum = (typeof KehilanganScalarFieldEnum)[keyof typeof KehilanganScalarFieldEnum]
+
+
+  export const PenghasilanScalarFieldEnum: {
+    hasil_id: 'hasil_id',
+    hasil_nomor: 'hasil_nomor',
+    hasil_nama: 'hasil_nama',
+    hasil_umur: 'hasil_umur',
+    hasil_pekerjaan: 'hasil_pekerjaan',
+    hasil_alamat: 'hasil_alamat',
+    hasil_penghasilan: 'hasil_penghasilan',
+    hasil_ttd: 'hasil_ttd',
+    hasil_createdBy: 'hasil_createdBy',
+    hasil_created: 'hasil_created',
+    hasil_updated: 'hasil_updated',
+    hasil_deleted: 'hasil_deleted'
+  };
+
+  export type PenghasilanScalarFieldEnum = (typeof PenghasilanScalarFieldEnum)[keyof typeof PenghasilanScalarFieldEnum]
+
+
+  export const TaniScalarFieldEnum: {
+    tani_id: 'tani_id',
+    tani_nomor: 'tani_nomor',
+    tani_nama: 'tani_nama',
+    tani_jabatan: 'tani_jabatan',
+    tani_sekretariat: 'tani_sekretariat',
+    tani_alamat: 'tani_alamat',
+    tani_keperluan: 'tani_keperluan',
+    tani_tujuanBantuan: 'tani_tujuanBantuan',
+    tani_ttd: 'tani_ttd',
+    tani_createdBy: 'tani_createdBy',
+    tani_created: 'tani_created',
+    tani_updated: 'tani_updated',
+    tani_deleted: 'tani_deleted'
+  };
+
+  export type TaniScalarFieldEnum = (typeof TaniScalarFieldEnum)[keyof typeof TaniScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -6958,6 +10576,12 @@ export namespace Prisma {
     nikah_createdBy?: BelumNikahListRelationFilter
     skck?: SkckListRelationFilter
     skck_createdBy?: SkckListRelationFilter
+    kehilangan?: KehilanganListRelationFilter
+    kehilangan_createdBy?: KehilanganListRelationFilter
+    penghasilan?: PenghasilanListRelationFilter
+    penghasilan_createdBy?: PenghasilanListRelationFilter
+    tani?: TaniListRelationFilter
+    tani_createdBy?: TaniListRelationFilter
   }
 
   export type usersOrderByWithRelationInput = {
@@ -6984,6 +10608,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahOrderByRelationAggregateInput
     skck?: skckOrderByRelationAggregateInput
     skck_createdBy?: skckOrderByRelationAggregateInput
+    kehilangan?: kehilanganOrderByRelationAggregateInput
+    kehilangan_createdBy?: kehilanganOrderByRelationAggregateInput
+    penghasilan?: penghasilanOrderByRelationAggregateInput
+    penghasilan_createdBy?: penghasilanOrderByRelationAggregateInput
+    tani?: taniOrderByRelationAggregateInput
+    tani_createdBy?: taniOrderByRelationAggregateInput
   }
 
   export type usersWhereUniqueInput = Prisma.AtLeast<{
@@ -7013,6 +10643,12 @@ export namespace Prisma {
     nikah_createdBy?: BelumNikahListRelationFilter
     skck?: SkckListRelationFilter
     skck_createdBy?: SkckListRelationFilter
+    kehilangan?: KehilanganListRelationFilter
+    kehilangan_createdBy?: KehilanganListRelationFilter
+    penghasilan?: PenghasilanListRelationFilter
+    penghasilan_createdBy?: PenghasilanListRelationFilter
+    tani?: TaniListRelationFilter
+    tani_createdBy?: TaniListRelationFilter
   }, "user_id" | "user_nip" | "user_name">
 
   export type usersOrderByWithAggregationInput = {
@@ -7488,6 +11124,296 @@ export namespace Prisma {
     skck_deleted?: DateTimeNullableWithAggregatesFilter<"skck"> | Date | string | null
   }
 
+  export type kehilanganWhereInput = {
+    AND?: kehilanganWhereInput | kehilanganWhereInput[]
+    OR?: kehilanganWhereInput[]
+    NOT?: kehilanganWhereInput | kehilanganWhereInput[]
+    hilang_id?: IntFilter<"kehilangan"> | number
+    hilang_nomor?: StringNullableFilter<"kehilangan"> | string | null
+    hilang_nama?: StringFilter<"kehilangan"> | string
+    hilang_jk?: IntFilter<"kehilangan"> | number
+    hilang_umur?: IntFilter<"kehilangan"> | number
+    hilang_pekerjaan?: StringFilter<"kehilangan"> | string
+    hilang_alamat?: StringFilter<"kehilangan"> | string
+    hilang_ttd?: IntNullableFilter<"kehilangan"> | number | null
+    hilang_createdBy?: IntNullableFilter<"kehilangan"> | number | null
+    hilang_created?: DateTimeFilter<"kehilangan"> | Date | string
+    hilang_updated?: DateTimeFilter<"kehilangan"> | Date | string
+    hilang_deleted?: DateTimeNullableFilter<"kehilangan"> | Date | string | null
+    ttd_hilang?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+    createdBy?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }
+
+  export type kehilanganOrderByWithRelationInput = {
+    hilang_id?: SortOrder
+    hilang_nomor?: SortOrderInput | SortOrder
+    hilang_nama?: SortOrder
+    hilang_jk?: SortOrder
+    hilang_umur?: SortOrder
+    hilang_pekerjaan?: SortOrder
+    hilang_alamat?: SortOrder
+    hilang_ttd?: SortOrderInput | SortOrder
+    hilang_createdBy?: SortOrderInput | SortOrder
+    hilang_created?: SortOrder
+    hilang_updated?: SortOrder
+    hilang_deleted?: SortOrderInput | SortOrder
+    ttd_hilang?: usersOrderByWithRelationInput
+    createdBy?: usersOrderByWithRelationInput
+  }
+
+  export type kehilanganWhereUniqueInput = Prisma.AtLeast<{
+    hilang_id?: number
+    AND?: kehilanganWhereInput | kehilanganWhereInput[]
+    OR?: kehilanganWhereInput[]
+    NOT?: kehilanganWhereInput | kehilanganWhereInput[]
+    hilang_nomor?: StringNullableFilter<"kehilangan"> | string | null
+    hilang_nama?: StringFilter<"kehilangan"> | string
+    hilang_jk?: IntFilter<"kehilangan"> | number
+    hilang_umur?: IntFilter<"kehilangan"> | number
+    hilang_pekerjaan?: StringFilter<"kehilangan"> | string
+    hilang_alamat?: StringFilter<"kehilangan"> | string
+    hilang_ttd?: IntNullableFilter<"kehilangan"> | number | null
+    hilang_createdBy?: IntNullableFilter<"kehilangan"> | number | null
+    hilang_created?: DateTimeFilter<"kehilangan"> | Date | string
+    hilang_updated?: DateTimeFilter<"kehilangan"> | Date | string
+    hilang_deleted?: DateTimeNullableFilter<"kehilangan"> | Date | string | null
+    ttd_hilang?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+    createdBy?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }, "hilang_id">
+
+  export type kehilanganOrderByWithAggregationInput = {
+    hilang_id?: SortOrder
+    hilang_nomor?: SortOrderInput | SortOrder
+    hilang_nama?: SortOrder
+    hilang_jk?: SortOrder
+    hilang_umur?: SortOrder
+    hilang_pekerjaan?: SortOrder
+    hilang_alamat?: SortOrder
+    hilang_ttd?: SortOrderInput | SortOrder
+    hilang_createdBy?: SortOrderInput | SortOrder
+    hilang_created?: SortOrder
+    hilang_updated?: SortOrder
+    hilang_deleted?: SortOrderInput | SortOrder
+    _count?: kehilanganCountOrderByAggregateInput
+    _avg?: kehilanganAvgOrderByAggregateInput
+    _max?: kehilanganMaxOrderByAggregateInput
+    _min?: kehilanganMinOrderByAggregateInput
+    _sum?: kehilanganSumOrderByAggregateInput
+  }
+
+  export type kehilanganScalarWhereWithAggregatesInput = {
+    AND?: kehilanganScalarWhereWithAggregatesInput | kehilanganScalarWhereWithAggregatesInput[]
+    OR?: kehilanganScalarWhereWithAggregatesInput[]
+    NOT?: kehilanganScalarWhereWithAggregatesInput | kehilanganScalarWhereWithAggregatesInput[]
+    hilang_id?: IntWithAggregatesFilter<"kehilangan"> | number
+    hilang_nomor?: StringNullableWithAggregatesFilter<"kehilangan"> | string | null
+    hilang_nama?: StringWithAggregatesFilter<"kehilangan"> | string
+    hilang_jk?: IntWithAggregatesFilter<"kehilangan"> | number
+    hilang_umur?: IntWithAggregatesFilter<"kehilangan"> | number
+    hilang_pekerjaan?: StringWithAggregatesFilter<"kehilangan"> | string
+    hilang_alamat?: StringWithAggregatesFilter<"kehilangan"> | string
+    hilang_ttd?: IntNullableWithAggregatesFilter<"kehilangan"> | number | null
+    hilang_createdBy?: IntNullableWithAggregatesFilter<"kehilangan"> | number | null
+    hilang_created?: DateTimeWithAggregatesFilter<"kehilangan"> | Date | string
+    hilang_updated?: DateTimeWithAggregatesFilter<"kehilangan"> | Date | string
+    hilang_deleted?: DateTimeNullableWithAggregatesFilter<"kehilangan"> | Date | string | null
+  }
+
+  export type penghasilanWhereInput = {
+    AND?: penghasilanWhereInput | penghasilanWhereInput[]
+    OR?: penghasilanWhereInput[]
+    NOT?: penghasilanWhereInput | penghasilanWhereInput[]
+    hasil_id?: IntFilter<"penghasilan"> | number
+    hasil_nomor?: StringNullableFilter<"penghasilan"> | string | null
+    hasil_nama?: StringFilter<"penghasilan"> | string
+    hasil_umur?: IntFilter<"penghasilan"> | number
+    hasil_pekerjaan?: StringFilter<"penghasilan"> | string
+    hasil_alamat?: StringFilter<"penghasilan"> | string
+    hasil_penghasilan?: StringFilter<"penghasilan"> | string
+    hasil_ttd?: IntNullableFilter<"penghasilan"> | number | null
+    hasil_createdBy?: IntNullableFilter<"penghasilan"> | number | null
+    hasil_created?: DateTimeFilter<"penghasilan"> | Date | string
+    hasil_updated?: DateTimeFilter<"penghasilan"> | Date | string
+    hasil_deleted?: DateTimeNullableFilter<"penghasilan"> | Date | string | null
+    ttd_hasil?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+    createdBy?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }
+
+  export type penghasilanOrderByWithRelationInput = {
+    hasil_id?: SortOrder
+    hasil_nomor?: SortOrderInput | SortOrder
+    hasil_nama?: SortOrder
+    hasil_umur?: SortOrder
+    hasil_pekerjaan?: SortOrder
+    hasil_alamat?: SortOrder
+    hasil_penghasilan?: SortOrder
+    hasil_ttd?: SortOrderInput | SortOrder
+    hasil_createdBy?: SortOrderInput | SortOrder
+    hasil_created?: SortOrder
+    hasil_updated?: SortOrder
+    hasil_deleted?: SortOrderInput | SortOrder
+    ttd_hasil?: usersOrderByWithRelationInput
+    createdBy?: usersOrderByWithRelationInput
+  }
+
+  export type penghasilanWhereUniqueInput = Prisma.AtLeast<{
+    hasil_id?: number
+    AND?: penghasilanWhereInput | penghasilanWhereInput[]
+    OR?: penghasilanWhereInput[]
+    NOT?: penghasilanWhereInput | penghasilanWhereInput[]
+    hasil_nomor?: StringNullableFilter<"penghasilan"> | string | null
+    hasil_nama?: StringFilter<"penghasilan"> | string
+    hasil_umur?: IntFilter<"penghasilan"> | number
+    hasil_pekerjaan?: StringFilter<"penghasilan"> | string
+    hasil_alamat?: StringFilter<"penghasilan"> | string
+    hasil_penghasilan?: StringFilter<"penghasilan"> | string
+    hasil_ttd?: IntNullableFilter<"penghasilan"> | number | null
+    hasil_createdBy?: IntNullableFilter<"penghasilan"> | number | null
+    hasil_created?: DateTimeFilter<"penghasilan"> | Date | string
+    hasil_updated?: DateTimeFilter<"penghasilan"> | Date | string
+    hasil_deleted?: DateTimeNullableFilter<"penghasilan"> | Date | string | null
+    ttd_hasil?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+    createdBy?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }, "hasil_id">
+
+  export type penghasilanOrderByWithAggregationInput = {
+    hasil_id?: SortOrder
+    hasil_nomor?: SortOrderInput | SortOrder
+    hasil_nama?: SortOrder
+    hasil_umur?: SortOrder
+    hasil_pekerjaan?: SortOrder
+    hasil_alamat?: SortOrder
+    hasil_penghasilan?: SortOrder
+    hasil_ttd?: SortOrderInput | SortOrder
+    hasil_createdBy?: SortOrderInput | SortOrder
+    hasil_created?: SortOrder
+    hasil_updated?: SortOrder
+    hasil_deleted?: SortOrderInput | SortOrder
+    _count?: penghasilanCountOrderByAggregateInput
+    _avg?: penghasilanAvgOrderByAggregateInput
+    _max?: penghasilanMaxOrderByAggregateInput
+    _min?: penghasilanMinOrderByAggregateInput
+    _sum?: penghasilanSumOrderByAggregateInput
+  }
+
+  export type penghasilanScalarWhereWithAggregatesInput = {
+    AND?: penghasilanScalarWhereWithAggregatesInput | penghasilanScalarWhereWithAggregatesInput[]
+    OR?: penghasilanScalarWhereWithAggregatesInput[]
+    NOT?: penghasilanScalarWhereWithAggregatesInput | penghasilanScalarWhereWithAggregatesInput[]
+    hasil_id?: IntWithAggregatesFilter<"penghasilan"> | number
+    hasil_nomor?: StringNullableWithAggregatesFilter<"penghasilan"> | string | null
+    hasil_nama?: StringWithAggregatesFilter<"penghasilan"> | string
+    hasil_umur?: IntWithAggregatesFilter<"penghasilan"> | number
+    hasil_pekerjaan?: StringWithAggregatesFilter<"penghasilan"> | string
+    hasil_alamat?: StringWithAggregatesFilter<"penghasilan"> | string
+    hasil_penghasilan?: StringWithAggregatesFilter<"penghasilan"> | string
+    hasil_ttd?: IntNullableWithAggregatesFilter<"penghasilan"> | number | null
+    hasil_createdBy?: IntNullableWithAggregatesFilter<"penghasilan"> | number | null
+    hasil_created?: DateTimeWithAggregatesFilter<"penghasilan"> | Date | string
+    hasil_updated?: DateTimeWithAggregatesFilter<"penghasilan"> | Date | string
+    hasil_deleted?: DateTimeNullableWithAggregatesFilter<"penghasilan"> | Date | string | null
+  }
+
+  export type taniWhereInput = {
+    AND?: taniWhereInput | taniWhereInput[]
+    OR?: taniWhereInput[]
+    NOT?: taniWhereInput | taniWhereInput[]
+    tani_id?: IntFilter<"tani"> | number
+    tani_nomor?: StringNullableFilter<"tani"> | string | null
+    tani_nama?: StringFilter<"tani"> | string
+    tani_jabatan?: StringFilter<"tani"> | string
+    tani_sekretariat?: StringFilter<"tani"> | string
+    tani_alamat?: StringFilter<"tani"> | string
+    tani_keperluan?: StringFilter<"tani"> | string
+    tani_tujuanBantuan?: StringFilter<"tani"> | string
+    tani_ttd?: IntNullableFilter<"tani"> | number | null
+    tani_createdBy?: IntNullableFilter<"tani"> | number | null
+    tani_created?: DateTimeFilter<"tani"> | Date | string
+    tani_updated?: DateTimeFilter<"tani"> | Date | string
+    tani_deleted?: DateTimeNullableFilter<"tani"> | Date | string | null
+    ttd_tani?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+    createdBy?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }
+
+  export type taniOrderByWithRelationInput = {
+    tani_id?: SortOrder
+    tani_nomor?: SortOrderInput | SortOrder
+    tani_nama?: SortOrder
+    tani_jabatan?: SortOrder
+    tani_sekretariat?: SortOrder
+    tani_alamat?: SortOrder
+    tani_keperluan?: SortOrder
+    tani_tujuanBantuan?: SortOrder
+    tani_ttd?: SortOrderInput | SortOrder
+    tani_createdBy?: SortOrderInput | SortOrder
+    tani_created?: SortOrder
+    tani_updated?: SortOrder
+    tani_deleted?: SortOrderInput | SortOrder
+    ttd_tani?: usersOrderByWithRelationInput
+    createdBy?: usersOrderByWithRelationInput
+  }
+
+  export type taniWhereUniqueInput = Prisma.AtLeast<{
+    tani_id?: number
+    AND?: taniWhereInput | taniWhereInput[]
+    OR?: taniWhereInput[]
+    NOT?: taniWhereInput | taniWhereInput[]
+    tani_nomor?: StringNullableFilter<"tani"> | string | null
+    tani_nama?: StringFilter<"tani"> | string
+    tani_jabatan?: StringFilter<"tani"> | string
+    tani_sekretariat?: StringFilter<"tani"> | string
+    tani_alamat?: StringFilter<"tani"> | string
+    tani_keperluan?: StringFilter<"tani"> | string
+    tani_tujuanBantuan?: StringFilter<"tani"> | string
+    tani_ttd?: IntNullableFilter<"tani"> | number | null
+    tani_createdBy?: IntNullableFilter<"tani"> | number | null
+    tani_created?: DateTimeFilter<"tani"> | Date | string
+    tani_updated?: DateTimeFilter<"tani"> | Date | string
+    tani_deleted?: DateTimeNullableFilter<"tani"> | Date | string | null
+    ttd_tani?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+    createdBy?: XOR<UsersNullableRelationFilter, usersWhereInput> | null
+  }, "tani_id">
+
+  export type taniOrderByWithAggregationInput = {
+    tani_id?: SortOrder
+    tani_nomor?: SortOrderInput | SortOrder
+    tani_nama?: SortOrder
+    tani_jabatan?: SortOrder
+    tani_sekretariat?: SortOrder
+    tani_alamat?: SortOrder
+    tani_keperluan?: SortOrder
+    tani_tujuanBantuan?: SortOrder
+    tani_ttd?: SortOrderInput | SortOrder
+    tani_createdBy?: SortOrderInput | SortOrder
+    tani_created?: SortOrder
+    tani_updated?: SortOrder
+    tani_deleted?: SortOrderInput | SortOrder
+    _count?: taniCountOrderByAggregateInput
+    _avg?: taniAvgOrderByAggregateInput
+    _max?: taniMaxOrderByAggregateInput
+    _min?: taniMinOrderByAggregateInput
+    _sum?: taniSumOrderByAggregateInput
+  }
+
+  export type taniScalarWhereWithAggregatesInput = {
+    AND?: taniScalarWhereWithAggregatesInput | taniScalarWhereWithAggregatesInput[]
+    OR?: taniScalarWhereWithAggregatesInput[]
+    NOT?: taniScalarWhereWithAggregatesInput | taniScalarWhereWithAggregatesInput[]
+    tani_id?: IntWithAggregatesFilter<"tani"> | number
+    tani_nomor?: StringNullableWithAggregatesFilter<"tani"> | string | null
+    tani_nama?: StringWithAggregatesFilter<"tani"> | string
+    tani_jabatan?: StringWithAggregatesFilter<"tani"> | string
+    tani_sekretariat?: StringWithAggregatesFilter<"tani"> | string
+    tani_alamat?: StringWithAggregatesFilter<"tani"> | string
+    tani_keperluan?: StringWithAggregatesFilter<"tani"> | string
+    tani_tujuanBantuan?: StringWithAggregatesFilter<"tani"> | string
+    tani_ttd?: IntNullableWithAggregatesFilter<"tani"> | number | null
+    tani_createdBy?: IntNullableWithAggregatesFilter<"tani"> | number | null
+    tani_created?: DateTimeWithAggregatesFilter<"tani"> | Date | string
+    tani_updated?: DateTimeWithAggregatesFilter<"tani"> | Date | string
+    tani_deleted?: DateTimeNullableWithAggregatesFilter<"tani"> | Date | string | null
+  }
+
   export type usersCreateInput = {
     user_nama: string
     user_nip?: string | null
@@ -7510,6 +11436,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
     skck?: skckCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateInput = {
@@ -7535,6 +11467,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
     skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUpdateInput = {
@@ -7559,6 +11497,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
     skck?: skckUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateInput = {
@@ -7584,6 +11528,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
     skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersCreateManyInput = {
@@ -8117,6 +12067,313 @@ export namespace Prisma {
     skck_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type kehilanganCreateInput = {
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+    ttd_hilang?: usersCreateNestedOneWithoutKehilanganInput
+    createdBy?: usersCreateNestedOneWithoutKehilangan_createdByInput
+  }
+
+  export type kehilanganUncheckedCreateInput = {
+    hilang_id?: number
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_ttd?: number | null
+    hilang_createdBy?: number | null
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+  }
+
+  export type kehilanganUpdateInput = {
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ttd_hilang?: usersUpdateOneWithoutKehilanganNestedInput
+    createdBy?: usersUpdateOneWithoutKehilangan_createdByNestedInput
+  }
+
+  export type kehilanganUncheckedUpdateInput = {
+    hilang_id?: IntFieldUpdateOperationsInput | number
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type kehilanganCreateManyInput = {
+    hilang_id?: number
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_ttd?: number | null
+    hilang_createdBy?: number | null
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+  }
+
+  export type kehilanganUpdateManyMutationInput = {
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type kehilanganUncheckedUpdateManyInput = {
+    hilang_id?: IntFieldUpdateOperationsInput | number
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type penghasilanCreateInput = {
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+    ttd_hasil?: usersCreateNestedOneWithoutPenghasilanInput
+    createdBy?: usersCreateNestedOneWithoutPenghasilan_createdByInput
+  }
+
+  export type penghasilanUncheckedCreateInput = {
+    hasil_id?: number
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_ttd?: number | null
+    hasil_createdBy?: number | null
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+  }
+
+  export type penghasilanUpdateInput = {
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ttd_hasil?: usersUpdateOneWithoutPenghasilanNestedInput
+    createdBy?: usersUpdateOneWithoutPenghasilan_createdByNestedInput
+  }
+
+  export type penghasilanUncheckedUpdateInput = {
+    hasil_id?: IntFieldUpdateOperationsInput | number
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type penghasilanCreateManyInput = {
+    hasil_id?: number
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_ttd?: number | null
+    hasil_createdBy?: number | null
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+  }
+
+  export type penghasilanUpdateManyMutationInput = {
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type penghasilanUncheckedUpdateManyInput = {
+    hasil_id?: IntFieldUpdateOperationsInput | number
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type taniCreateInput = {
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+    ttd_tani?: usersCreateNestedOneWithoutTaniInput
+    createdBy?: usersCreateNestedOneWithoutTani_createdByInput
+  }
+
+  export type taniUncheckedCreateInput = {
+    tani_id?: number
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_ttd?: number | null
+    tani_createdBy?: number | null
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+  }
+
+  export type taniUpdateInput = {
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ttd_tani?: usersUpdateOneWithoutTaniNestedInput
+    createdBy?: usersUpdateOneWithoutTani_createdByNestedInput
+  }
+
+  export type taniUncheckedUpdateInput = {
+    tani_id?: IntFieldUpdateOperationsInput | number
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type taniCreateManyInput = {
+    tani_id?: number
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_ttd?: number | null
+    tani_createdBy?: number | null
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+  }
+
+  export type taniUpdateManyMutationInput = {
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type taniUncheckedUpdateManyInput = {
+    tani_id?: IntFieldUpdateOperationsInput | number
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -8212,6 +12469,24 @@ export namespace Prisma {
     none?: skckWhereInput
   }
 
+  export type KehilanganListRelationFilter = {
+    every?: kehilanganWhereInput
+    some?: kehilanganWhereInput
+    none?: kehilanganWhereInput
+  }
+
+  export type PenghasilanListRelationFilter = {
+    every?: penghasilanWhereInput
+    some?: penghasilanWhereInput
+    none?: penghasilanWhereInput
+  }
+
+  export type TaniListRelationFilter = {
+    every?: taniWhereInput
+    some?: taniWhereInput
+    none?: taniWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -8226,6 +12501,18 @@ export namespace Prisma {
   }
 
   export type skckOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type kehilanganOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type penghasilanOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type taniOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -8677,6 +12964,186 @@ export namespace Prisma {
     skck_createdBy?: SortOrder
   }
 
+  export type kehilanganCountOrderByAggregateInput = {
+    hilang_id?: SortOrder
+    hilang_nomor?: SortOrder
+    hilang_nama?: SortOrder
+    hilang_jk?: SortOrder
+    hilang_umur?: SortOrder
+    hilang_pekerjaan?: SortOrder
+    hilang_alamat?: SortOrder
+    hilang_ttd?: SortOrder
+    hilang_createdBy?: SortOrder
+    hilang_created?: SortOrder
+    hilang_updated?: SortOrder
+    hilang_deleted?: SortOrder
+  }
+
+  export type kehilanganAvgOrderByAggregateInput = {
+    hilang_id?: SortOrder
+    hilang_jk?: SortOrder
+    hilang_umur?: SortOrder
+    hilang_ttd?: SortOrder
+    hilang_createdBy?: SortOrder
+  }
+
+  export type kehilanganMaxOrderByAggregateInput = {
+    hilang_id?: SortOrder
+    hilang_nomor?: SortOrder
+    hilang_nama?: SortOrder
+    hilang_jk?: SortOrder
+    hilang_umur?: SortOrder
+    hilang_pekerjaan?: SortOrder
+    hilang_alamat?: SortOrder
+    hilang_ttd?: SortOrder
+    hilang_createdBy?: SortOrder
+    hilang_created?: SortOrder
+    hilang_updated?: SortOrder
+    hilang_deleted?: SortOrder
+  }
+
+  export type kehilanganMinOrderByAggregateInput = {
+    hilang_id?: SortOrder
+    hilang_nomor?: SortOrder
+    hilang_nama?: SortOrder
+    hilang_jk?: SortOrder
+    hilang_umur?: SortOrder
+    hilang_pekerjaan?: SortOrder
+    hilang_alamat?: SortOrder
+    hilang_ttd?: SortOrder
+    hilang_createdBy?: SortOrder
+    hilang_created?: SortOrder
+    hilang_updated?: SortOrder
+    hilang_deleted?: SortOrder
+  }
+
+  export type kehilanganSumOrderByAggregateInput = {
+    hilang_id?: SortOrder
+    hilang_jk?: SortOrder
+    hilang_umur?: SortOrder
+    hilang_ttd?: SortOrder
+    hilang_createdBy?: SortOrder
+  }
+
+  export type penghasilanCountOrderByAggregateInput = {
+    hasil_id?: SortOrder
+    hasil_nomor?: SortOrder
+    hasil_nama?: SortOrder
+    hasil_umur?: SortOrder
+    hasil_pekerjaan?: SortOrder
+    hasil_alamat?: SortOrder
+    hasil_penghasilan?: SortOrder
+    hasil_ttd?: SortOrder
+    hasil_createdBy?: SortOrder
+    hasil_created?: SortOrder
+    hasil_updated?: SortOrder
+    hasil_deleted?: SortOrder
+  }
+
+  export type penghasilanAvgOrderByAggregateInput = {
+    hasil_id?: SortOrder
+    hasil_umur?: SortOrder
+    hasil_ttd?: SortOrder
+    hasil_createdBy?: SortOrder
+  }
+
+  export type penghasilanMaxOrderByAggregateInput = {
+    hasil_id?: SortOrder
+    hasil_nomor?: SortOrder
+    hasil_nama?: SortOrder
+    hasil_umur?: SortOrder
+    hasil_pekerjaan?: SortOrder
+    hasil_alamat?: SortOrder
+    hasil_penghasilan?: SortOrder
+    hasil_ttd?: SortOrder
+    hasil_createdBy?: SortOrder
+    hasil_created?: SortOrder
+    hasil_updated?: SortOrder
+    hasil_deleted?: SortOrder
+  }
+
+  export type penghasilanMinOrderByAggregateInput = {
+    hasil_id?: SortOrder
+    hasil_nomor?: SortOrder
+    hasil_nama?: SortOrder
+    hasil_umur?: SortOrder
+    hasil_pekerjaan?: SortOrder
+    hasil_alamat?: SortOrder
+    hasil_penghasilan?: SortOrder
+    hasil_ttd?: SortOrder
+    hasil_createdBy?: SortOrder
+    hasil_created?: SortOrder
+    hasil_updated?: SortOrder
+    hasil_deleted?: SortOrder
+  }
+
+  export type penghasilanSumOrderByAggregateInput = {
+    hasil_id?: SortOrder
+    hasil_umur?: SortOrder
+    hasil_ttd?: SortOrder
+    hasil_createdBy?: SortOrder
+  }
+
+  export type taniCountOrderByAggregateInput = {
+    tani_id?: SortOrder
+    tani_nomor?: SortOrder
+    tani_nama?: SortOrder
+    tani_jabatan?: SortOrder
+    tani_sekretariat?: SortOrder
+    tani_alamat?: SortOrder
+    tani_keperluan?: SortOrder
+    tani_tujuanBantuan?: SortOrder
+    tani_ttd?: SortOrder
+    tani_createdBy?: SortOrder
+    tani_created?: SortOrder
+    tani_updated?: SortOrder
+    tani_deleted?: SortOrder
+  }
+
+  export type taniAvgOrderByAggregateInput = {
+    tani_id?: SortOrder
+    tani_ttd?: SortOrder
+    tani_createdBy?: SortOrder
+  }
+
+  export type taniMaxOrderByAggregateInput = {
+    tani_id?: SortOrder
+    tani_nomor?: SortOrder
+    tani_nama?: SortOrder
+    tani_jabatan?: SortOrder
+    tani_sekretariat?: SortOrder
+    tani_alamat?: SortOrder
+    tani_keperluan?: SortOrder
+    tani_tujuanBantuan?: SortOrder
+    tani_ttd?: SortOrder
+    tani_createdBy?: SortOrder
+    tani_created?: SortOrder
+    tani_updated?: SortOrder
+    tani_deleted?: SortOrder
+  }
+
+  export type taniMinOrderByAggregateInput = {
+    tani_id?: SortOrder
+    tani_nomor?: SortOrder
+    tani_nama?: SortOrder
+    tani_jabatan?: SortOrder
+    tani_sekretariat?: SortOrder
+    tani_alamat?: SortOrder
+    tani_keperluan?: SortOrder
+    tani_tujuanBantuan?: SortOrder
+    tani_ttd?: SortOrder
+    tani_createdBy?: SortOrder
+    tani_created?: SortOrder
+    tani_updated?: SortOrder
+    tani_deleted?: SortOrder
+  }
+
+  export type taniSumOrderByAggregateInput = {
+    tani_id?: SortOrder
+    tani_ttd?: SortOrder
+    tani_createdBy?: SortOrder
+  }
+
   export type jabatanCreateNestedOneWithoutUsersInput = {
     create?: XOR<jabatanCreateWithoutUsersInput, jabatanUncheckedCreateWithoutUsersInput>
     connectOrCreate?: jabatanCreateOrConnectWithoutUsersInput
@@ -8725,6 +13192,48 @@ export namespace Prisma {
     connect?: skckWhereUniqueInput | skckWhereUniqueInput[]
   }
 
+  export type kehilanganCreateNestedManyWithoutTtd_hilangInput = {
+    create?: XOR<kehilanganCreateWithoutTtd_hilangInput, kehilanganUncheckedCreateWithoutTtd_hilangInput> | kehilanganCreateWithoutTtd_hilangInput[] | kehilanganUncheckedCreateWithoutTtd_hilangInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutTtd_hilangInput | kehilanganCreateOrConnectWithoutTtd_hilangInput[]
+    createMany?: kehilanganCreateManyTtd_hilangInputEnvelope
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+  }
+
+  export type kehilanganCreateNestedManyWithoutCreatedByInput = {
+    create?: XOR<kehilanganCreateWithoutCreatedByInput, kehilanganUncheckedCreateWithoutCreatedByInput> | kehilanganCreateWithoutCreatedByInput[] | kehilanganUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutCreatedByInput | kehilanganCreateOrConnectWithoutCreatedByInput[]
+    createMany?: kehilanganCreateManyCreatedByInputEnvelope
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+  }
+
+  export type penghasilanCreateNestedManyWithoutTtd_hasilInput = {
+    create?: XOR<penghasilanCreateWithoutTtd_hasilInput, penghasilanUncheckedCreateWithoutTtd_hasilInput> | penghasilanCreateWithoutTtd_hasilInput[] | penghasilanUncheckedCreateWithoutTtd_hasilInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutTtd_hasilInput | penghasilanCreateOrConnectWithoutTtd_hasilInput[]
+    createMany?: penghasilanCreateManyTtd_hasilInputEnvelope
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+  }
+
+  export type penghasilanCreateNestedManyWithoutCreatedByInput = {
+    create?: XOR<penghasilanCreateWithoutCreatedByInput, penghasilanUncheckedCreateWithoutCreatedByInput> | penghasilanCreateWithoutCreatedByInput[] | penghasilanUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutCreatedByInput | penghasilanCreateOrConnectWithoutCreatedByInput[]
+    createMany?: penghasilanCreateManyCreatedByInputEnvelope
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+  }
+
+  export type taniCreateNestedManyWithoutTtd_taniInput = {
+    create?: XOR<taniCreateWithoutTtd_taniInput, taniUncheckedCreateWithoutTtd_taniInput> | taniCreateWithoutTtd_taniInput[] | taniUncheckedCreateWithoutTtd_taniInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutTtd_taniInput | taniCreateOrConnectWithoutTtd_taniInput[]
+    createMany?: taniCreateManyTtd_taniInputEnvelope
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+  }
+
+  export type taniCreateNestedManyWithoutCreatedByInput = {
+    create?: XOR<taniCreateWithoutCreatedByInput, taniUncheckedCreateWithoutCreatedByInput> | taniCreateWithoutCreatedByInput[] | taniUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutCreatedByInput | taniCreateOrConnectWithoutCreatedByInput[]
+    createMany?: taniCreateManyCreatedByInputEnvelope
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+  }
+
   export type sktmUncheckedCreateNestedManyWithoutTtd_sktmInput = {
     create?: XOR<sktmCreateWithoutTtd_sktmInput, sktmUncheckedCreateWithoutTtd_sktmInput> | sktmCreateWithoutTtd_sktmInput[] | sktmUncheckedCreateWithoutTtd_sktmInput[]
     connectOrCreate?: sktmCreateOrConnectWithoutTtd_sktmInput | sktmCreateOrConnectWithoutTtd_sktmInput[]
@@ -8765,6 +13274,48 @@ export namespace Prisma {
     connectOrCreate?: skckCreateOrConnectWithoutCreatedByInput | skckCreateOrConnectWithoutCreatedByInput[]
     createMany?: skckCreateManyCreatedByInputEnvelope
     connect?: skckWhereUniqueInput | skckWhereUniqueInput[]
+  }
+
+  export type kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput = {
+    create?: XOR<kehilanganCreateWithoutTtd_hilangInput, kehilanganUncheckedCreateWithoutTtd_hilangInput> | kehilanganCreateWithoutTtd_hilangInput[] | kehilanganUncheckedCreateWithoutTtd_hilangInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutTtd_hilangInput | kehilanganCreateOrConnectWithoutTtd_hilangInput[]
+    createMany?: kehilanganCreateManyTtd_hilangInputEnvelope
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+  }
+
+  export type kehilanganUncheckedCreateNestedManyWithoutCreatedByInput = {
+    create?: XOR<kehilanganCreateWithoutCreatedByInput, kehilanganUncheckedCreateWithoutCreatedByInput> | kehilanganCreateWithoutCreatedByInput[] | kehilanganUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutCreatedByInput | kehilanganCreateOrConnectWithoutCreatedByInput[]
+    createMany?: kehilanganCreateManyCreatedByInputEnvelope
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+  }
+
+  export type penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput = {
+    create?: XOR<penghasilanCreateWithoutTtd_hasilInput, penghasilanUncheckedCreateWithoutTtd_hasilInput> | penghasilanCreateWithoutTtd_hasilInput[] | penghasilanUncheckedCreateWithoutTtd_hasilInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutTtd_hasilInput | penghasilanCreateOrConnectWithoutTtd_hasilInput[]
+    createMany?: penghasilanCreateManyTtd_hasilInputEnvelope
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+  }
+
+  export type penghasilanUncheckedCreateNestedManyWithoutCreatedByInput = {
+    create?: XOR<penghasilanCreateWithoutCreatedByInput, penghasilanUncheckedCreateWithoutCreatedByInput> | penghasilanCreateWithoutCreatedByInput[] | penghasilanUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutCreatedByInput | penghasilanCreateOrConnectWithoutCreatedByInput[]
+    createMany?: penghasilanCreateManyCreatedByInputEnvelope
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+  }
+
+  export type taniUncheckedCreateNestedManyWithoutTtd_taniInput = {
+    create?: XOR<taniCreateWithoutTtd_taniInput, taniUncheckedCreateWithoutTtd_taniInput> | taniCreateWithoutTtd_taniInput[] | taniUncheckedCreateWithoutTtd_taniInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutTtd_taniInput | taniCreateOrConnectWithoutTtd_taniInput[]
+    createMany?: taniCreateManyTtd_taniInputEnvelope
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+  }
+
+  export type taniUncheckedCreateNestedManyWithoutCreatedByInput = {
+    create?: XOR<taniCreateWithoutCreatedByInput, taniUncheckedCreateWithoutCreatedByInput> | taniCreateWithoutCreatedByInput[] | taniUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutCreatedByInput | taniCreateOrConnectWithoutCreatedByInput[]
+    createMany?: taniCreateManyCreatedByInputEnvelope
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -8885,6 +13436,90 @@ export namespace Prisma {
     deleteMany?: skckScalarWhereInput | skckScalarWhereInput[]
   }
 
+  export type kehilanganUpdateManyWithoutTtd_hilangNestedInput = {
+    create?: XOR<kehilanganCreateWithoutTtd_hilangInput, kehilanganUncheckedCreateWithoutTtd_hilangInput> | kehilanganCreateWithoutTtd_hilangInput[] | kehilanganUncheckedCreateWithoutTtd_hilangInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutTtd_hilangInput | kehilanganCreateOrConnectWithoutTtd_hilangInput[]
+    upsert?: kehilanganUpsertWithWhereUniqueWithoutTtd_hilangInput | kehilanganUpsertWithWhereUniqueWithoutTtd_hilangInput[]
+    createMany?: kehilanganCreateManyTtd_hilangInputEnvelope
+    set?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    disconnect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    delete?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    update?: kehilanganUpdateWithWhereUniqueWithoutTtd_hilangInput | kehilanganUpdateWithWhereUniqueWithoutTtd_hilangInput[]
+    updateMany?: kehilanganUpdateManyWithWhereWithoutTtd_hilangInput | kehilanganUpdateManyWithWhereWithoutTtd_hilangInput[]
+    deleteMany?: kehilanganScalarWhereInput | kehilanganScalarWhereInput[]
+  }
+
+  export type kehilanganUpdateManyWithoutCreatedByNestedInput = {
+    create?: XOR<kehilanganCreateWithoutCreatedByInput, kehilanganUncheckedCreateWithoutCreatedByInput> | kehilanganCreateWithoutCreatedByInput[] | kehilanganUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutCreatedByInput | kehilanganCreateOrConnectWithoutCreatedByInput[]
+    upsert?: kehilanganUpsertWithWhereUniqueWithoutCreatedByInput | kehilanganUpsertWithWhereUniqueWithoutCreatedByInput[]
+    createMany?: kehilanganCreateManyCreatedByInputEnvelope
+    set?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    disconnect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    delete?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    update?: kehilanganUpdateWithWhereUniqueWithoutCreatedByInput | kehilanganUpdateWithWhereUniqueWithoutCreatedByInput[]
+    updateMany?: kehilanganUpdateManyWithWhereWithoutCreatedByInput | kehilanganUpdateManyWithWhereWithoutCreatedByInput[]
+    deleteMany?: kehilanganScalarWhereInput | kehilanganScalarWhereInput[]
+  }
+
+  export type penghasilanUpdateManyWithoutTtd_hasilNestedInput = {
+    create?: XOR<penghasilanCreateWithoutTtd_hasilInput, penghasilanUncheckedCreateWithoutTtd_hasilInput> | penghasilanCreateWithoutTtd_hasilInput[] | penghasilanUncheckedCreateWithoutTtd_hasilInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutTtd_hasilInput | penghasilanCreateOrConnectWithoutTtd_hasilInput[]
+    upsert?: penghasilanUpsertWithWhereUniqueWithoutTtd_hasilInput | penghasilanUpsertWithWhereUniqueWithoutTtd_hasilInput[]
+    createMany?: penghasilanCreateManyTtd_hasilInputEnvelope
+    set?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    disconnect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    delete?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    update?: penghasilanUpdateWithWhereUniqueWithoutTtd_hasilInput | penghasilanUpdateWithWhereUniqueWithoutTtd_hasilInput[]
+    updateMany?: penghasilanUpdateManyWithWhereWithoutTtd_hasilInput | penghasilanUpdateManyWithWhereWithoutTtd_hasilInput[]
+    deleteMany?: penghasilanScalarWhereInput | penghasilanScalarWhereInput[]
+  }
+
+  export type penghasilanUpdateManyWithoutCreatedByNestedInput = {
+    create?: XOR<penghasilanCreateWithoutCreatedByInput, penghasilanUncheckedCreateWithoutCreatedByInput> | penghasilanCreateWithoutCreatedByInput[] | penghasilanUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutCreatedByInput | penghasilanCreateOrConnectWithoutCreatedByInput[]
+    upsert?: penghasilanUpsertWithWhereUniqueWithoutCreatedByInput | penghasilanUpsertWithWhereUniqueWithoutCreatedByInput[]
+    createMany?: penghasilanCreateManyCreatedByInputEnvelope
+    set?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    disconnect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    delete?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    update?: penghasilanUpdateWithWhereUniqueWithoutCreatedByInput | penghasilanUpdateWithWhereUniqueWithoutCreatedByInput[]
+    updateMany?: penghasilanUpdateManyWithWhereWithoutCreatedByInput | penghasilanUpdateManyWithWhereWithoutCreatedByInput[]
+    deleteMany?: penghasilanScalarWhereInput | penghasilanScalarWhereInput[]
+  }
+
+  export type taniUpdateManyWithoutTtd_taniNestedInput = {
+    create?: XOR<taniCreateWithoutTtd_taniInput, taniUncheckedCreateWithoutTtd_taniInput> | taniCreateWithoutTtd_taniInput[] | taniUncheckedCreateWithoutTtd_taniInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutTtd_taniInput | taniCreateOrConnectWithoutTtd_taniInput[]
+    upsert?: taniUpsertWithWhereUniqueWithoutTtd_taniInput | taniUpsertWithWhereUniqueWithoutTtd_taniInput[]
+    createMany?: taniCreateManyTtd_taniInputEnvelope
+    set?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    disconnect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    delete?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    update?: taniUpdateWithWhereUniqueWithoutTtd_taniInput | taniUpdateWithWhereUniqueWithoutTtd_taniInput[]
+    updateMany?: taniUpdateManyWithWhereWithoutTtd_taniInput | taniUpdateManyWithWhereWithoutTtd_taniInput[]
+    deleteMany?: taniScalarWhereInput | taniScalarWhereInput[]
+  }
+
+  export type taniUpdateManyWithoutCreatedByNestedInput = {
+    create?: XOR<taniCreateWithoutCreatedByInput, taniUncheckedCreateWithoutCreatedByInput> | taniCreateWithoutCreatedByInput[] | taniUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutCreatedByInput | taniCreateOrConnectWithoutCreatedByInput[]
+    upsert?: taniUpsertWithWhereUniqueWithoutCreatedByInput | taniUpsertWithWhereUniqueWithoutCreatedByInput[]
+    createMany?: taniCreateManyCreatedByInputEnvelope
+    set?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    disconnect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    delete?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    update?: taniUpdateWithWhereUniqueWithoutCreatedByInput | taniUpdateWithWhereUniqueWithoutCreatedByInput[]
+    updateMany?: taniUpdateManyWithWhereWithoutCreatedByInput | taniUpdateManyWithWhereWithoutCreatedByInput[]
+    deleteMany?: taniScalarWhereInput | taniScalarWhereInput[]
+  }
+
   export type NullableIntFieldUpdateOperationsInput = {
     set?: number | null
     increment?: number
@@ -8975,6 +13610,90 @@ export namespace Prisma {
     update?: skckUpdateWithWhereUniqueWithoutCreatedByInput | skckUpdateWithWhereUniqueWithoutCreatedByInput[]
     updateMany?: skckUpdateManyWithWhereWithoutCreatedByInput | skckUpdateManyWithWhereWithoutCreatedByInput[]
     deleteMany?: skckScalarWhereInput | skckScalarWhereInput[]
+  }
+
+  export type kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput = {
+    create?: XOR<kehilanganCreateWithoutTtd_hilangInput, kehilanganUncheckedCreateWithoutTtd_hilangInput> | kehilanganCreateWithoutTtd_hilangInput[] | kehilanganUncheckedCreateWithoutTtd_hilangInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutTtd_hilangInput | kehilanganCreateOrConnectWithoutTtd_hilangInput[]
+    upsert?: kehilanganUpsertWithWhereUniqueWithoutTtd_hilangInput | kehilanganUpsertWithWhereUniqueWithoutTtd_hilangInput[]
+    createMany?: kehilanganCreateManyTtd_hilangInputEnvelope
+    set?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    disconnect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    delete?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    update?: kehilanganUpdateWithWhereUniqueWithoutTtd_hilangInput | kehilanganUpdateWithWhereUniqueWithoutTtd_hilangInput[]
+    updateMany?: kehilanganUpdateManyWithWhereWithoutTtd_hilangInput | kehilanganUpdateManyWithWhereWithoutTtd_hilangInput[]
+    deleteMany?: kehilanganScalarWhereInput | kehilanganScalarWhereInput[]
+  }
+
+  export type kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput = {
+    create?: XOR<kehilanganCreateWithoutCreatedByInput, kehilanganUncheckedCreateWithoutCreatedByInput> | kehilanganCreateWithoutCreatedByInput[] | kehilanganUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: kehilanganCreateOrConnectWithoutCreatedByInput | kehilanganCreateOrConnectWithoutCreatedByInput[]
+    upsert?: kehilanganUpsertWithWhereUniqueWithoutCreatedByInput | kehilanganUpsertWithWhereUniqueWithoutCreatedByInput[]
+    createMany?: kehilanganCreateManyCreatedByInputEnvelope
+    set?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    disconnect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    delete?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    connect?: kehilanganWhereUniqueInput | kehilanganWhereUniqueInput[]
+    update?: kehilanganUpdateWithWhereUniqueWithoutCreatedByInput | kehilanganUpdateWithWhereUniqueWithoutCreatedByInput[]
+    updateMany?: kehilanganUpdateManyWithWhereWithoutCreatedByInput | kehilanganUpdateManyWithWhereWithoutCreatedByInput[]
+    deleteMany?: kehilanganScalarWhereInput | kehilanganScalarWhereInput[]
+  }
+
+  export type penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput = {
+    create?: XOR<penghasilanCreateWithoutTtd_hasilInput, penghasilanUncheckedCreateWithoutTtd_hasilInput> | penghasilanCreateWithoutTtd_hasilInput[] | penghasilanUncheckedCreateWithoutTtd_hasilInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutTtd_hasilInput | penghasilanCreateOrConnectWithoutTtd_hasilInput[]
+    upsert?: penghasilanUpsertWithWhereUniqueWithoutTtd_hasilInput | penghasilanUpsertWithWhereUniqueWithoutTtd_hasilInput[]
+    createMany?: penghasilanCreateManyTtd_hasilInputEnvelope
+    set?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    disconnect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    delete?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    update?: penghasilanUpdateWithWhereUniqueWithoutTtd_hasilInput | penghasilanUpdateWithWhereUniqueWithoutTtd_hasilInput[]
+    updateMany?: penghasilanUpdateManyWithWhereWithoutTtd_hasilInput | penghasilanUpdateManyWithWhereWithoutTtd_hasilInput[]
+    deleteMany?: penghasilanScalarWhereInput | penghasilanScalarWhereInput[]
+  }
+
+  export type penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput = {
+    create?: XOR<penghasilanCreateWithoutCreatedByInput, penghasilanUncheckedCreateWithoutCreatedByInput> | penghasilanCreateWithoutCreatedByInput[] | penghasilanUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: penghasilanCreateOrConnectWithoutCreatedByInput | penghasilanCreateOrConnectWithoutCreatedByInput[]
+    upsert?: penghasilanUpsertWithWhereUniqueWithoutCreatedByInput | penghasilanUpsertWithWhereUniqueWithoutCreatedByInput[]
+    createMany?: penghasilanCreateManyCreatedByInputEnvelope
+    set?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    disconnect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    delete?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    connect?: penghasilanWhereUniqueInput | penghasilanWhereUniqueInput[]
+    update?: penghasilanUpdateWithWhereUniqueWithoutCreatedByInput | penghasilanUpdateWithWhereUniqueWithoutCreatedByInput[]
+    updateMany?: penghasilanUpdateManyWithWhereWithoutCreatedByInput | penghasilanUpdateManyWithWhereWithoutCreatedByInput[]
+    deleteMany?: penghasilanScalarWhereInput | penghasilanScalarWhereInput[]
+  }
+
+  export type taniUncheckedUpdateManyWithoutTtd_taniNestedInput = {
+    create?: XOR<taniCreateWithoutTtd_taniInput, taniUncheckedCreateWithoutTtd_taniInput> | taniCreateWithoutTtd_taniInput[] | taniUncheckedCreateWithoutTtd_taniInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutTtd_taniInput | taniCreateOrConnectWithoutTtd_taniInput[]
+    upsert?: taniUpsertWithWhereUniqueWithoutTtd_taniInput | taniUpsertWithWhereUniqueWithoutTtd_taniInput[]
+    createMany?: taniCreateManyTtd_taniInputEnvelope
+    set?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    disconnect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    delete?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    update?: taniUpdateWithWhereUniqueWithoutTtd_taniInput | taniUpdateWithWhereUniqueWithoutTtd_taniInput[]
+    updateMany?: taniUpdateManyWithWhereWithoutTtd_taniInput | taniUpdateManyWithWhereWithoutTtd_taniInput[]
+    deleteMany?: taniScalarWhereInput | taniScalarWhereInput[]
+  }
+
+  export type taniUncheckedUpdateManyWithoutCreatedByNestedInput = {
+    create?: XOR<taniCreateWithoutCreatedByInput, taniUncheckedCreateWithoutCreatedByInput> | taniCreateWithoutCreatedByInput[] | taniUncheckedCreateWithoutCreatedByInput[]
+    connectOrCreate?: taniCreateOrConnectWithoutCreatedByInput | taniCreateOrConnectWithoutCreatedByInput[]
+    upsert?: taniUpsertWithWhereUniqueWithoutCreatedByInput | taniUpsertWithWhereUniqueWithoutCreatedByInput[]
+    createMany?: taniCreateManyCreatedByInputEnvelope
+    set?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    disconnect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    delete?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    connect?: taniWhereUniqueInput | taniWhereUniqueInput[]
+    update?: taniUpdateWithWhereUniqueWithoutCreatedByInput | taniUpdateWithWhereUniqueWithoutCreatedByInput[]
+    updateMany?: taniUpdateManyWithWhereWithoutCreatedByInput | taniUpdateManyWithWhereWithoutCreatedByInput[]
+    deleteMany?: taniScalarWhereInput | taniScalarWhereInput[]
   }
 
   export type usersCreateNestedManyWithoutJabatanInput = {
@@ -9113,6 +13832,102 @@ export namespace Prisma {
     delete?: usersWhereInput | boolean
     connect?: usersWhereUniqueInput
     update?: XOR<XOR<usersUpdateToOneWithWhereWithoutSkck_createdByInput, usersUpdateWithoutSkck_createdByInput>, usersUncheckedUpdateWithoutSkck_createdByInput>
+  }
+
+  export type usersCreateNestedOneWithoutKehilanganInput = {
+    create?: XOR<usersCreateWithoutKehilanganInput, usersUncheckedCreateWithoutKehilanganInput>
+    connectOrCreate?: usersCreateOrConnectWithoutKehilanganInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type usersCreateNestedOneWithoutKehilangan_createdByInput = {
+    create?: XOR<usersCreateWithoutKehilangan_createdByInput, usersUncheckedCreateWithoutKehilangan_createdByInput>
+    connectOrCreate?: usersCreateOrConnectWithoutKehilangan_createdByInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type usersUpdateOneWithoutKehilanganNestedInput = {
+    create?: XOR<usersCreateWithoutKehilanganInput, usersUncheckedCreateWithoutKehilanganInput>
+    connectOrCreate?: usersCreateOrConnectWithoutKehilanganInput
+    upsert?: usersUpsertWithoutKehilanganInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutKehilanganInput, usersUpdateWithoutKehilanganInput>, usersUncheckedUpdateWithoutKehilanganInput>
+  }
+
+  export type usersUpdateOneWithoutKehilangan_createdByNestedInput = {
+    create?: XOR<usersCreateWithoutKehilangan_createdByInput, usersUncheckedCreateWithoutKehilangan_createdByInput>
+    connectOrCreate?: usersCreateOrConnectWithoutKehilangan_createdByInput
+    upsert?: usersUpsertWithoutKehilangan_createdByInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutKehilangan_createdByInput, usersUpdateWithoutKehilangan_createdByInput>, usersUncheckedUpdateWithoutKehilangan_createdByInput>
+  }
+
+  export type usersCreateNestedOneWithoutPenghasilanInput = {
+    create?: XOR<usersCreateWithoutPenghasilanInput, usersUncheckedCreateWithoutPenghasilanInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPenghasilanInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type usersCreateNestedOneWithoutPenghasilan_createdByInput = {
+    create?: XOR<usersCreateWithoutPenghasilan_createdByInput, usersUncheckedCreateWithoutPenghasilan_createdByInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPenghasilan_createdByInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type usersUpdateOneWithoutPenghasilanNestedInput = {
+    create?: XOR<usersCreateWithoutPenghasilanInput, usersUncheckedCreateWithoutPenghasilanInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPenghasilanInput
+    upsert?: usersUpsertWithoutPenghasilanInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutPenghasilanInput, usersUpdateWithoutPenghasilanInput>, usersUncheckedUpdateWithoutPenghasilanInput>
+  }
+
+  export type usersUpdateOneWithoutPenghasilan_createdByNestedInput = {
+    create?: XOR<usersCreateWithoutPenghasilan_createdByInput, usersUncheckedCreateWithoutPenghasilan_createdByInput>
+    connectOrCreate?: usersCreateOrConnectWithoutPenghasilan_createdByInput
+    upsert?: usersUpsertWithoutPenghasilan_createdByInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutPenghasilan_createdByInput, usersUpdateWithoutPenghasilan_createdByInput>, usersUncheckedUpdateWithoutPenghasilan_createdByInput>
+  }
+
+  export type usersCreateNestedOneWithoutTaniInput = {
+    create?: XOR<usersCreateWithoutTaniInput, usersUncheckedCreateWithoutTaniInput>
+    connectOrCreate?: usersCreateOrConnectWithoutTaniInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type usersCreateNestedOneWithoutTani_createdByInput = {
+    create?: XOR<usersCreateWithoutTani_createdByInput, usersUncheckedCreateWithoutTani_createdByInput>
+    connectOrCreate?: usersCreateOrConnectWithoutTani_createdByInput
+    connect?: usersWhereUniqueInput
+  }
+
+  export type usersUpdateOneWithoutTaniNestedInput = {
+    create?: XOR<usersCreateWithoutTaniInput, usersUncheckedCreateWithoutTaniInput>
+    connectOrCreate?: usersCreateOrConnectWithoutTaniInput
+    upsert?: usersUpsertWithoutTaniInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutTaniInput, usersUpdateWithoutTaniInput>, usersUncheckedUpdateWithoutTaniInput>
+  }
+
+  export type usersUpdateOneWithoutTani_createdByNestedInput = {
+    create?: XOR<usersCreateWithoutTani_createdByInput, usersUncheckedCreateWithoutTani_createdByInput>
+    connectOrCreate?: usersCreateOrConnectWithoutTani_createdByInput
+    upsert?: usersUpsertWithoutTani_createdByInput
+    disconnect?: usersWhereInput | boolean
+    delete?: usersWhereInput | boolean
+    connect?: usersWhereUniqueInput
+    update?: XOR<XOR<usersUpdateToOneWithWhereWithoutTani_createdByInput, usersUpdateWithoutTani_createdByInput>, usersUncheckedUpdateWithoutTani_createdByInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -9613,6 +14428,232 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type kehilanganCreateWithoutTtd_hilangInput = {
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+    createdBy?: usersCreateNestedOneWithoutKehilangan_createdByInput
+  }
+
+  export type kehilanganUncheckedCreateWithoutTtd_hilangInput = {
+    hilang_id?: number
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_createdBy?: number | null
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+  }
+
+  export type kehilanganCreateOrConnectWithoutTtd_hilangInput = {
+    where: kehilanganWhereUniqueInput
+    create: XOR<kehilanganCreateWithoutTtd_hilangInput, kehilanganUncheckedCreateWithoutTtd_hilangInput>
+  }
+
+  export type kehilanganCreateManyTtd_hilangInputEnvelope = {
+    data: kehilanganCreateManyTtd_hilangInput | kehilanganCreateManyTtd_hilangInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type kehilanganCreateWithoutCreatedByInput = {
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+    ttd_hilang?: usersCreateNestedOneWithoutKehilanganInput
+  }
+
+  export type kehilanganUncheckedCreateWithoutCreatedByInput = {
+    hilang_id?: number
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_ttd?: number | null
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+  }
+
+  export type kehilanganCreateOrConnectWithoutCreatedByInput = {
+    where: kehilanganWhereUniqueInput
+    create: XOR<kehilanganCreateWithoutCreatedByInput, kehilanganUncheckedCreateWithoutCreatedByInput>
+  }
+
+  export type kehilanganCreateManyCreatedByInputEnvelope = {
+    data: kehilanganCreateManyCreatedByInput | kehilanganCreateManyCreatedByInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type penghasilanCreateWithoutTtd_hasilInput = {
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+    createdBy?: usersCreateNestedOneWithoutPenghasilan_createdByInput
+  }
+
+  export type penghasilanUncheckedCreateWithoutTtd_hasilInput = {
+    hasil_id?: number
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_createdBy?: number | null
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+  }
+
+  export type penghasilanCreateOrConnectWithoutTtd_hasilInput = {
+    where: penghasilanWhereUniqueInput
+    create: XOR<penghasilanCreateWithoutTtd_hasilInput, penghasilanUncheckedCreateWithoutTtd_hasilInput>
+  }
+
+  export type penghasilanCreateManyTtd_hasilInputEnvelope = {
+    data: penghasilanCreateManyTtd_hasilInput | penghasilanCreateManyTtd_hasilInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type penghasilanCreateWithoutCreatedByInput = {
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+    ttd_hasil?: usersCreateNestedOneWithoutPenghasilanInput
+  }
+
+  export type penghasilanUncheckedCreateWithoutCreatedByInput = {
+    hasil_id?: number
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_ttd?: number | null
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+  }
+
+  export type penghasilanCreateOrConnectWithoutCreatedByInput = {
+    where: penghasilanWhereUniqueInput
+    create: XOR<penghasilanCreateWithoutCreatedByInput, penghasilanUncheckedCreateWithoutCreatedByInput>
+  }
+
+  export type penghasilanCreateManyCreatedByInputEnvelope = {
+    data: penghasilanCreateManyCreatedByInput | penghasilanCreateManyCreatedByInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type taniCreateWithoutTtd_taniInput = {
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+    createdBy?: usersCreateNestedOneWithoutTani_createdByInput
+  }
+
+  export type taniUncheckedCreateWithoutTtd_taniInput = {
+    tani_id?: number
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_createdBy?: number | null
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+  }
+
+  export type taniCreateOrConnectWithoutTtd_taniInput = {
+    where: taniWhereUniqueInput
+    create: XOR<taniCreateWithoutTtd_taniInput, taniUncheckedCreateWithoutTtd_taniInput>
+  }
+
+  export type taniCreateManyTtd_taniInputEnvelope = {
+    data: taniCreateManyTtd_taniInput | taniCreateManyTtd_taniInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type taniCreateWithoutCreatedByInput = {
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+    ttd_tani?: usersCreateNestedOneWithoutTaniInput
+  }
+
+  export type taniUncheckedCreateWithoutCreatedByInput = {
+    tani_id?: number
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_ttd?: number | null
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+  }
+
+  export type taniCreateOrConnectWithoutCreatedByInput = {
+    where: taniWhereUniqueInput
+    create: XOR<taniCreateWithoutCreatedByInput, taniUncheckedCreateWithoutCreatedByInput>
+  }
+
+  export type taniCreateManyCreatedByInputEnvelope = {
+    data: taniCreateManyCreatedByInput | taniCreateManyCreatedByInput[]
+    skipDuplicates?: boolean
+  }
+
   export type jabatanUpsertWithoutUsersInput = {
     update: XOR<jabatanUpdateWithoutUsersInput, jabatanUncheckedUpdateWithoutUsersInput>
     create: XOR<jabatanCreateWithoutUsersInput, jabatanUncheckedCreateWithoutUsersInput>
@@ -9806,6 +14847,157 @@ export namespace Prisma {
     data: XOR<skckUpdateManyMutationInput, skckUncheckedUpdateManyWithoutCreatedByInput>
   }
 
+  export type kehilanganUpsertWithWhereUniqueWithoutTtd_hilangInput = {
+    where: kehilanganWhereUniqueInput
+    update: XOR<kehilanganUpdateWithoutTtd_hilangInput, kehilanganUncheckedUpdateWithoutTtd_hilangInput>
+    create: XOR<kehilanganCreateWithoutTtd_hilangInput, kehilanganUncheckedCreateWithoutTtd_hilangInput>
+  }
+
+  export type kehilanganUpdateWithWhereUniqueWithoutTtd_hilangInput = {
+    where: kehilanganWhereUniqueInput
+    data: XOR<kehilanganUpdateWithoutTtd_hilangInput, kehilanganUncheckedUpdateWithoutTtd_hilangInput>
+  }
+
+  export type kehilanganUpdateManyWithWhereWithoutTtd_hilangInput = {
+    where: kehilanganScalarWhereInput
+    data: XOR<kehilanganUpdateManyMutationInput, kehilanganUncheckedUpdateManyWithoutTtd_hilangInput>
+  }
+
+  export type kehilanganScalarWhereInput = {
+    AND?: kehilanganScalarWhereInput | kehilanganScalarWhereInput[]
+    OR?: kehilanganScalarWhereInput[]
+    NOT?: kehilanganScalarWhereInput | kehilanganScalarWhereInput[]
+    hilang_id?: IntFilter<"kehilangan"> | number
+    hilang_nomor?: StringNullableFilter<"kehilangan"> | string | null
+    hilang_nama?: StringFilter<"kehilangan"> | string
+    hilang_jk?: IntFilter<"kehilangan"> | number
+    hilang_umur?: IntFilter<"kehilangan"> | number
+    hilang_pekerjaan?: StringFilter<"kehilangan"> | string
+    hilang_alamat?: StringFilter<"kehilangan"> | string
+    hilang_ttd?: IntNullableFilter<"kehilangan"> | number | null
+    hilang_createdBy?: IntNullableFilter<"kehilangan"> | number | null
+    hilang_created?: DateTimeFilter<"kehilangan"> | Date | string
+    hilang_updated?: DateTimeFilter<"kehilangan"> | Date | string
+    hilang_deleted?: DateTimeNullableFilter<"kehilangan"> | Date | string | null
+  }
+
+  export type kehilanganUpsertWithWhereUniqueWithoutCreatedByInput = {
+    where: kehilanganWhereUniqueInput
+    update: XOR<kehilanganUpdateWithoutCreatedByInput, kehilanganUncheckedUpdateWithoutCreatedByInput>
+    create: XOR<kehilanganCreateWithoutCreatedByInput, kehilanganUncheckedCreateWithoutCreatedByInput>
+  }
+
+  export type kehilanganUpdateWithWhereUniqueWithoutCreatedByInput = {
+    where: kehilanganWhereUniqueInput
+    data: XOR<kehilanganUpdateWithoutCreatedByInput, kehilanganUncheckedUpdateWithoutCreatedByInput>
+  }
+
+  export type kehilanganUpdateManyWithWhereWithoutCreatedByInput = {
+    where: kehilanganScalarWhereInput
+    data: XOR<kehilanganUpdateManyMutationInput, kehilanganUncheckedUpdateManyWithoutCreatedByInput>
+  }
+
+  export type penghasilanUpsertWithWhereUniqueWithoutTtd_hasilInput = {
+    where: penghasilanWhereUniqueInput
+    update: XOR<penghasilanUpdateWithoutTtd_hasilInput, penghasilanUncheckedUpdateWithoutTtd_hasilInput>
+    create: XOR<penghasilanCreateWithoutTtd_hasilInput, penghasilanUncheckedCreateWithoutTtd_hasilInput>
+  }
+
+  export type penghasilanUpdateWithWhereUniqueWithoutTtd_hasilInput = {
+    where: penghasilanWhereUniqueInput
+    data: XOR<penghasilanUpdateWithoutTtd_hasilInput, penghasilanUncheckedUpdateWithoutTtd_hasilInput>
+  }
+
+  export type penghasilanUpdateManyWithWhereWithoutTtd_hasilInput = {
+    where: penghasilanScalarWhereInput
+    data: XOR<penghasilanUpdateManyMutationInput, penghasilanUncheckedUpdateManyWithoutTtd_hasilInput>
+  }
+
+  export type penghasilanScalarWhereInput = {
+    AND?: penghasilanScalarWhereInput | penghasilanScalarWhereInput[]
+    OR?: penghasilanScalarWhereInput[]
+    NOT?: penghasilanScalarWhereInput | penghasilanScalarWhereInput[]
+    hasil_id?: IntFilter<"penghasilan"> | number
+    hasil_nomor?: StringNullableFilter<"penghasilan"> | string | null
+    hasil_nama?: StringFilter<"penghasilan"> | string
+    hasil_umur?: IntFilter<"penghasilan"> | number
+    hasil_pekerjaan?: StringFilter<"penghasilan"> | string
+    hasil_alamat?: StringFilter<"penghasilan"> | string
+    hasil_penghasilan?: StringFilter<"penghasilan"> | string
+    hasil_ttd?: IntNullableFilter<"penghasilan"> | number | null
+    hasil_createdBy?: IntNullableFilter<"penghasilan"> | number | null
+    hasil_created?: DateTimeFilter<"penghasilan"> | Date | string
+    hasil_updated?: DateTimeFilter<"penghasilan"> | Date | string
+    hasil_deleted?: DateTimeNullableFilter<"penghasilan"> | Date | string | null
+  }
+
+  export type penghasilanUpsertWithWhereUniqueWithoutCreatedByInput = {
+    where: penghasilanWhereUniqueInput
+    update: XOR<penghasilanUpdateWithoutCreatedByInput, penghasilanUncheckedUpdateWithoutCreatedByInput>
+    create: XOR<penghasilanCreateWithoutCreatedByInput, penghasilanUncheckedCreateWithoutCreatedByInput>
+  }
+
+  export type penghasilanUpdateWithWhereUniqueWithoutCreatedByInput = {
+    where: penghasilanWhereUniqueInput
+    data: XOR<penghasilanUpdateWithoutCreatedByInput, penghasilanUncheckedUpdateWithoutCreatedByInput>
+  }
+
+  export type penghasilanUpdateManyWithWhereWithoutCreatedByInput = {
+    where: penghasilanScalarWhereInput
+    data: XOR<penghasilanUpdateManyMutationInput, penghasilanUncheckedUpdateManyWithoutCreatedByInput>
+  }
+
+  export type taniUpsertWithWhereUniqueWithoutTtd_taniInput = {
+    where: taniWhereUniqueInput
+    update: XOR<taniUpdateWithoutTtd_taniInput, taniUncheckedUpdateWithoutTtd_taniInput>
+    create: XOR<taniCreateWithoutTtd_taniInput, taniUncheckedCreateWithoutTtd_taniInput>
+  }
+
+  export type taniUpdateWithWhereUniqueWithoutTtd_taniInput = {
+    where: taniWhereUniqueInput
+    data: XOR<taniUpdateWithoutTtd_taniInput, taniUncheckedUpdateWithoutTtd_taniInput>
+  }
+
+  export type taniUpdateManyWithWhereWithoutTtd_taniInput = {
+    where: taniScalarWhereInput
+    data: XOR<taniUpdateManyMutationInput, taniUncheckedUpdateManyWithoutTtd_taniInput>
+  }
+
+  export type taniScalarWhereInput = {
+    AND?: taniScalarWhereInput | taniScalarWhereInput[]
+    OR?: taniScalarWhereInput[]
+    NOT?: taniScalarWhereInput | taniScalarWhereInput[]
+    tani_id?: IntFilter<"tani"> | number
+    tani_nomor?: StringNullableFilter<"tani"> | string | null
+    tani_nama?: StringFilter<"tani"> | string
+    tani_jabatan?: StringFilter<"tani"> | string
+    tani_sekretariat?: StringFilter<"tani"> | string
+    tani_alamat?: StringFilter<"tani"> | string
+    tani_keperluan?: StringFilter<"tani"> | string
+    tani_tujuanBantuan?: StringFilter<"tani"> | string
+    tani_ttd?: IntNullableFilter<"tani"> | number | null
+    tani_createdBy?: IntNullableFilter<"tani"> | number | null
+    tani_created?: DateTimeFilter<"tani"> | Date | string
+    tani_updated?: DateTimeFilter<"tani"> | Date | string
+    tani_deleted?: DateTimeNullableFilter<"tani"> | Date | string | null
+  }
+
+  export type taniUpsertWithWhereUniqueWithoutCreatedByInput = {
+    where: taniWhereUniqueInput
+    update: XOR<taniUpdateWithoutCreatedByInput, taniUncheckedUpdateWithoutCreatedByInput>
+    create: XOR<taniCreateWithoutCreatedByInput, taniUncheckedCreateWithoutCreatedByInput>
+  }
+
+  export type taniUpdateWithWhereUniqueWithoutCreatedByInput = {
+    where: taniWhereUniqueInput
+    data: XOR<taniUpdateWithoutCreatedByInput, taniUncheckedUpdateWithoutCreatedByInput>
+  }
+
+  export type taniUpdateManyWithWhereWithoutCreatedByInput = {
+    where: taniScalarWhereInput
+    data: XOR<taniUpdateManyMutationInput, taniUncheckedUpdateManyWithoutCreatedByInput>
+  }
+
   export type usersCreateWithoutJabatanInput = {
     user_nama: string
     user_nip?: string | null
@@ -9827,6 +15019,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
     skck?: skckCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateWithoutJabatanInput = {
@@ -9851,6 +15049,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
     skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersCreateOrConnectWithoutJabatanInput = {
@@ -9922,6 +15126,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
     skck?: skckCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateWithoutSktmInput = {
@@ -9946,6 +15156,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
     skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersCreateOrConnectWithoutSktmInput = {
@@ -9974,6 +15190,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
     skck?: skckCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateWithoutSktm_createdByInput = {
@@ -9998,6 +15220,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
     skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersCreateOrConnectWithoutSktm_createdByInput = {
@@ -10037,6 +15265,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
     skck?: skckUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutSktmInput = {
@@ -10061,6 +15295,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
     skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUpsertWithoutSktm_createdByInput = {
@@ -10095,6 +15335,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
     skck?: skckUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutSktm_createdByInput = {
@@ -10119,6 +15365,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
     skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersCreateWithoutBelumNikahInput = {
@@ -10142,6 +15394,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
     skck?: skckCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateWithoutBelumNikahInput = {
@@ -10166,6 +15424,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
     skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersCreateOrConnectWithoutBelumNikahInput = {
@@ -10194,6 +15458,12 @@ export namespace Prisma {
     belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
     skck?: skckCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateWithoutNikah_createdByInput = {
@@ -10218,6 +15488,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
     skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
     skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersCreateOrConnectWithoutNikah_createdByInput = {
@@ -10257,6 +15533,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
     skck?: skckUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutBelumNikahInput = {
@@ -10281,6 +15563,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
     skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUpsertWithoutNikah_createdByInput = {
@@ -10315,6 +15603,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
     skck?: skckUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutNikah_createdByInput = {
@@ -10339,6 +15633,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
     skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersCreateWithoutSkckInput = {
@@ -10362,6 +15662,12 @@ export namespace Prisma {
     belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
     nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
     skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateWithoutSkckInput = {
@@ -10386,6 +15692,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
     nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
     skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersCreateOrConnectWithoutSkckInput = {
@@ -10414,6 +15726,12 @@ export namespace Prisma {
     belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
     nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
     skck?: skckCreateNestedManyWithoutTtd_skckInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersUncheckedCreateWithoutSkck_createdByInput = {
@@ -10438,6 +15756,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
     nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
     skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
   }
 
   export type usersCreateOrConnectWithoutSkck_createdByInput = {
@@ -10477,6 +15801,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
     nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
     skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutSkckInput = {
@@ -10501,6 +15831,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
     nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
     skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUpsertWithoutSkck_createdByInput = {
@@ -10535,6 +15871,12 @@ export namespace Prisma {
     belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
     nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
     skck?: skckUpdateManyWithoutTtd_skckNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutSkck_createdByInput = {
@@ -10559,6 +15901,816 @@ export namespace Prisma {
     belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
     nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
     skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersCreateWithoutKehilanganInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
+    skck?: skckCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersUncheckedCreateWithoutKehilanganInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_jabatan?: number | null
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmUncheckedCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
+    skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersCreateOrConnectWithoutKehilanganInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutKehilanganInput, usersUncheckedCreateWithoutKehilanganInput>
+  }
+
+  export type usersCreateWithoutKehilangan_createdByInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
+    skck?: skckCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersUncheckedCreateWithoutKehilangan_createdByInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_jabatan?: number | null
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmUncheckedCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
+    skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersCreateOrConnectWithoutKehilangan_createdByInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutKehilangan_createdByInput, usersUncheckedCreateWithoutKehilangan_createdByInput>
+  }
+
+  export type usersUpsertWithoutKehilanganInput = {
+    update: XOR<usersUpdateWithoutKehilanganInput, usersUncheckedUpdateWithoutKehilanganInput>
+    create: XOR<usersCreateWithoutKehilanganInput, usersUncheckedCreateWithoutKehilanganInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutKehilanganInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutKehilanganInput, usersUncheckedUpdateWithoutKehilanganInput>
+  }
+
+  export type usersUpdateWithoutKehilanganInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutKehilanganInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUncheckedUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUpsertWithoutKehilangan_createdByInput = {
+    update: XOR<usersUpdateWithoutKehilangan_createdByInput, usersUncheckedUpdateWithoutKehilangan_createdByInput>
+    create: XOR<usersCreateWithoutKehilangan_createdByInput, usersUncheckedCreateWithoutKehilangan_createdByInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutKehilangan_createdByInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutKehilangan_createdByInput, usersUncheckedUpdateWithoutKehilangan_createdByInput>
+  }
+
+  export type usersUpdateWithoutKehilangan_createdByInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutKehilangan_createdByInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUncheckedUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersCreateWithoutPenghasilanInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
+    skck?: skckCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersUncheckedCreateWithoutPenghasilanInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_jabatan?: number | null
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmUncheckedCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
+    skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersCreateOrConnectWithoutPenghasilanInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutPenghasilanInput, usersUncheckedCreateWithoutPenghasilanInput>
+  }
+
+  export type usersCreateWithoutPenghasilan_createdByInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
+    skck?: skckCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersUncheckedCreateWithoutPenghasilan_createdByInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_jabatan?: number | null
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmUncheckedCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
+    skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersCreateOrConnectWithoutPenghasilan_createdByInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutPenghasilan_createdByInput, usersUncheckedCreateWithoutPenghasilan_createdByInput>
+  }
+
+  export type usersUpsertWithoutPenghasilanInput = {
+    update: XOR<usersUpdateWithoutPenghasilanInput, usersUncheckedUpdateWithoutPenghasilanInput>
+    create: XOR<usersCreateWithoutPenghasilanInput, usersUncheckedCreateWithoutPenghasilanInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutPenghasilanInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutPenghasilanInput, usersUncheckedUpdateWithoutPenghasilanInput>
+  }
+
+  export type usersUpdateWithoutPenghasilanInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutPenghasilanInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUncheckedUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUpsertWithoutPenghasilan_createdByInput = {
+    update: XOR<usersUpdateWithoutPenghasilan_createdByInput, usersUncheckedUpdateWithoutPenghasilan_createdByInput>
+    create: XOR<usersCreateWithoutPenghasilan_createdByInput, usersUncheckedCreateWithoutPenghasilan_createdByInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutPenghasilan_createdByInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutPenghasilan_createdByInput, usersUncheckedUpdateWithoutPenghasilan_createdByInput>
+  }
+
+  export type usersUpdateWithoutPenghasilan_createdByInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutPenghasilan_createdByInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUncheckedUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersCreateWithoutTaniInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
+    skck?: skckCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani_createdBy?: taniCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersUncheckedCreateWithoutTaniInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_jabatan?: number | null
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmUncheckedCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
+    skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani_createdBy?: taniUncheckedCreateNestedManyWithoutCreatedByInput
+  }
+
+  export type usersCreateOrConnectWithoutTaniInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutTaniInput, usersUncheckedCreateWithoutTaniInput>
+  }
+
+  export type usersCreateWithoutTani_createdByInput = {
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    jabatan?: jabatanCreateNestedOneWithoutUsersInput
+    sktm?: sktmCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahCreateNestedManyWithoutCreated_byInput
+    skck?: skckCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanCreateNestedManyWithoutCreatedByInput
+    tani?: taniCreateNestedManyWithoutTtd_taniInput
+  }
+
+  export type usersUncheckedCreateWithoutTani_createdByInput = {
+    user_id?: number
+    user_nama: string
+    user_nip?: string | null
+    user_email?: string | null
+    user_hp: string
+    user_image?: string | null
+    user_alamat: string
+    user_jabatan?: number | null
+    user_name: string
+    user_pass: string
+    user_level: number
+    user_lastip?: string | null
+    user_lastlogin?: string | null
+    user_created?: Date | string
+    user_updated?: Date | string
+    user_deleted?: Date | string | null
+    sktm?: sktmUncheckedCreateNestedManyWithoutTtd_sktmInput
+    sktm_createdBy?: sktmUncheckedCreateNestedManyWithoutCreated_byInput
+    belumNikah?: belumNikahUncheckedCreateNestedManyWithoutTtd_nikahInput
+    nikah_createdBy?: belumNikahUncheckedCreateNestedManyWithoutCreated_byInput
+    skck?: skckUncheckedCreateNestedManyWithoutTtd_skckInput
+    skck_createdBy?: skckUncheckedCreateNestedManyWithoutCreatedByInput
+    kehilangan?: kehilanganUncheckedCreateNestedManyWithoutTtd_hilangInput
+    kehilangan_createdBy?: kehilanganUncheckedCreateNestedManyWithoutCreatedByInput
+    penghasilan?: penghasilanUncheckedCreateNestedManyWithoutTtd_hasilInput
+    penghasilan_createdBy?: penghasilanUncheckedCreateNestedManyWithoutCreatedByInput
+    tani?: taniUncheckedCreateNestedManyWithoutTtd_taniInput
+  }
+
+  export type usersCreateOrConnectWithoutTani_createdByInput = {
+    where: usersWhereUniqueInput
+    create: XOR<usersCreateWithoutTani_createdByInput, usersUncheckedCreateWithoutTani_createdByInput>
+  }
+
+  export type usersUpsertWithoutTaniInput = {
+    update: XOR<usersUpdateWithoutTaniInput, usersUncheckedUpdateWithoutTaniInput>
+    create: XOR<usersCreateWithoutTaniInput, usersUncheckedCreateWithoutTaniInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutTaniInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutTaniInput, usersUncheckedUpdateWithoutTaniInput>
+  }
+
+  export type usersUpdateWithoutTaniInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutTaniInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUncheckedUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
+  }
+
+  export type usersUpsertWithoutTani_createdByInput = {
+    update: XOR<usersUpdateWithoutTani_createdByInput, usersUncheckedUpdateWithoutTani_createdByInput>
+    create: XOR<usersCreateWithoutTani_createdByInput, usersUncheckedCreateWithoutTani_createdByInput>
+    where?: usersWhereInput
+  }
+
+  export type usersUpdateToOneWithWhereWithoutTani_createdByInput = {
+    where?: usersWhereInput
+    data: XOR<usersUpdateWithoutTani_createdByInput, usersUncheckedUpdateWithoutTani_createdByInput>
+  }
+
+  export type usersUpdateWithoutTani_createdByInput = {
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    jabatan?: jabatanUpdateOneWithoutUsersNestedInput
+    sktm?: sktmUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+  }
+
+  export type usersUncheckedUpdateWithoutTani_createdByInput = {
+    user_id?: IntFieldUpdateOperationsInput | number
+    user_nama?: StringFieldUpdateOperationsInput | string
+    user_nip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_email?: NullableStringFieldUpdateOperationsInput | string | null
+    user_hp?: StringFieldUpdateOperationsInput | string
+    user_image?: NullableStringFieldUpdateOperationsInput | string | null
+    user_alamat?: StringFieldUpdateOperationsInput | string
+    user_jabatan?: NullableIntFieldUpdateOperationsInput | number | null
+    user_name?: StringFieldUpdateOperationsInput | string
+    user_pass?: StringFieldUpdateOperationsInput | string
+    user_level?: IntFieldUpdateOperationsInput | number
+    user_lastip?: NullableStringFieldUpdateOperationsInput | string | null
+    user_lastlogin?: NullableStringFieldUpdateOperationsInput | string | null
+    user_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    user_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sktm?: sktmUncheckedUpdateManyWithoutTtd_sktmNestedInput
+    sktm_createdBy?: sktmUncheckedUpdateManyWithoutCreated_byNestedInput
+    belumNikah?: belumNikahUncheckedUpdateManyWithoutTtd_nikahNestedInput
+    nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
+    skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
+    skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
   }
 
   export type sktmCreateManyTtd_sktmInput = {
@@ -10677,6 +16829,92 @@ export namespace Prisma {
     skck_created?: Date | string
     skck_updated?: Date | string
     skck_deleted?: Date | string | null
+  }
+
+  export type kehilanganCreateManyTtd_hilangInput = {
+    hilang_id?: number
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_createdBy?: number | null
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+  }
+
+  export type kehilanganCreateManyCreatedByInput = {
+    hilang_id?: number
+    hilang_nomor?: string | null
+    hilang_nama: string
+    hilang_jk: number
+    hilang_umur: number
+    hilang_pekerjaan: string
+    hilang_alamat: string
+    hilang_ttd?: number | null
+    hilang_created?: Date | string
+    hilang_updated?: Date | string
+    hilang_deleted?: Date | string | null
+  }
+
+  export type penghasilanCreateManyTtd_hasilInput = {
+    hasil_id?: number
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_createdBy?: number | null
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+  }
+
+  export type penghasilanCreateManyCreatedByInput = {
+    hasil_id?: number
+    hasil_nomor?: string | null
+    hasil_nama: string
+    hasil_umur: number
+    hasil_pekerjaan: string
+    hasil_alamat: string
+    hasil_penghasilan: string
+    hasil_ttd?: number | null
+    hasil_created?: Date | string
+    hasil_updated?: Date | string
+    hasil_deleted?: Date | string | null
+  }
+
+  export type taniCreateManyTtd_taniInput = {
+    tani_id?: number
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_createdBy?: number | null
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
+  }
+
+  export type taniCreateManyCreatedByInput = {
+    tani_id?: number
+    tani_nomor?: string | null
+    tani_nama: string
+    tani_jabatan: string
+    tani_sekretariat: string
+    tani_alamat: string
+    tani_keperluan: string
+    tani_tujuanBantuan: string
+    tani_ttd?: number | null
+    tani_created?: Date | string
+    tani_updated?: Date | string
+    tani_deleted?: Date | string | null
   }
 
   export type sktmUpdateWithoutTtd_sktmInput = {
@@ -11027,6 +17265,258 @@ export namespace Prisma {
     skck_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type kehilanganUpdateWithoutTtd_hilangInput = {
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdBy?: usersUpdateOneWithoutKehilangan_createdByNestedInput
+  }
+
+  export type kehilanganUncheckedUpdateWithoutTtd_hilangInput = {
+    hilang_id?: IntFieldUpdateOperationsInput | number
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type kehilanganUncheckedUpdateManyWithoutTtd_hilangInput = {
+    hilang_id?: IntFieldUpdateOperationsInput | number
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type kehilanganUpdateWithoutCreatedByInput = {
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ttd_hilang?: usersUpdateOneWithoutKehilanganNestedInput
+  }
+
+  export type kehilanganUncheckedUpdateWithoutCreatedByInput = {
+    hilang_id?: IntFieldUpdateOperationsInput | number
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type kehilanganUncheckedUpdateManyWithoutCreatedByInput = {
+    hilang_id?: IntFieldUpdateOperationsInput | number
+    hilang_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hilang_nama?: StringFieldUpdateOperationsInput | string
+    hilang_jk?: IntFieldUpdateOperationsInput | number
+    hilang_umur?: IntFieldUpdateOperationsInput | number
+    hilang_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hilang_alamat?: StringFieldUpdateOperationsInput | string
+    hilang_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hilang_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hilang_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type penghasilanUpdateWithoutTtd_hasilInput = {
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdBy?: usersUpdateOneWithoutPenghasilan_createdByNestedInput
+  }
+
+  export type penghasilanUncheckedUpdateWithoutTtd_hasilInput = {
+    hasil_id?: IntFieldUpdateOperationsInput | number
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type penghasilanUncheckedUpdateManyWithoutTtd_hasilInput = {
+    hasil_id?: IntFieldUpdateOperationsInput | number
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type penghasilanUpdateWithoutCreatedByInput = {
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ttd_hasil?: usersUpdateOneWithoutPenghasilanNestedInput
+  }
+
+  export type penghasilanUncheckedUpdateWithoutCreatedByInput = {
+    hasil_id?: IntFieldUpdateOperationsInput | number
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type penghasilanUncheckedUpdateManyWithoutCreatedByInput = {
+    hasil_id?: IntFieldUpdateOperationsInput | number
+    hasil_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    hasil_nama?: StringFieldUpdateOperationsInput | string
+    hasil_umur?: IntFieldUpdateOperationsInput | number
+    hasil_pekerjaan?: StringFieldUpdateOperationsInput | string
+    hasil_alamat?: StringFieldUpdateOperationsInput | string
+    hasil_penghasilan?: StringFieldUpdateOperationsInput | string
+    hasil_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    hasil_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    hasil_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type taniUpdateWithoutTtd_taniInput = {
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdBy?: usersUpdateOneWithoutTani_createdByNestedInput
+  }
+
+  export type taniUncheckedUpdateWithoutTtd_taniInput = {
+    tani_id?: IntFieldUpdateOperationsInput | number
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type taniUncheckedUpdateManyWithoutTtd_taniInput = {
+    tani_id?: IntFieldUpdateOperationsInput | number
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_createdBy?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type taniUpdateWithoutCreatedByInput = {
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ttd_tani?: usersUpdateOneWithoutTaniNestedInput
+  }
+
+  export type taniUncheckedUpdateWithoutCreatedByInput = {
+    tani_id?: IntFieldUpdateOperationsInput | number
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type taniUncheckedUpdateManyWithoutCreatedByInput = {
+    tani_id?: IntFieldUpdateOperationsInput | number
+    tani_nomor?: NullableStringFieldUpdateOperationsInput | string | null
+    tani_nama?: StringFieldUpdateOperationsInput | string
+    tani_jabatan?: StringFieldUpdateOperationsInput | string
+    tani_sekretariat?: StringFieldUpdateOperationsInput | string
+    tani_alamat?: StringFieldUpdateOperationsInput | string
+    tani_keperluan?: StringFieldUpdateOperationsInput | string
+    tani_tujuanBantuan?: StringFieldUpdateOperationsInput | string
+    tani_ttd?: NullableIntFieldUpdateOperationsInput | number | null
+    tani_created?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_updated?: DateTimeFieldUpdateOperationsInput | Date | string
+    tani_deleted?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
   export type usersCreateManyJabatanInput = {
     user_id?: number
     user_nama: string
@@ -11066,6 +17556,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUpdateManyWithoutCreated_byNestedInput
     skck?: skckUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateWithoutJabatanInput = {
@@ -11090,6 +17586,12 @@ export namespace Prisma {
     nikah_createdBy?: belumNikahUncheckedUpdateManyWithoutCreated_byNestedInput
     skck?: skckUncheckedUpdateManyWithoutTtd_skckNestedInput
     skck_createdBy?: skckUncheckedUpdateManyWithoutCreatedByNestedInput
+    kehilangan?: kehilanganUncheckedUpdateManyWithoutTtd_hilangNestedInput
+    kehilangan_createdBy?: kehilanganUncheckedUpdateManyWithoutCreatedByNestedInput
+    penghasilan?: penghasilanUncheckedUpdateManyWithoutTtd_hasilNestedInput
+    penghasilan_createdBy?: penghasilanUncheckedUpdateManyWithoutCreatedByNestedInput
+    tani?: taniUncheckedUpdateManyWithoutTtd_taniNestedInput
+    tani_createdBy?: taniUncheckedUpdateManyWithoutCreatedByNestedInput
   }
 
   export type usersUncheckedUpdateManyWithoutJabatanInput = {
@@ -11143,6 +17645,18 @@ export namespace Prisma {
      * @deprecated Use skckDefaultArgs instead
      */
     export type skckArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = skckDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use kehilanganDefaultArgs instead
+     */
+    export type kehilanganArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = kehilanganDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use penghasilanDefaultArgs instead
+     */
+    export type penghasilanArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = penghasilanDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use taniDefaultArgs instead
+     */
+    export type taniArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = taniDefaultArgs<ExtArgs>
 
   /**
    * Batch Payload for updateMany & deleteMany & createMany

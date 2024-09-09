@@ -15,10 +15,10 @@ export const saveSkck = async (data: Skck_Type) => {
       cookies().get("next-auth.session-token")?.value ??
       cookies().get("__Secure-next-auth.session-token")?.value;
 
-    // const decoded = await decode({
-    //   token: sessionToken,
-    //   secret: String(process.env.NEXTAUTH_SECRET),
-    // });
+    const decoded = await decode({
+      token: sessionToken,
+      secret: String(process.env.NEXTAUTH_SECRET),
+    });
 
     try {
       if (data.skck_id)
