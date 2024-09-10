@@ -258,7 +258,7 @@ const TableTani = () => {
                 }`}
               >
                 <div className="flex items-center justify-between bg-[#fbfbfb] px-5 py-3 dark:bg-[#121c2c]">
-                  <h5 className="text-lg font-bold">Form SKCK</h5>
+                  <h5 className="text-lg font-bold">Form Rekomendasi Kelompok Tani</h5>
                   <button
                     onClick={() => setShow(false)}
                     type="button"
